@@ -3,15 +3,13 @@ import styled from 'styled-components';
 
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
+import Sidebar from './Sidebar';
+import Content from './Content';
 
-const Content = styled.div`
+const Page = styled.div`
     display: grid;
     place-items: center;
     grid-template-columns: minmax(150px, 25%) 1fr;
-    background-size: 100%;
-    gap: 1rem;
-
-
 `;
 
 export default function Layout(props) {
@@ -20,14 +18,12 @@ export default function Layout(props) {
             <GlobalStyles />
             <Typography />
 
-            <Content>
-                <aside>
-                sdfsdfsdf
-                </aside>
-                <main>
+            <Page>
+                <Sidebar />
+                <Content>
                     {props.children}
-                </main>
-            </Content>
+                </Content>
+            </Page>
         </>
     );
 }

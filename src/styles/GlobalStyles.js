@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
     --blue: #093E47;
     --white: #FFFFFF;
     --grey: #DCE0E2;
-    --light-grey: ##e9eef0;
+    --light-grey: #eeeeee;
     --light-green: #7D9A64;
     --dark-green: #6A6E4F;
     --red: #96244E;
@@ -17,21 +17,9 @@ const GlobalStyles = createGlobalStyle`
     overflow: hidden;
   }
 
-  main {
-    background-color: var(--light-grey);
-    height: 100vh;
-    width: 100%;
-  }
-
-  aside {
-    background-color: var(--dark-green);
-    height: 100vh;
-    width: 100%;
-    border-radius: 15px;
-  }
-
   body {
     font-size: 2rem;
+    margin: 0;
   }
 
   .gatsby-image-wrapper img[src*="base64\\,"] { // different with Wes
