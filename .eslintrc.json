@@ -1,0 +1,23 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true,
+            "modules": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true,
+    },
+    "extends": [
+        "../tools/eslint/.eslintrc-common.json",
+        "../tools/eslint/.eslintrc-es6.json",
+        "../tools/eslint/.eslintrc-react.json"
+    ]
+}
