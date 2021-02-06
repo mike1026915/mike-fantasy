@@ -4,7 +4,32 @@ module.exports = {
     FAST_DEV: true,
   },
   siteMetadata: {
-    title: "MikeFantasy",
+    title: "Mike Fantasy",
+    name: "Mike Fang",
+    url: "",
+    intro: "Try my best to do right things with right people then enjoy the life at ease!",
+    copyright: '© All rights reserved.',
+    menu: [
+      {
+        label: 'About me',
+        path: '/'
+      },
+      {
+        label: 'Blog',
+        path: '/pages/blog'
+      },
+      {
+        label: 'Contact me',
+        path: '/pages/contacts'
+      }
+    ],
+    contact: {
+      email: '',
+      github: '#',
+      rss: '',
+      linkedin: '#',
+      instagram: '#',
+    }
   },
   plugins: [
     "gatsby-plugin-netlify-cms",

@@ -31,7 +31,7 @@
     "gatsby-plugin-typescript": "^2.11.0",
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-sharp": "^2.11.0",
-    "netlify-cms-app": "^2.14.14",
+    "netlify-cms-app": "^2.14.17",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
