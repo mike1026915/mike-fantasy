@@ -6,6 +6,7 @@ module.exports = {
   siteMetadata: {
     title: "Mike Fantasy",
     name: "Mike Fang",
+    siteUrl: 'https:/mike-fang.com',
     url: "",
     intro: "Try my best to do right things with right people then enjoy the life at ease!",
     copyright: '© All rights reserved.',
