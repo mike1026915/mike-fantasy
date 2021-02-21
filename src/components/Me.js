@@ -8,10 +8,8 @@ const StyledMe = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50vh;
-    q {
-        margin: 1rem 15%;
-    }
+    height: 36vh;
+    margin-bottom: 3rem;
 
     q::before {
         content: '\\201C';
@@ -20,8 +18,19 @@ const StyledMe = styled.div`
     q::after {
         content: '\\201D';
     }
-
 `
+
+const StyledName = styled.div`
+    font-size: 3rem;
+    font-style: bold;
+`;
+
+const StyledQuote = styled.q`
+    font-size: 1rem;
+    font-style: italic;
+    margin: 1rem 50% 0 0;
+`;
+
 
 export default function Me(props) {
     const {
@@ -41,18 +50,18 @@ export default function Me(props) {
                 draggable={false}
                 style={{
                     borderRadius: "15%",
-                    width: "auto",
+                    width: "25vh",
                     height: "25vh",
-                    margin: "5% 25%"
+                    margin: "5% 0.15rem"
                 }}
 
             />
-            <h3>
+            <StyledName>
                 {name}
-            </h3>
-            <q>
+            </StyledName>
+            <StyledQuote>
                 {intro}
-            </q>
+            </StyledQuote>
         </StyledMe>
     );
 }

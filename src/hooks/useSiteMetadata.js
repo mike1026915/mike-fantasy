@@ -16,7 +16,7 @@ const useSiteMetadata = () => {
             copyright
             description
             intro
-            menu {
+            menus {
               label
               path
             }

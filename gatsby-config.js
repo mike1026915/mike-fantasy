@@ -15,21 +15,17 @@ module.exports = {
     siteUrl: 'https://mike-fang.com',
     description: "Mike's personal website",
     url: "https://mike-fang.com",
-    intro: "Try my best to do right things with right people then enjoy a comfortable life!",
+    intro: "Try my best to do right things with right people then enjoy an easy life!",
     copyright: '© All rights reserved.',
-    menu: [
+    menus: [
       {
         label: 'About me',
         path: '/'
       },
       {
         label: 'Blog',
-        path: '/pages/blog'
+        path: '/blog'
       },
-      {
-        label: 'Contact me',
-        path: '/pages/contacts'
-      }
     ],
     contact: {
       email: '',

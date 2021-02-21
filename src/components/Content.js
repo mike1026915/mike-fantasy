@@ -10,20 +10,10 @@ const StyledContent = styled.main`
     align-items: center;
 `
 
-export default function Sidebar() {
-
+export default function Sidebar(props) {
     return (
         <StyledContent>
-            <h1>
-                <em>
-                    Try my best to <br />
-                    do the right things  <br />
-                    with the right people  <br />
-                    then  <br />
-                    enjoy the life  <br />
-                    at ease!  <br />
-                </em>
-            </h1>
+            {props.children}
         </StyledContent>
     )
 }

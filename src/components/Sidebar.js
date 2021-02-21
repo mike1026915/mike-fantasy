@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Me from './Me';
+import Menus from './Menus';
 
 const StyledSideBar = styled.aside`
     background-color: var(--dark-green);
@@ -9,7 +10,10 @@ const StyledSideBar = styled.aside`
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 1rem;
+    padding-left: 15%;
 `
 
 export default function Sidebar() {
@@ -18,7 +22,7 @@ export default function Sidebar() {
     return (
         <StyledSideBar>
             <Me/>
-            <h2 style={s}> links </h2>
+            <Menus />
             <h3 style={s}> contact </h3>
             <p style={s}> copyright </p>
         </StyledSideBar>

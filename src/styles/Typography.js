@@ -26,7 +26,6 @@ const Typography = createGlobalStyle`
 
   aside {
     font-weight: 500;
-    text-align: center;
     color: var(--grey);
     display: flex;
     flex-direction: column;
