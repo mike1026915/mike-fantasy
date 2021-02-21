@@ -1,4 +1,10 @@
-module.exports = {
+import dotenv from 'dotenv';
+
+dotenv.config({
+    path: '.env',
+});
+
+export default {
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
     FAST_DEV: true,
@@ -6,9 +12,10 @@ module.exports = {
   siteMetadata: {
     title: "Mike Fantasy",
     name: "Mike Fang",
-    siteUrl: 'https:/mike-fang.com',
-    url: "",
-    intro: "Try my best to do right things with right people then enjoy the life at ease!",
+    siteUrl: 'https://mike-fang.com',
+    description: "Mike's personal website",
+    url: "https://mike-fang.com",
+    intro: "Try my best to do right things with right people then enjoy a comfortable life!",
     copyright: '© All rights reserved.',
     menu: [
       {
