@@ -8,8 +8,7 @@ const StyledMe = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 36vh;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 
     q::before {
         content: '\\201C';
@@ -28,7 +27,9 @@ const StyledName = styled.div`
 const StyledQuote = styled.q`
     font-size: 1rem;
     font-style: italic;
-    margin: 1rem 50% 0 0;
+    margin: 0.5rem 30% 0 0;
+    line-height: 2.1rem;
+    letter-spacing: 0.1rem;
 `;
 
 
@@ -52,7 +53,7 @@ export default function Me(props) {
                     borderRadius: "15%",
                     width: "25vh",
                     height: "25vh",
-                    margin: "5% 0.15rem"
+                    margin: "1.5rem 0"
                 }}
 
             />

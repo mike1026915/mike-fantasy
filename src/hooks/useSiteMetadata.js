@@ -6,12 +6,11 @@ const useSiteMetadata = () => {
       query {
         site {
           siteMetadata {
-            contact {
+            contacts {
               email
               github
               instagram
               linkedin
-              rss
             }
             copyright
             description

@@ -10,7 +10,6 @@ const Page = styled.div`
     display: grid;
     place-items: center;
     grid-template-columns: minmax(150px, 36%) 1fr;
-    place-items: center;
 `;
 
 export default function Layout(props) {

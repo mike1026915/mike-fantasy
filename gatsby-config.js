@@ -19,7 +19,7 @@ module.exports = {
     copyright: '© All rights reserved.',
     menus: [
       {
-        label: 'About me',
+        label: 'About Me',
         path: '/'
       },
       {
@@ -27,12 +27,11 @@ module.exports = {
         path: '/blog'
       },
     ],
-    contact: {
-      email: '',
-      github: '#',
-      rss: '',
-      linkedin: '#',
-      instagram: '#',
+    contacts: {
+      email: 'mailto:mike1026915.cs96@g2.nctu.edu.tw',
+      github: 'https://github.com/mike1026915/',
+      linkedin: 'https://www.linkedin.com/in/mike1026915/',
+      instagram: 'https://www.instagram.com/mike1026915/',
     }
   },
   plugins: [

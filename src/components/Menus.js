@@ -11,6 +11,12 @@ const StyledUl = styled.ul`
 `
 const StyledLi = styled.li`
     list-style-type: none;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+
+    &:hover {
+        transform: scale(1.5) translate(15px);
+    }
 `
 
 export default function Menus(props) {
@@ -27,7 +33,7 @@ export default function Menus(props) {
                 {
                     menus.map((menu) => {
                         return (
-                            <StyledLi>
+                            <StyledLi key={`Menu-${menu.path}`}>
                                 <Link to={menu.path}>
                                     {menu.label}
                                 </Link>

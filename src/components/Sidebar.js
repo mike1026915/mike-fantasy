@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Me from './Me';
 import Menus from './Menus';
+import Contacts from './Contacts';
 
 const StyledSideBar = styled.aside`
     background-color: var(--dark-green);
@@ -13,18 +14,17 @@ const StyledSideBar = styled.aside`
     justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
-    padding-left: 15%;
+    padding-left: 30%;
 `
 
 export default function Sidebar() {
-    const s = {
-    }
+
     return (
         <StyledSideBar>
             <Me/>
             <Menus />
-            <h3 style={s}> contact </h3>
-            <p style={s}> copyright </p>
+            <Contacts />
+            {/*<p> copyright </p>*/}
         </StyledSideBar>
     )
 }
