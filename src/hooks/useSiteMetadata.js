@@ -37,11 +37,6 @@ const useSiteMetadata = () => {
     `
   );
 
-  console.log({
-    site,
-    file,
-  })
-
   return {
     siteMetadata: site.siteMetadata,
     profilePicture: file.childImageSharp.fluid,

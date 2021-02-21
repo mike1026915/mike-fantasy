@@ -10,7 +10,7 @@ const StyledMe = styled.div`
     justify-content: center;
     height: 50vh;
     q {
-        margin: 1rem 5%;
+        margin: 1rem 15%;
     }
 
     q::before {
