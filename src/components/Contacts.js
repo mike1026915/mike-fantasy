@@ -33,7 +33,10 @@ const Icon = (props) => {
     } = props;
 
     return (
-        <svg viewBox={icon.viewBox}>
+        <svg
+            viewBox={icon.viewBox}
+            style={(name === 'linkedin') ? { marginBottom: '1px', } : {}}
+        >
             <title>{name}</title>
             <path d={icon.path} />
         </svg>
@@ -74,10 +77,6 @@ const StyledUl = styled.ul`
         height: 1.5rem;
         fill: var(--white);
     }
-
-    &::last-child {
-        margin-bottom: 1px;
-    }
 `
 
 const StyledLi = styled.li`
@@ -93,8 +92,6 @@ export default function Contacts(props) {
         contacts,
     } = siteMetadata;
 
-    console.log(contacts)
-
     return (
         <>
             <StyledUl>
@@ -107,7 +104,10 @@ export default function Contacts(props) {
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >
-                                    <Icon icon={getIcon(key)} />
+                                    <Icon
+                                        icon={getIcon(key)}
+                                        name={key}
+                                    />
                                 </a>
                             </StyledLi>
                         );
