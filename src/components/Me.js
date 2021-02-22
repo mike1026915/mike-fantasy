@@ -9,6 +9,7 @@ const StyledMe = styled.div`
     flex-direction: column;
     justify-content: center;
     margin-bottom: 1.5rem;
+    padding-top: 15%;
 
     q::before {
         content: '\\201C';
@@ -53,7 +54,7 @@ export default function Me(props) {
                     borderRadius: "15%",
                     width: "25vh",
                     height: "25vh",
-                    margin: "3rem 0 1.5rem 0"
+                    margin: "0 0 1.5rem 0"
                 }}
 
             />

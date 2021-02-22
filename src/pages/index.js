@@ -5,7 +5,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <h1>
-      Under construction
+        Under construction
       </h1>
     </Layout>
   );
