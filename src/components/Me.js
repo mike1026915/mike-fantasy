@@ -53,7 +53,7 @@ export default function Me(props) {
                     borderRadius: "15%",
                     width: "25vh",
                     height: "25vh",
-                    margin: "1.5rem 0"
+                    margin: "3rem 0 1.5rem 0"
                 }}
 
             />

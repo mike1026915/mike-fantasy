@@ -74,6 +74,10 @@ const StyledUl = styled.ul`
         height: 1.5rem;
         fill: var(--white);
     }
+
+    &::last-child {
+        margin-bottom: 1px;
+    }
 `
 
 const StyledLi = styled.li`

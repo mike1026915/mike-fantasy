@@ -5,14 +5,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <h1>
-          <em>
-              Try my best to <br />
-              do the right things  <br />
-              with the right people  <br />
-              then  <br />
-              enjoy the life  <br />
-              at ease!  <br />
-          </em>
+      Under construction
       </h1>
     </Layout>
   );
