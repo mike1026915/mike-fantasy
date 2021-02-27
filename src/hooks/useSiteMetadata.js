@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
 const useSiteMetadata = () => {
-  const { site, file } = useStaticQuery(
+  const { site, profile, icon } = useStaticQuery(
     graphql`
       query {
         site {
@@ -25,7 +25,14 @@ const useSiteMetadata = () => {
             url
           }
         }
-        file(relativePath: {eq: "Mike.jpg"}) {
+        profile: file(relativePath: {eq: "Mike.jpg"}) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        icon: file(relativePath: {eq: "icon.png"}) {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -38,7 +45,8 @@ const useSiteMetadata = () => {
 
   return {
     siteMetadata: site.siteMetadata,
-    profilePicture: file.childImageSharp.fluid,
+    profilePicture: profile.childImageSharp.fluid,
+    icon: icon.childImageSharp.fluid,
   }
 };
 
