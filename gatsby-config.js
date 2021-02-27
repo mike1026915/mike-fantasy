@@ -1,3 +1,9 @@
+const dotenv = require('dotenv');
+
+dotenv.config({
+    path: '.env',
+});
+
 module.exports = {
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
@@ -6,30 +12,26 @@ module.exports = {
   siteMetadata: {
     title: "Mike Fantasy",
     name: "Mike Fang",
-    siteUrl: 'https:/mike-fang.com',
-    url: "",
-    intro: "Try my best to do right things with right people then enjoy the life at ease!",
+    siteUrl: 'https://mike-fang.com',
+    description: "Mike's personal website",
+    url: "https://mike-fang.com",
+    intro: "Try my best to do right things with right people then enjoy an easy life!",
     copyright: '© All rights reserved.',
-    menu: [
+    menus: [
       {
-        label: 'About me',
+        label: 'About Me',
         path: '/'
       },
       {
         label: 'Blog',
-        path: '/pages/blog'
+        path: '/blog'
       },
-      {
-        label: 'Contact me',
-        path: '/pages/contacts'
-      }
     ],
-    contact: {
-      email: '',
-      github: '#',
-      rss: '',
-      linkedin: '#',
-      instagram: '#',
+    contacts: {
+      email: 'mailto:mike1026915.cs96@g2.nctu.edu.tw',
+      github: 'https://github.com/mike1026915/',
+      linkedin: 'https://www.linkedin.com/in/mike1026915/',
+      instagram: 'https://www.instagram.com/mike1026915/',
     }
   },
   plugins: [

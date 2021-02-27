@@ -9,8 +9,7 @@ import Content from './Content';
 const Page = styled.div`
     display: grid;
     place-items: center;
-    grid-template-columns: minmax(150px, 25%) 1fr;
-    place-items: center;
+    grid-template-columns: minmax(150px, 30%) 1fr;
 `;
 
 export default function Layout(props) {

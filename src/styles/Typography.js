@@ -1,15 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 
 import Sora from '../assets/fonts/Sora-Medium.ttf';
+import Montserrat from '../assets/fonts/Montserrat-Medium.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
     font-family: Sora;
     src: url(${Sora});
   }
+  @font-face {
+    font-family: Montserrat;
+    src: url(${Montserrat});
+  }
 
   html {
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
   main {
@@ -21,16 +26,21 @@ const Typography = createGlobalStyle`
 
   aside {
     font-weight: 500;
-    text-align: center;
     color: var(--grey);
     display: flex;
     flex-direction: column;
+
+    q {
+      font-family: 'Montserrat', 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-style: italic;
+      font-weight: 300;
+    }
 
   }
 
   p, li {
     letter-spacing: 0.5px;
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
   h1 {
@@ -49,10 +59,12 @@ const Typography = createGlobalStyle`
     font-weight: 300;
     margin: 0;
   }
+
   a {
     color: var(--grey);
     text-decoration-color: var(--brown);
   }
+
   mark, .mark {
     background: var(--light-green);
     padding: 0 2px 2px 2px;
