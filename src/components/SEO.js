@@ -29,12 +29,11 @@ export default function SEO( {children, subTitle, location, ogType, image}){
             <meta name="description" content={description}/>
 
             {/** Open graph */}
-            {location && <meta property="og:url" content={location.href}/>}
+            {location && <meta property="og:url" content={location.href || siteUrl}/>}
             <meta property="og:type" content={ogType || 'website'} />
             <meta property="og:title" content={title} key="ogtitle" />
-            <meta property="og:image" content={image || icon?.src || 'images/icon.png'} />
+            <meta property="og:image" content={image || `${siteUrl}${icon?.src}` || 'images/icon.png'} />
             <meta property="og:site_name" ontent={title} key="ogsitename" />
-            <meta property="og:url" content={siteUrl} />
             <meta property="og:description" content={description} key="ogdesc"/>
 
             {/** Twitter Card */}
