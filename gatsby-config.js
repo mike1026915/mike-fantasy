@@ -12,9 +12,9 @@ module.exports = {
   siteMetadata: {
     title: "Mike Fantasy",
     name: "Mike Fang",
-    siteUrl: 'https://mike-fang.com',
+    siteUrl: 'https://www.mike-fang.com',
     description: "Mike Fang 's personal website and blog.",
-    url: "https://mike-fang.com",
+    url: "https://www.mike-fang.com",
     intro: "Try my best to do right things with right people then enjoy an easy life!",
     copyright: '© All rights reserved.',
     menus: [

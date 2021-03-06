@@ -9,7 +9,6 @@ const StyledMe = styled.div`
     flex-direction: column;
     justify-content: center;
     margin-bottom: 1.5rem;
-    padding-top: 15%;
 
     q::before {
         content: '\\201C';
@@ -28,7 +27,7 @@ const StyledName = styled.div`
 const StyledQuote = styled.q`
     font-size: 1rem;
     font-style: italic;
-    margin: 0.5rem 30% 0 0;
+    margin: 0.5rem 25% 0 0;
     line-height: 2.1rem;
     letter-spacing: 0.1rem;
 `;
@@ -51,10 +50,12 @@ export default function Me(props) {
                 title="Mike Fang"
                 draggable={false}
                 style={{
-                    borderRadius: "15%",
                     width: "25vh",
                     height: "25vh",
                     margin: "0 0 1.5rem 0"
+                }}
+                imgStyle={{
+                    transform: 'rotate(25deg)',
                 }}
 
             />

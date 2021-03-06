@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledContent = styled.main`
     background-color: var(--light-grey);
-    height: 100vh;
+    min-height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
