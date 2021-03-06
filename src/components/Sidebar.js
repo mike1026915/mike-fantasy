@@ -8,8 +8,10 @@ import Contacts from './Contacts';
 
 const StyledSideBar = styled.aside`
     background-color: var(--dark-green);
-    min-height: 100vh;
+    min-height: 100%;
     padding-left: 15%;
+    visibility: visible;
+    transition: all 0.5s ease 0s;
 
     .switch {
         border: 2px;
@@ -19,6 +21,10 @@ const StyledSideBar = styled.aside`
         padding: 5px;
         margin: 15px 8px;
         cursor: pointer;
+
+        :hover {
+            opacity: 0.7;
+        }
     }
 `
 const StyledSideBarContent = styled.div`
@@ -37,7 +43,7 @@ const StyledSwitch = styled.span`
 
 const StyledClosedSideBar = styled.aside`
     background-color: var(--dark-green);
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
 
     .switch {
@@ -50,6 +56,9 @@ const StyledClosedSideBar = styled.aside`
         cursor: pointer;
         transform: rotate(180deg);
 
+        :hover {
+            opacity: 0.7;
+        }
     }
 `
 
