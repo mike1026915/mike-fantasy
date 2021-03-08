@@ -8,7 +8,8 @@ import Contacts from './Contacts';
 
 const StyledSideBar = styled.aside`
     background-color: var(--dark-green);
-    min-height: 100%;
+    min-height: 100vh;
+    height: 100%;
     padding-left: 15%;
     visibility: visible;
     transition: all 0.5s ease 0s;
