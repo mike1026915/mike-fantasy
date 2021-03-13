@@ -1,7 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import resume from '../data/profile';
+
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import Header from '../components/resume/Header';
 
 export default function IndexPage() {
   return (
@@ -10,9 +13,7 @@ export default function IndexPage() {
         subTitle="Profile"
         ogType="profile"
       />
-      <h1>
-        Under construction
-      </h1>
+      <Header />
     </Layout>
   );
 }

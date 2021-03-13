@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { VscDebugReverseContinue } from "react-icons/vsc";
 
@@ -7,27 +7,66 @@ import Menus from './Menus';
 import Contacts from './Contacts';
 
 const StyledSideBar = styled.aside`
+
     background-color: var(--dark-green);
     min-height: 100vh;
-    height: 100%;
-    padding-left: 15%;
-    visibility: visible;
     transition: all 0.5s ease 0s;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: fixed;
 
-    .switch {
-        border: 2px;
-        border-radius: 5px;
-        border-color: var(--grey);
-        border-style: solid;
-        padding: 5px;
-        margin: 15px 8px;
-        cursor: pointer;
+    @media (min-width: 100vh) {
+        width: var(--side-panel-size);
+        padding-left: var(--side-panel-left-padding);
+        padding-right: var(--side-panel-right-padding);
 
-        :hover {
-            opacity: 0.7;
+        .switch {
+            visibility: hidden;
+        }
+    }
+
+    @media (max-width: 100vh)  {
+        width: ${(props) => (props.isOpen ? 'var(--side-panel-size)' : '50px' )};
+        padding-left: ${(props) => (props.isOpen ? 'var(--side-panel-left-padding)' : '0' )};
+        padding-right: ${(props) => (props.isOpen ? 'var(--side-panel-right-padding)' : '0' )};
+
+        .content {
+            display: ${(props) => (props.isOpen ? 'flex' : 'none' )};
+        }
+
+        .switch {
+            border: 2px;
+            border-radius: 5px;
+            border-color: var(--grey);
+            border-style: solid;
+            padding: 5px;
+            margin: ${(props) => (props.isOpen ? '15px 8px' : '8px 8px' )};
+            transform: ${(props) => (props.isOpen ? 'rotate(0)' : 'rotate(180deg)' )};
+            transition: transform 0.5s ease 0s;
+            cursor: pointer;
+
+            :hover {
+                opacity: 0.7;
+            }
+
+            ${(props) => (props.isOpen ? '' : `
+                top: 0;
+                left: 0;
+                position: fixed;`
+            )};
         }
     }
 `
+
+const StyledSwitch = styled.div`
+        padding: 5px;
+        min-height: 80px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+`
+
 const StyledSideBarContent = styled.div`
     width: 100%;
     display: flex;
@@ -36,66 +75,57 @@ const StyledSideBarContent = styled.div`
     align-items: flex-start;
     gap: 1rem;
 `
-const StyledSwitch = styled.span`
-        padding: 5px 5px 0 0;
-        display: flex;
-        flex-direction: row-reverse;
-`
-
-const StyledClosedSideBar = styled.aside`
-    background-color: var(--dark-green);
-    min-height: 100%;
-    width: 100%;
-
-    .switch {
-        border: 2px;
-        border-radius: 5px;
-        border-color: var(--grey);
-        border-style: solid;
-        padding: 5px;
-        margin: 20px 8px;
-        cursor: pointer;
-        transform: rotate(180deg);
-
-        :hover {
-            opacity: 0.7;
-        }
-    }
-`
 
 export default function Sidebar(props) {
-    const {
-        isSidebarOpen,
-        onClickSidebarSwitch,
-    } = props;
 
-    if(isSidebarOpen) {
-        return (
-            <StyledSideBar>
-                <StyledSwitch>
-                    <VscDebugReverseContinue
-                        className="switch"
-                        onClick={onClickSidebarSwitch}
-                    />
-                </StyledSwitch>
-                <StyledSideBarContent>
-                    <Me/>
-                    <Menus />
-                    <Contacts />
-                    {/*<p> copyright </p>*/}
-                </StyledSideBarContent>
-            </StyledSideBar>
-        )
-    } else {
-        return (
-            <StyledClosedSideBar>
+    let [isOpen, setIsOpen] = useState(false);
+    let domRef = useRef(null);
+    const _handleOnClick = useCallback(() => {
+        setIsOpen(!isOpen)
+    });
+
+    useEffect(() => {
+        const onTransitionStart = (event) => {
+            const transformMatrixList = window.getComputedStyle(domRef.current.firstChild)
+                .getPropertyValue('transform').slice(7, -1).split(',').map(x => parseInt(x, 10));
+
+            if (
+                transformMatrixList[0] === 1 &&
+                transformMatrixList[1] === 0 &&
+                transformMatrixList[2] === 0 &&
+                transformMatrixList[3] === 1
+                ) {
+                    setIsOpen(false)
+                }
+        };
+
+        domRef.current.addEventListener('transitionstart', onTransitionStart);
+
+            return () => {
+                domRef.current.removeEventListener('transitionend', onTransitionStart);
+            };
+    }, [domRef]);
+
+    return (
+        <StyledSideBar
+            isOpen={isOpen}
+        >
+            <StyledSwitch
+                ref={domRef}
+            >
                 <VscDebugReverseContinue
                     className="switch"
-                    onClick={onClickSidebarSwitch}
+                    onClick={_handleOnClick}
                 />
-            </StyledClosedSideBar>
-        );
-    }
-
-
+            </StyledSwitch>
+            <StyledSideBarContent
+                className="content"
+            >
+                <Me/>
+                <Menus />
+                <Contacts />
+                {/*<p> copyright </p>*/}
+            </StyledSideBarContent>
+        </StyledSideBar>
+    )
 }

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import useSiteMetadata from '../hooks/useSiteMetadata';
 
 
-const StyledUl = styled.ul`
+const StyledUl = styled.nav`
     padding: 0;
     margin: 0;
 `

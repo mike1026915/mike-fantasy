@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
     --dark-green: #6A6E4F;
     --red: #96244E;
     --brown: #615400;
+    --side-panel-size: 30vh;
+    --side-panel-left-padding: 5%;
+    --side-panel-right-padding: 1%;
+    --responsive: 100vh;
   }
   html {
     font-size: 10px;

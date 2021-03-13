@@ -1,0 +1,134 @@
+{
+    "contact": {
+        "phone": "+886 958-815-391",
+        "email": "mike1026915.cs96@g2.nctu.edu.tw",
+        "website": "https://www.mike-fang.com",
+        "location": "Taipei, Taiwan"
+    },
+    "skills": [
+        {
+            "title": "General",
+            "subskills": [
+                "Web application Software Development", "System Software Development", "Test Plan and Test Cases Design", "Automation Testing", "Regression Testing", "Performance Testing Design and Improvement","Continuous Integration/Delivery", "Agile and Scrum experience", "Certified Scrum Master",
+                "Trend Micro Certified Cyber Security Professional", "Members mentoring", "Communication", "Project Planning, Managing and Leading", "Quick Learning Capability"
+            ]
+        },
+        {
+            "title": "Programming Languages",
+            "subskills": [
+                "JavaScript", "Python", "Shell Script", "Java", "C/C++", "C#", "Perl"
+            ]
+        },
+        {
+            "title": "Web Development",
+            "subskills": [
+                "React.js", "Redux", "Node.js", "Express.js", "MySQL", "Redis","HTML5", "CSS3", "SCSS", "Gatsby.js", "Next.js", "Restful API", "Open API", "ava", "Cypress","AWS Services", "ELK"
+            ]
+        },
+        {
+            "title": "Tool & Platform",
+            "subskills": [
+                "Linux", "Windows", "MacOS","git", "Perforce", "VSCode", "QEMU", "VirtualBox", "Docker", "Jenkins", "Postman", "Jmeter", "Vyond", "Trello", "Jira", "Selenium"
+            ]
+        },
+        {
+            "title": "Natural Languages",
+            "subskills": [
+                {
+                    "name": "English",
+                    "description": "Business Fluency, TOEIC 940"
+                }, {
+                    "name": "English",
+                    "description": "Native Speaker"
+                }, {
+                    "name": "Japanese",
+                    "description": "Beginner"
+                }
+            ]
+        }
+    ],
+    "summary": "ts.",
+    "education": [
+        {
+            "institution": "National Chiao Tung University",
+            "location": "Hsinchu, Taiwan",
+            "degree": "Master of Engineering / Computer Science ",
+            "Score": "95/100",
+            "GPA": "4.3/4.3",
+            "start": "2007",
+            "end": "2011",
+            "thesis": "A Decision-theoretic Data Prefetch Algorithm for Reducing Latency and Amortizing Traffic of Mobile Applications."
+        },
+        {
+            "institution": "National Chiao Tung University",
+            "location": "Hsinchu, Taiwan",
+            "degree": "Bachelor of Engineering / Computer Science",
+            "Score": "92.51/100",
+            "GPA": "4.16/4.3",
+            "start": "2007",
+            "end": "2011"
+        }
+    ],
+    "experience": [
+        {
+            "role": "Consultant",
+            "company": "Baran Cezayirli Consulting",
+            "description": "I consult startups to take their concept to the next level.",
+            "start": "08/2018",
+            "end": ""
+        },
+        {
+            "role": "Full Stack Tech Lead",
+            "company": "Malaeb Limited",
+            "description": "Malaeb is a group sports community and booking platform. I was managing all technical aspects of the product. I designed a new solution to improve the current platform, build and manage a new development team to migrate the new app. Implement better internal processes to increase productivity.",
+            "start": "11/2018",
+            "end": "09/2019"
+        },
+        {
+            "role": "Full Stack Tech Lead",
+            "company": "Solve Care",
+            "description": "Solve care is a healthcare blockchain platform. I was responsible for the client side development team and architecture of the platform. I was also active in product management team.",
+            "start": "04/2018",
+            "end": "11/2018"
+        },
+        {
+            "role": "Full Stack Lead Developer",
+            "company": "Applied Blockchain",
+            "description": "Applied Blockchain built blockchain applications for enterprises and startups. I built 4 full stack blockchain projects during my contract.",
+            "start": "10/2017",
+            "end": "04/2018"
+        },
+        {
+            "role": "Full Stack Lead Developer",
+            "company": "Dmapper",
+            "description": "Worked as a lead full-stack developer for Cortex which is B2B audit automation software for Deloitte. I was responsible for the architecture and development of the platform, managing development team.",
+            "start": "12/2016",
+            "end": "10/2017"
+        },
+        {
+            "role": "Front End Developer - UI/UX Designer",
+            "company": "GovRight",
+            "description": "GovRight provides citizens the opportunity to understand and contribute to government and legislation. I was responsible for the UX and development of admin interface for the platform.",
+            "start": "11/2015",
+            "end": "04/2016"
+        },
+        {
+            "role": "Full Stack Developer",
+            "company": "Freelance",
+            "description": "In the first years of my career, I had the privilege to work with many startups and building my own games and applications.",
+            "start": "04/2008",
+            "end": "01/2016"
+        }
+    ],
+    "role": "Senior Software Engineer / Team leader",
+    "projects": [
+        {
+            "name": "Gatsby resume starter",
+            "company": "Open source",
+            "description": "Gatsby resume tailwind is a free starter template with  Netlify CMS implementation. It is easy to customize the design with thanks to tailwind theming capabilities. It uses git as a backend and can be deployed to any static hosting service like Netlify, firebase hosting or Github pages.",
+            "link": "https://github.com/barancezayirli/gatsby-resume-tailwind"
+        }
+    ],
+    "name": "Chung-Hao (Mike) Fang / 方鍾豪",
+    "Hobby": ["Reading", "Cooking", "Traveling", "Singing" , "Chatting with Friends"]
+}

@@ -7,8 +7,16 @@ const StyledContent = styled.main`
     min-height: 100vh;
     height: 100%;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    padding: 15px 30px;
+    transition: all 0.5s ease 0s;
+
+    @media (min-width: 100vh) {
+        margin-left: calc(var(--side-panel-size) + var(--side-panel-left-padding) + var(--side-panel-right-padding));
+    }
+
+    @media (max-width: 100vh) {
+        margin-left: 50px;
+    }
 `
 
 export default function Sidebar(props) {

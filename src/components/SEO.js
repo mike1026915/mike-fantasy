@@ -33,7 +33,7 @@ export default function SEO( {children, subTitle, location, ogType, image}){
             <meta property="og:type" content={ogType || 'website'} />
             <meta property="og:title" content={title} key="ogtitle" />
             <meta property="og:image" content={image || `${siteUrl}${preview?.src}` || 'images/icon.png'} />
-            <meta property="og:site_name" ontent={title} key="ogsitename" />
+            <meta property="og:site_name" content={title} key="ogsitename" />
             <meta property="og:description" content={description} key="ogdesc"/>
 
             {/** Twitter Card */}

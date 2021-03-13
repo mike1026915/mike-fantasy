@@ -1,3 +1,7 @@
 backend:
   name: github
   repo: mike1026915/mike-fantasy
+
+publish_mode: editorial_workflow
+media_folder: "/uploads"
+collections: []
