@@ -76,6 +76,10 @@ const StyledUl = styled.ul`
         width: 1.5rem;
         height: 1.5rem;
         fill: var(--white);
+
+        :hover {
+            opacity: 0.7;
+        }
     }
 `
 

@@ -1,9 +1,21 @@
 {
-    "contact": {
-        "phone": "+886 958-815-391",
-        "email": "mike1026915.cs96@g2.nctu.edu.tw",
-        "website": "https://www.mike-fang.com",
-        "location": "Taipei, Taiwan"
+    "contacts": {
+        "email": {
+            "link": "mailto:mike1026915.cs96@g2.nctu.edu.tw",
+            "text": "mike1026915.cs96@g2.nctu.edu.tw"
+        },
+        "phone": {
+            "link": "tel:+886958815391",
+            "text": "+886 958 815 391"
+        },
+        "website": {
+            "link": "https://www.mike-fang.com",
+            "text": "My Personal Website"
+        },
+        "location": {
+            "link": "https://en.wikipedia.org/wiki/Taipei",
+            "text": "Taipei, Taiwan"
+        }
     },
     "skills": [
         {
@@ -120,7 +132,7 @@
             "end": "01/2016"
         }
     ],
-    "role": "Senior Software Engineer / Team leader",
+    "title": "Senior Software Engineer / Team leader",
     "projects": [
         {
             "name": "Gatsby resume starter",
@@ -129,6 +141,7 @@
             "link": "https://github.com/barancezayirli/gatsby-resume-tailwind"
         }
     ],
-    "name": "Chung-Hao (Mike) Fang / 方鍾豪",
+    "name": "Mike Fang",
+    "chineseName": "方鍾豪",
     "Hobby": ["Reading", "Cooking", "Traveling", "Singing" , "Chatting with Friends"]
 }

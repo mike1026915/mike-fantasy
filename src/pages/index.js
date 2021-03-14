@@ -13,7 +13,12 @@ export default function IndexPage() {
         subTitle="Profile"
         ogType="profile"
       />
-      <Header />
+      <Header
+        name={resume.name}
+        chineseName={resume.chineseName}
+        title={resume.title}
+        contacts={resume.contacts}
+      />
     </Layout>
   );
 }

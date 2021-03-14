@@ -87,7 +87,7 @@ export default function Sidebar(props) {
     useEffect(() => {
         const onTransitionStart = (event) => {
             const transformMatrixList = window.getComputedStyle(domRef.current.firstChild)
-                .getPropertyValue('transform').slice(7, -1).split(',').map(x => parseInt(x, 10));
+                ?.getPropertyValue('transform')?.slice(7, -1)?.split(',').map(x => parseInt(x, 10));
 
             if (
                 transformMatrixList[0] === 1 &&

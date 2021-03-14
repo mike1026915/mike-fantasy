@@ -7,7 +7,7 @@ const StyledContent = styled.main`
     min-height: 100vh;
     height: 100%;
     width: 100%;
-    padding: 15px 30px;
+    padding: 3%;
     transition: all 0.5s ease 0s;
 
     @media (min-width: 100vh) {

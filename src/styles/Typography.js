@@ -36,23 +36,28 @@ const Typography = createGlobalStyle`
       font-weight: 300;
     }
 
+    a {
+      color: var(--grey);
+      text-decoration-color: var(--brown);
+    }
+
   }
 
   p, li {
     letter-spacing: 0.5px;
+    margin: 0;
     font-family: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
   h1 {
     font-weight: 700;
     text-transform: uppercase;
-    text-align: center;
-    margin: 3rem;
+    margin: 0;
   }
 
   h2 {
     font-weight: 500;
-    margin: 1.5rem,
+    margin: 0;
   }
 
   h3,h4,h5,h6 {
@@ -60,10 +65,6 @@ const Typography = createGlobalStyle`
     margin: 0;
   }
 
-  a {
-    color: var(--grey);
-    text-decoration-color: var(--brown);
-  }
 
   mark, .mark {
     background: var(--light-green);
