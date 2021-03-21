@@ -8,7 +8,7 @@ import { MdLocationOn } from "react-icons/md";
 const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
-    border-bottom: solid;
+    border-bottom: 0.2rem solid var(--light-green);
     padding-bottom: 1rem;
 `
 const Name = styled.h1`
@@ -27,8 +27,9 @@ const Right = styled.div`
     display: flex;
     flex-direction: column;
     justify-items: space-between;
-    border-left: solid;
-    padding-left: 1rem;
+    border-left: 0.2rem solid var(--light-green);
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
 
     a {
         font-size: 1.5rem;
