@@ -23,18 +23,27 @@ const Left = styled.div`
 `
 
 const Right = styled.div`
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-items: space-between;
-    border-left: 0.2rem solid var(--light-green);
-    padding-left: 1.5rem;
-    padding-bottom: 1rem;
+    @media (min-width: 125vh) {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-items: space-between;
+        border-left: 0.2rem solid var(--light-green);
+        padding-left: 1.5rem;
+        padding-bottom: 1rem;
 
-    a {
-        font-size: 1.5rem;
-        margin-left: 1.5rem;
+        a {
+            font-size: 1.5rem;
+            margin-left: 1.5rem;
+        }
     }
+
+    @media (max-width: 125vh) {
+        display: none;
+        border-left: none;
+    }
+
+
 `
 
 const LINKED_IN_ICON = (
