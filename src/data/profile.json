@@ -4,9 +4,9 @@
             "link": "mailto:mike1026915.cs96@g2.nctu.edu.tw",
             "text": "mike1026915.cs96@g2.nctu.edu.tw"
         },
-        "phone": {
-            "link": "tel:+886958815391",
-            "text": "+886 958 815 391"
+        "linkedin": {
+            "link": "https://www.linkedin.com/in/mike1026915/",
+            "text": "My LinkedIn"
         },
         "website": {
             "link": "https://www.mike-fang.com",
@@ -132,7 +132,7 @@
             "end": "01/2016"
         }
     ],
-    "title": "Senior Software Engineer / Team leader",
+    "title": "Senior Software Engineer / Team Leader",
     "projects": [
         {
             "name": "Gatsby resume starter",
