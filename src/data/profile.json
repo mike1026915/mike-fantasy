@@ -20,41 +20,38 @@
     "skills": [
         {
             "title": "General",
-            "subskills": [
-                "Web application Software Development", "System Software Development", "Test Plan and Test Cases Design", "Automation Testing", "Regression Testing", "Performance Testing Design and Improvement","Continuous Integration/Delivery", "Agile and Scrum experience", "Certified Scrum Master",
+            "items": [
+                "Web application Software Development", "System Software Development", "Test Plan and Test Cases Design", "Automation Testing", "Regression Testing", "Performance Testing Design and Improvement", "Continuous Integration/Delivery", "Agile and Scrum experience", "Certified Scrum Master",
                 "Trend Micro Certified Cyber Security Professional", "Members mentoring", "Communication", "Project Planning, Managing and Leading", "Quick Learning Capability"
             ]
         },
         {
             "title": "Programming Languages",
-            "subskills": [
+            "items": [
                 "JavaScript", "Python", "Shell Script", "Java", "C/C++", "C#", "Perl"
             ]
         },
         {
-            "title": "Web Development",
-            "subskills": [
+            "title": "Web Developments",
+            "items": [
                 "React.js", "Redux", "Node.js", "Express.js", "MySQL", "Redis","HTML5", "CSS3", "SCSS", "Gatsby.js", "Next.js", "Restful API", "Open API", "ava", "Cypress","AWS Services", "ELK"
             ]
         },
         {
-            "title": "Tool & Platform",
-            "subskills": [
+            "title": "Tools & Platforms",
+            "items": [
                 "Linux", "Windows", "MacOS","git", "Perforce", "VSCode", "QEMU", "VirtualBox", "Docker", "Jenkins", "Postman", "Jmeter", "Vyond", "Trello", "Jira", "Selenium"
             ]
         },
         {
             "title": "Natural Languages",
-            "subskills": [
+            "items": [
                 {
-                    "name": "English",
-                    "description": "Business Fluency, TOEIC 940"
+                    "name": "English(Business Fluency, TOEIC 940)"
                 }, {
-                    "name": "English",
-                    "description": "Native Speaker"
+                    "name": "Chinese(Native Speaker)"
                 }, {
-                    "name": "Japanese",
-                    "description": "Beginner"
+                    "name": "Japanese(Beginner)"
                 }
             ]
         }

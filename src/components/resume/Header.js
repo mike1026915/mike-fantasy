@@ -19,12 +19,13 @@ const Title = styled.h3`
 `
 
 const Left = styled.div`
-    flex-grow: 2;
+    width: 66.67%;
 `
 
 const Right = styled.div`
+
     @media (min-width: 125vh) {
-        flex-grow: 1;
+        width: 33.33%;
         display: flex;
         flex-direction: column;
         justify-items: space-between;
