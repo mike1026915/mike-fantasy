@@ -21,8 +21,8 @@
         {
             "title": "General",
             "items": [
-                "Web application Software Development", "System Software Development", "Test Plan and Test Cases Design", "Automation Testing", "Regression Testing", "Performance Testing Design and Improvement", "Continuous Integration/Delivery", "Agile and Scrum experience", "Certified Scrum Master",
-                "Trend Micro Certified Cyber Security Professional", "Members mentoring", "Communication", "Project Planning, Managing and Leading", "Quick Learning Capability"
+                "Web Application Development", "System Software Development", "Test Plan and Cases Design", "Automation Testing", "Regression Testing", "Performance Testing Design and Improvement", "Continuous Integration and Delivery", "Agile and Scrum experience", "Certified Scrum Master",
+                "Trend Micro Certified Cyber Security Professional", "Members mentoring", "Communication", "Project Planning, Managing and Leading", "Quick Learning"
             ]
         },
         {
@@ -45,15 +45,7 @@
         },
         {
             "title": "Natural Languages",
-            "items": [
-                {
-                    "name": "English(Business Fluency, TOEIC 940)"
-                }, {
-                    "name": "Chinese(Native Speaker)"
-                }, {
-                    "name": "Japanese(Beginner)"
-                }
-            ]
+            "items": [ "English (Business Fluency, TOEIC 940)", "Chinese (Native Speaker)", "Japanese (Beginner)" ]
         }
     ],
     "summary": "A competent software engineer, adaptive quick learner, committed team player, and communicative project leader. Participated in developing security system software and large SaaS web service. Both products have more than million of users around the world. With the 10-year experience including software development, software testing, support engineer and project leader, I really love working with a fantastic team to make creative products to help our clients to solve their problems. ",
@@ -80,65 +72,113 @@
     ],
     "experience": [
         {
-            "role": "Consultant",
-            "company": "Baran Cezayirli Consulting",
-            "description": "I consult startups to take their concept to the next level.",
-            "start": "08/2018",
-            "end": ""
+            "role": "Senior Software Engineer",
+            "company": "Vyond",
+            "location": "Taipei, Taiwan",
+            "project": "Vyond",
+            "url": "https://www.vyond.com/",
+            "start": "05/2018",
+            "end": "12/2018",
+            "description": "Online Web Video Maker",
+            "events": [
+                "Being a project leader to develop new features of our SaaS product with engineers, designers, data specialists, animators and PMs between Taiwan and Hong Kong",
+                "Improve product system stability and performance",
+                "Cultivate new comers to make a good working environment in Taiwan Office",
+                "Design and implement a request scheduler system to handle burst video generation requests request and reduce 60% unnecessary requests",
+                "Lead a new version of video management project to provide better user experience. Including code refactor and unit tests",
+                "Head a content share mechanism project to solve"
+            ]
         },
         {
-            "role": "Full Stack Tech Lead",
-            "company": "Malaeb Limited",
-            "description": "Malaeb is a group sports community and booking platform. I was managing all technical aspects of the product. I designed a new solution to improve the current platform, build and manage a new development team to migrate the new app. Implement better internal processes to increase productivity.",
-            "start": "11/2018",
-            "end": "09/2019"
+            "role": "Software Engineer",
+            "company": "Vyond",
+            "location": "Taipei, Taiwan",
+            "project": "Vyond",
+            "url": "https://www.vyond.com/",
+            "start": "05/2018",
+            "end": "12/2018",
+            "description": "Online Web Video Maker",
+            "events": [
+                "Develop new features of our SaaS product with engineers, designers, data specialists, animators between Taiwan and Hong Kong",
+                "Lead a customer issues task force and propose solution to enhance our product",
+                "Reduce 80% unnecessary search results in the search improvement task force",
+                "Increase our retention rate about 40% in the onboarding improvement task force"
+            ]
         },
         {
-            "role": "Full Stack Tech Lead",
-            "company": "Solve Care",
-            "description": "Solve care is a healthcare blockchain platform. I was responsible for the client side development team and architecture of the platform. I was also active in product management team.",
-            "start": "04/2018",
-            "end": "11/2018"
+            "role": "Senior Software Automation Engineer",
+            "company": "NETGEAR",
+            "location": "Taipei, Taiwan",
+            "project": "Arlo",
+            "url": "https://www.arlo.com/asia/default.aspx",
+            "start": "05/2018",
+            "end": "07/2018",
+            "description": "Smart Camera Backend API Automation Testing",
+            "events": [
+                "Maintain and improve existing REST API automation framework. Save 20% time of daily regression",
+                "Payment flow API integration testing and daily regression trouble shooting",
+                "Load/Volume testing for the web server",
+                "Cooperate with colleagues from USA/India/Russia/Taiwan"
+            ]
         },
         {
-            "role": "Full Stack Lead Developer",
-            "company": "Applied Blockchain",
-            "description": "Applied Blockchain built blockchain applications for enterprises and startups. I built 4 full stack blockchain projects during my contract.",
-            "start": "10/2017",
-            "end": "04/2018"
+            "role": "Senior Software Engineer",
+            "company": "Trend Micro",
+            "location": "Taipei, Taiwan",
+            "project": "Deep Discovery (U-Sandbox: Virtual machine management module)",
+            "url": "https://www.trendmicro.com/en_us/business/products/network/advanced-threat-protection.html",
+            "start": "01/2016",
+            "end": "05/2018",
+            "description": "Dynamic sandbox solution to detect unknown malware used by APT attack",
+            "events": [
+                "Design and develop the process of sandbox module update to increase deployment flexibility and decrease the response time for detecting a new threat",
+                "Investigate and adopt multiple hypervisors and networking solutions to sandbox environment to improve overall performance",
+                "Design and develop a framework for sandbox result analysis and integrate core techniques modules to improve malware detection rate",
+                "Maintain a Windows application to help customer creates their customized virtual environment",
+                "Maintain CI Jenkins system and write unit test",
+                "Cooperate with the Technical Support team to solve customer feedback issues.",
+                "Act as a communication bridge between developers and QA engineers"
+            ]
         },
         {
-            "role": "Full Stack Lead Developer",
-            "company": "Dmapper",
-            "description": "Worked as a lead full-stack developer for Cortex which is B2B audit automation software for Deloitte. I was responsible for the architecture and development of the platform, managing development team.",
-            "start": "12/2016",
-            "end": "10/2017"
+            "role": "Software Engineer in Test",
+            "company": "Trend Micro",
+            "location": "Taipei, Taiwan",
+            "project": "Deep Discovery (U-Sandbox: Virtual machine management module)",
+            "url": "https://www.trendmicro.com/en_us/business/products/network/advanced-threat-protection.html",
+            "start": "09/2013",
+            "end": "12/2015",
+            "description": "Dynamic sandbox solution to detect unknown malware used by APT attack",
+            "events": [
+                "Have code review/end-to-end testing to find potential defects and drive the architecture design",
+                "Make test malware samples using C/C++, C#...etc. to trigger specific behavior for integration testing",
+                "Build an automated fast build verification testing (BVT) system as a part of CI system to verify basic build quality. Remove unnecessary manual basic checking",
+                "Create a web control system using Python Flask framework to integrate existing testing systems",
+                "Re-design and enhance existing automation framework. Remove limitations of old framework and fulfill requirements from team members and increase test automation rate by at least 20 %",
+                "Coach new comer and lead them to be familiar with our project and culture",
+                "Get top score in 1-month virus training in Trend Micro",
+                "Act as a proactive contact window between Taiwan team and China team"
+            ]
         },
         {
-            "role": "Front End Developer - UI/UX Designer",
-            "company": "GovRight",
-            "description": "GovRight provides citizens the opportunity to understand and contribute to government and legislation. I was responsible for the UX and development of admin interface for the platform.",
-            "start": "11/2015",
-            "end": "04/2016"
-        },
-        {
-            "role": "Full Stack Developer",
-            "company": "Freelance",
-            "description": "In the first years of my career, I had the privilege to work with many startups and building my own games and applications.",
-            "start": "04/2008",
-            "end": "01/2016"
+            "role": "Part-time Programmer",
+            "company": "Trend Micro",
+            "location": "Taipei, Taiwan",
+            "project": "Deep Discovery (U-Sandbox: Virtual machine management module)",
+            "url": "https://www.trendmicro.com/en_us/business/products/network/advanced-threat-protection.html",
+            "start": "09/2013",
+            "end": "12/2015",
+            "description": "Android and iOS application development",
+            "events": [
+                "Interactive Picture Book with Corona SDK in Lua language",
+                "A POC iOS app for wifi storage with WebDAV protocol with Objective-C",
+                "A native Android hot-spot setting widget via NFC"
+            ]
         }
     ],
     "title": "Senior Software Engineer / Team Leader",
-    "projects": [
-        {
-            "name": "Gatsby resume starter",
-            "company": "Open source",
-            "description": "Gatsby resume tailwind is a free starter template with  Netlify CMS implementation. It is easy to customize the design with thanks to tailwind theming capabilities. It uses git as a backend and can be deployed to any static hosting service like Netlify, firebase hosting or Github pages.",
-            "link": "https://github.com/barancezayirli/gatsby-resume-tailwind"
-        }
-    ],
+    "projects": [],
     "name": "Mike Fang",
     "chineseName": "方鍾豪",
-    "Hobby": ["Reading", "Cooking", "Traveling", "Singing" , "Chatting with Friends"]
+    "hobby": ["Reading", "Cooking", "Traveling", "Singing" , "Chatting with Friends"]
 }

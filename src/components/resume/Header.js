@@ -31,7 +31,8 @@ const Right = styled.div`
         justify-items: space-between;
         border-left: 0.2rem solid var(--light-green);
         padding-left: 1.5rem;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        padding-top: 1rem;
 
         a {
             font-size: 1.5rem;
@@ -43,8 +44,6 @@ const Right = styled.div`
         display: none;
         border-left: none;
     }
-
-
 `
 
 const LINKED_IN_ICON = (
