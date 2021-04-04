@@ -12,21 +12,36 @@ import Hobby from '../components/resume/Hobby';
 import Experience from '../components/resume/Experience';
 import Education from '../components/resume/Education';
 
+import { RESPONSIVE_BOUNDARY } from '../constants/constants';
+
 const StyledMain = styled.main`
     display: flex;
-    flex-direction: row;
 
-    .left {
-        width: 66.67%;
-        min-height: 100px;
-        padding: 1.5rem 1.5rem 0 0;
+    @media (min-width: ${RESPONSIVE_BOUNDARY}) {
+        flex-direction: row;
+
+        .left {
+            width: 66.67%;
+            min-height: 100px;
+            padding: 1.5rem 3.1rem 0 0;
+        }
+
+        .right {
+            width: 33.33%;
+            min-height: 100px;
+            border-left: 0.2rem solid var(--light-green);
+            padding: 1.5rem 0 0 2.5rem;
+        }
     }
 
-    .right {
-        width: 33.33%;
-        min-height: 100px;
-        border-left: 0.2rem solid var(--light-green);
-        padding: 1.5rem 0 0 1.5rem;
+    @media (max-width: ${RESPONSIVE_BOUNDARY}) {
+        flex-direction: column;
+
+        .left, .right {
+            width: 100%;
+            min-height: 100px;
+            padding: 1.5rem 3.1rem 0 0;
+        }
     }
 
 `;
@@ -52,9 +67,6 @@ export default function IndexPage() {
               <Experience
                   experience={resume.experience}
               />
-              <Education
-                  education={resume.education}
-              />
           </div>
           <div className="right">
               <Skills
@@ -63,8 +75,10 @@ export default function IndexPage() {
               <Hobby
                   hobby={resume.hobby}
               />
+              <Education
+                  education={resume.education}
+              />
           </div>
-
       </StyledMain>
     </Layout>
   );

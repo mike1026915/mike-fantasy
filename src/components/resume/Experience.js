@@ -7,54 +7,86 @@ const StyledExperienceItem = styled.div`
 
 `;
 
-const StyledCompanyNameLocation = styled.div`
+const Header = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+`;
+
+const Location = styled.div`
 
 `;
 
-const StyledLocation = styled.div`
+const CompanyName = styled.div`
 
 `;
 
-const StyledCompanyName = styled.div`
+const Role = styled.div`
 
 `;
 
-const StyledRolePeriod = styled.div`
+const Period = styled.div`
 
 `;
 
-const StyledRole = styled.div`
+const Description = styled.div`
 
 `;
 
-const StyledPeriod = styled.div`
+const EventList = styled.ul`
 
 `;
 
 const ExperienceItem = (props) => {
+    const {
+        role,
+        company,
+        location,
+        project,
+        url,
+        start,
+        end,
+        description,
+        events
+    } = props;
 
     return (
         <>
-            <StyledCompanyNameLocation>
-                <StyledCompanyName>
-
-                </StyledCompanyName>
-                <StyledLocation>
-
-                </StyledLocation>
-            </StyledCompanyNameLocation>
-            <StyledRolePeriod>
-                <StyledRole>
-
-                </StyledRole>
-                <StyledPeriod>
-
-                </StyledPeriod>
-            </StyledRolePeriod>
+            <Header>
+                <CompanyName>
+                    {company}
+                </CompanyName>
+                <Location>
+                    {location}
+                </Location>
+            </Header>
+            <Header>
+                <Role>
+                    {role}
+                </Role>
+                <Period>
+                    {start} - {end}
+                </Period>
+            </Header>
+            <Description>
+                {description}
+            </Description>
+            <EventList>
+                {events.map((event) => {
+                    return (
+                        <li>
+                            {event}
+                        </li>
+                    );
+                })}
+            </EventList>
         </>
     )
-
 }
+
+const ExperienceItems = styled.div`
+
+`;
 
 function Experience(props) {
     const {
@@ -66,6 +98,17 @@ function Experience(props) {
             <SectionTitle
                 text="Experience"
             />
+            <ExperienceItems>
+                {
+                    experience.map((e) => {
+                        return (
+                            <ExperienceItem
+                                { ...e }
+                            />
+                        )
+                    })
+                }
+            </ExperienceItems>
         </>
     )
 }

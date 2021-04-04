@@ -5,6 +5,8 @@ import { MdMail } from "react-icons/md";
 import { MdWeb } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 
+import { RESPONSIVE_BOUNDARY } from '../../constants/constants';
+
 const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
@@ -24,7 +26,7 @@ const Left = styled.div`
 
 const Right = styled.div`
 
-    @media (min-width: 125vh) {
+    @media (min-width: ${RESPONSIVE_BOUNDARY}) {
         width: 33.33%;
         display: flex;
         flex-direction: column;
@@ -40,7 +42,7 @@ const Right = styled.div`
         }
     }
 
-    @media (max-width: 125vh) {
+    @media (max-width: ${RESPONSIVE_BOUNDARY}) {
         display: none;
         border-left: none;
     }

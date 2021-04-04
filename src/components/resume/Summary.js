@@ -6,6 +6,8 @@ import { SiPython } from "react-icons/si";
 import { SiReact } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 
+import { RESPONSIVE_BOUNDARY } from '../../constants/constants';
+
 const StyleSummary = styled.p`
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -21,7 +23,7 @@ const StyleSummaryContent = styled.div`
 `
 const StyleLeft = styled.div`
 
-    @media (min-width: 125vh) {
+    @media (min-width: ${RESPONSIVE_BOUNDARY}) {
         padding-left: 1rem;
         padding-right: 2rem;
         border-right: 0.15rem solid var(--light-green);
@@ -37,7 +39,7 @@ const StyleLeft = styled.div`
         }
     }
 
-    @media (max-width: 125vh) {
+    @media (max-width: ${RESPONSIVE_BOUNDARY}) {
         display: none;
         border-left: none;
     }

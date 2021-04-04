@@ -2,6 +2,8 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import { RESPONSIVE_BOUNDARY } from '../constants/constants';
+
 const StyledContent = styled.main`
     background-color: var(--light-grey);
     min-height: 100vh;
@@ -10,11 +12,11 @@ const StyledContent = styled.main`
     padding: 3%;
     transition: all 0.5s ease 0s;
 
-    @media (min-width: 100vh) {
+    @media (min-width: ${RESPONSIVE_BOUNDARY}) {
         margin-left: calc(var(--side-panel-size) + var(--side-panel-left-padding) + var(--side-panel-right-padding));
     }
 
-    @media (max-width: 100vh) {
+    @media (max-width: ${RESPONSIVE_BOUNDARY}) {
         margin-left: 50px;
     }
 `

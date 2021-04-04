@@ -6,6 +6,8 @@ import Me from './Me';
 import Menus from './Menus';
 import Contacts from './Contacts';
 
+import { RESPONSIVE_BOUNDARY } from '../constants/constants';
+
 const StyledSideBar = styled.aside`
 
     background-color: var(--dark-green);
@@ -16,7 +18,7 @@ const StyledSideBar = styled.aside`
     left: 0;
     position: fixed;
 
-    @media (min-width: 100vh) {
+    @media (min-width: ${RESPONSIVE_BOUNDARY}) {
         width: var(--side-panel-size);
         padding-left: var(--side-panel-left-padding);
         padding-right: var(--side-panel-right-padding);
@@ -26,7 +28,7 @@ const StyledSideBar = styled.aside`
         }
     }
 
-    @media (max-width: 100vh)  {
+    @media (max-width: ${RESPONSIVE_BOUNDARY})  {
         width: ${(props) => (props.isOpen ? 'var(--side-panel-size)' : '50px' )};
         padding-left: ${(props) => (props.isOpen ? 'var(--side-panel-left-padding)' : '0' )};
         padding-right: ${(props) => (props.isOpen ? 'var(--side-panel-right-padding)' : '0' )};
