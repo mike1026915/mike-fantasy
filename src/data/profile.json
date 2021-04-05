@@ -51,55 +51,57 @@
     "summary": "A competent software engineer, adaptive quick learner, committed team player, and communicative project leader. Participated in developing security system software and large SaaS web service. Both products have more than million of users around the world. With the 10-year experience including software development, software testing, support engineer and project leader, I really love working with a fantastic team to make creative products to help our clients to solve their problems. ",
     "education": [
         {
-            "institution": "National Chiao Tung University",
+            "school": "National Chiao Tung University",
             "location": "Hsinchu, Taiwan",
-            "degree": "Master of Engineering / Computer Science ",
-            "Score": "95/100",
+            "degree": "Master of Engineering / Computer Science",
+            "url": "https://www.nycu.edu.tw/",
+            "score": "95/100",
             "GPA": "4.3/4.3",
-            "start": "2007",
-            "end": "2011",
+            "start": "09/2007",
+            "end": "06/2011",
             "thesis": "A Decision-theoretic Data Prefetch Algorithm for Reducing Latency and Amortizing Traffic of Mobile Applications."
         },
         {
-            "institution": "National Chiao Tung University",
+            "school": "National Chiao Tung University",
             "location": "Hsinchu, Taiwan",
             "degree": "Bachelor of Engineering / Computer Science",
-            "Score": "92.51/100",
+            "url": "https://www.nycu.edu.tw/",
+            "score": "92.51/100",
             "GPA": "4.16/4.3",
-            "start": "2007",
-            "end": "2011"
+            "start": "09/2007",
+            "end": "06/2011"
         }
     ],
     "experience": [
         {
             "role": "Senior Software Engineer",
-            "company": "Vyond",
+            "company": "VYOND",
             "location": "Taipei, Taiwan",
             "project": "Vyond",
             "url": "https://www.vyond.com/",
-            "start": "05/2018",
-            "end": "12/2018",
-            "description": "Online Web Video Maker",
+            "start": "01/2020",
+            "end": "NOW",
+            "description": "Online SaaS Animation Software Tool for Businesses",
             "events": [
                 "Being a project leader to develop new features of our SaaS product with engineers, designers, data specialists, animators and PMs between Taiwan and Hong Kong",
                 "Improve product system stability and performance",
                 "Cultivate new comers to make a good working environment in Taiwan Office",
                 "Design and implement a request scheduler system to handle burst video generation requests request and reduce 60% unnecessary requests",
                 "Lead a new version of video management project to provide better user experience. Including code refactor and unit tests",
-                "Head a content share mechanism project to solve"
+                "Head a content share mechanism project to solve customer pain points"
             ]
         },
         {
             "role": "Software Engineer",
-            "company": "Vyond",
+            "company": "VYOND",
             "location": "Taipei, Taiwan",
             "project": "Vyond",
             "url": "https://www.vyond.com/",
-            "start": "05/2018",
-            "end": "12/2018",
-            "description": "Online Web Video Maker",
+            "start": "09/2018",
+            "end": "12/2019",
+            "description": "Online SaaS Animation Software Tool for Businesses",
             "events": [
-                "Develop new features of our SaaS product with engineers, designers, data specialists, animators between Taiwan and Hong Kong",
+                "Develop new features with engineers, designers, data specialists, animators between Taiwan and Hong Kong",
                 "Lead a customer issues task force and propose solution to enhance our product",
                 "Reduce 80% unnecessary search results in the search improvement task force",
                 "Increase our retention rate about 40% in the onboarding improvement task force"
@@ -113,7 +115,7 @@
             "url": "https://www.arlo.com/asia/default.aspx",
             "start": "05/2018",
             "end": "07/2018",
-            "description": "Smart Camera Backend API Automation Testing",
+            "description": "Smart Home Solution",
             "events": [
                 "Maintain and improve existing REST API automation framework. Save 20% time of daily regression",
                 "Payment flow API integration testing and daily regression trouble shooting",
@@ -125,11 +127,11 @@
             "role": "Senior Software Engineer",
             "company": "Trend Micro",
             "location": "Taipei, Taiwan",
-            "project": "Deep Discovery (U-Sandbox: Virtual machine management module)",
+            "project": "Deep Discovery (U-Sandbox)",
             "url": "https://www.trendmicro.com/en_us/business/products/network/advanced-threat-protection.html",
             "start": "01/2016",
             "end": "05/2018",
-            "description": "Dynamic sandbox solution to detect unknown malware used by APT attack",
+            "description": "Dynamic Sandbox Analysis for Unknown Malware Detection",
             "events": [
                 "Design and develop the process of sandbox module update to increase deployment flexibility and decrease the response time for detecting a new threat",
                 "Investigate and adopt multiple hypervisors and networking solutions to sandbox environment to improve overall performance",
@@ -144,11 +146,11 @@
             "role": "Software Engineer in Test",
             "company": "Trend Micro",
             "location": "Taipei, Taiwan",
-            "project": "Deep Discovery (U-Sandbox: Virtual machine management module)",
+            "project": "Deep Discovery (U-Sandbox)",
             "url": "https://www.trendmicro.com/en_us/business/products/network/advanced-threat-protection.html",
             "start": "09/2013",
             "end": "12/2015",
-            "description": "Dynamic sandbox solution to detect unknown malware used by APT attack",
+            "description": "Dynamic Sandbox Analysis for Unknown Malware Detection",
             "events": [
                 "Have code review/end-to-end testing to find potential defects and drive the architecture design",
                 "Make test malware samples using C/C++, C#...etc. to trigger specific behavior for integration testing",
@@ -164,14 +166,14 @@
             "role": "Part-time Programmer",
             "company": "CAMEO Info Tech",
             "location": "HsinChu, Taiwan",
-            "project": "Deep Discovery (U-Sandbox: Virtual machine management module)",
+            "project": "",
             "url": "https://www.trendmicro.com/en_us/business/products/network/advanced-threat-protection.html",
-            "start": "09/2013",
-            "end": "12/2015",
-            "description": "Android and iOS application development",
+            "start": "07/2011",
+            "end": "04/2013",
+            "description": "Android and iOS Application Development",
             "events": [
                 "Interactive Picture Book with Corona SDK in Lua language",
-                "A POC iOS app for wifi storage with WebDAV protocol with Objective-C",
+                "An native iOS APP for WIFI storage with WebDAV protocol with Objective-C",
                 "A native Android hot-spot setting widget via NFC"
             ]
         }

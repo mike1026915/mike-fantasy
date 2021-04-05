@@ -12,9 +12,6 @@ const TagList = styled.div`
         margin: 0.5rem;
     }
 
-    :not(:last-child) {
-        border-bottom: 0.5rem solid var(--light-green);
-    }
 `;
 
 export default TagList;

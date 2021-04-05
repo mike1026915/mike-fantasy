@@ -47,39 +47,39 @@ const StyledMain = styled.main`
 `;
 
 export default function IndexPage() {
-  return (
-    <Layout>
-      <SEO
-        subTitle="Profile"
-        ogType="profile"
-      />
-      <Header
-        name={resume.name}
-        chineseName={resume.chineseName}
-        title={resume.title}
-        contacts={resume.contacts}
-      />
-      <Summary
-        summary={resume.summary}
-      />
-      <StyledMain>
-          <div className="left">
-              <Experience
-                  experience={resume.experience}
-              />
-          </div>
-          <div className="right">
-              <Skills
-                  skills={resume.skills}
-              />
-              <Hobby
-                  hobby={resume.hobby}
-              />
-              <Education
-                  education={resume.education}
-              />
-          </div>
-      </StyledMain>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <SEO
+                subTitle="Profile"
+                ogType="profile"
+            />
+            <Header
+                name={resume.name}
+                chineseName={resume.chineseName}
+                title={resume.title}
+                contacts={resume.contacts}
+            />
+            <Summary
+                summary={resume.summary}
+            />
+            <StyledMain>
+                <div className="left">
+                    <Experience
+                        experience={resume.experience}
+                    />
+                    <Education
+                        education={resume.education}
+                    />
+                </div>
+                <div className="right">
+                    <Skills
+                        skills={resume.skills}
+                    />
+                    <Hobby
+                        hobby={resume.hobby}
+                    />
+                </div>
+            </StyledMain>
+        </Layout>
+    );
 }

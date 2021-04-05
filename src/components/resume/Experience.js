@@ -13,27 +13,35 @@ const Header = styled.div`
     align-items: flex-end;
 `;
 
-const Location = styled.div`
-
+const Location = styled.h4`
+    font-style: italic;
+    font-size: 1.5rem;
 `;
 
-const CompanyName = styled.div`
-
+const CompanyName = styled.h4`
 `;
 
-const Role = styled.div`
-
+const Role = styled.h3`
+    text-decoration: underline;
 `;
 
 const Period = styled.div`
-
+    font-style: italic;
+    font-size: 1.5rem;
 `;
 
-const Description = styled.div`
-
+const Description = styled.ul`
+`;
+const Project = styled.div`
+    margin-top: 1.5rem;
 `;
 
 const EventList = styled.ul`
+
+    li {
+        font-weight: 100;
+        font-family: 'Montserrat', 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
 `;
 
@@ -53,14 +61,6 @@ const ExperienceItem = (props) => {
     return (
         <>
             <Header>
-                <CompanyName>
-                    {company}
-                </CompanyName>
-                <Location>
-                    {location}
-                </Location>
-            </Header>
-            <Header>
                 <Role>
                     {role}
                 </Role>
@@ -68,7 +68,23 @@ const ExperienceItem = (props) => {
                     {start} - {end}
                 </Period>
             </Header>
+            <Header>
+                <CompanyName>
+                    {company}
+                </CompanyName>
+                <Location>
+                    {location}
+                </Location>
+            </Header>
             <Description>
+                { project ? (
+                    <>
+                        <a href={url}>
+                            {project}
+                        </a>
+                        <br/>
+                    </>
+                ) : null}
                 {description}
             </Description>
             <EventList>
