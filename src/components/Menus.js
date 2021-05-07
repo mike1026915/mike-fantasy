@@ -13,6 +13,8 @@ const StyledLi = styled.li`
     list-style-type: none;
     font-size: 1.5rem;
     margin: 1rem 0;
+    font-family: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
 
     &:hover {
         transform: scale(1.5) translate(15px);

@@ -8,6 +8,8 @@ const StyledTag = styled.p`
     padding: 0.75rem;
     border-radius: 15px;
     font-size: 1.5rem;
+    font-family: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
 
     :hover {
         color: var(--dark-grey);

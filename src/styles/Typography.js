@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import Sora from '../assets/fonts/Sora-Medium.ttf';
 import Montserrat from '../assets/fonts/Montserrat-Medium.ttf';
 import Roboto from '../assets/fonts//Roboto-Light.ttf';
+import OpenSans from '../assets/fonts/OpenSans-Light.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
@@ -17,6 +18,11 @@ const Typography = createGlobalStyle`
   @font-face {
     font-family: Roboto;
     src: url(${Roboto});
+  }
+
+  @font-face {
+    font-family: OpenSans;
+    src: url(${OpenSans});
   }
 
   html {
@@ -51,10 +57,9 @@ const Typography = createGlobalStyle`
 
   p, li {
     margin: 0;
-    font-family: 'Roboto', 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    letter-spacing: 0.1rem;
+    font-family: 'OpenSans', 'Roboto', 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.05rem;
     font-size: 1.751rem;
-    word-spacing: 0.15rem;
     padding-bottom: 0.5rem;
   }
 
