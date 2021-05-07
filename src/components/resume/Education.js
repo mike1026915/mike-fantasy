@@ -32,10 +32,6 @@ const Period = styled.div`
 `;
 
 const Thesis = styled.ul`
-    li {
-        font-weight: 100;
-        font-family: 'Montserrat', 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
 `;
 
 

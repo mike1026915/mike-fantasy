@@ -19,7 +19,7 @@ module.exports = {
     copyright: '© All rights reserved.',
     menus: [
       {
-        label: 'About Me',
+        label: 'Resume',
         path: '/'
       },
       {
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "./src/images/icon.png",
       },
     },
     "gatsby-plugin-mdx",
@@ -67,6 +67,13 @@ module.exports = {
       __key: "pages",
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/blogs`,
+        name: `blog`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-typescript`,
       options: {
         isTSX: true, // defaults to false
@@ -74,5 +81,38 @@ module.exports = {
         allExtensions: true, // defaults to false
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+        // a workaround to solve mdx-remark plugin compat issue
+        // https://github.com/gatsbyjs/gatsby/issues/15486
+        plugins: [
+          `gatsby-remark-images`,
+          `gatsby-remark-prismjs`,
+        ],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+
+          {
+            resolve: `gatsby-remark-smartypants`,
+          },
+        ],
+      },
+    }
   ],
 };

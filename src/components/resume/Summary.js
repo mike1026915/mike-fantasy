@@ -15,7 +15,7 @@ const StyleSummary = styled.p`
     font-size: 1.75rem;
     letter-spacing: .025em;
     line-height: 1.625;
-    font-family: 'Montserrat', 'sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', 'Montserrat', 'sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 `
 
 const StyleSummaryContent = styled.div`

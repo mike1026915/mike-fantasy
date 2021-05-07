@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Sora from '../assets/fonts/Sora-Medium.ttf';
 import Montserrat from '../assets/fonts/Montserrat-Medium.ttf';
+import Roboto from '../assets/fonts//Roboto-Light.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
@@ -11,6 +12,11 @@ const Typography = createGlobalStyle`
   @font-face {
     font-family: Montserrat;
     src: url(${Montserrat});
+  }
+
+  @font-face {
+    font-family: Roboto;
+    src: url(${Roboto});
   }
 
   html {
@@ -44,9 +50,12 @@ const Typography = createGlobalStyle`
   }
 
   p, li {
-    letter-spacing: 0.5px;
     margin: 0;
-    font-family: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 1.751rem;
+    word-spacing: 0.15rem;
+    padding-bottom: 0.5rem;
   }
 
   h1 {
