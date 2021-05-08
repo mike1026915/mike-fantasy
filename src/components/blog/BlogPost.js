@@ -24,7 +24,7 @@ class BlogPost extends React.Component {
 }
 
 export default BlogPost;
-
+/*
 export const pageQuery = graphql`
     query($slug: String!) {
         site {
@@ -45,4 +45,4 @@ export const pageQuery = graphql`
             timeToRead
         }
     }
-`
+`*/

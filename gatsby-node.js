@@ -1,6 +1,6 @@
 const path = require('path')
-
-export async function createPages({graphql, actions}) {
+/*
+exports.createPages = async ({graphql, actions}) => {
     const blogPost = path.resolve(`./src/components/blog/BlogPost.js`)
     const { data } = await graphql(`
         query {
@@ -44,4 +44,4 @@ export async function createPages({graphql, actions}) {
         });
     })
 
-}
+}*/
