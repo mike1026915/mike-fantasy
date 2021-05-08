@@ -1,4 +1,4 @@
-import path, { resolve } from 'path';
+const path = require('path')
 
 export async function createPages({graphql, actions}) {
     const blogPost = path.resolve(`./src/components/blog/BlogPost.js`)
