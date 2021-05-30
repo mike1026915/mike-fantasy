@@ -11,7 +11,7 @@ const StyledMetadata = styled.div`
     border-bottom: solid;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 `
 class BlogPost extends React.Component {
 

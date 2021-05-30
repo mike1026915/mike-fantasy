@@ -1,7 +1,37 @@
 backend:
-  name: github
+  name: git-gateway
   repo: mike1026915/mike-fantasy
+  branch: main
 
 publish_mode: editorial_workflow
-media_folder: "/uploads"
-collections: []
+media_folder: "static/uploads"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blogs"
+    create: true
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index.mdx"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Social Image", name: "socialImage", widget: "image" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Social Image", name: "socialImage", widget: "image" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }

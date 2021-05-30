@@ -7,6 +7,11 @@ import Tag from '../Tag';
 const Title = styled.h2`
     letter-spacing: 0.05rem;
     word-spacing: 0.25rem;
+
+    a {
+        color: var(--dark-green);
+        text-decoration: none;
+    }
 `;
 
 const Tags = styled.div`
