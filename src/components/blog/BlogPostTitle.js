@@ -1,15 +1,26 @@
 import React from "react";
 import styled from 'styled-components';
+import { Link } from "gatsby"
 
 import Tag from '../Tag';
 
-const Title = styled.h1`
-    letter-spacing: 0.15rem;
+const Title = styled.h2`
+    letter-spacing: 0.05rem;
+    word-spacing: 0.25rem;
 `;
 
 const Tags = styled.div`
     display: flex;
+
+    p {
+        margin-right: 5px;
+        font-size: 1rem
+    }
 `;
+
+const Date = styled.h5`
+    font-style: italic;
+`
 
 export default function BlogPostTitle(props) {
     const {
@@ -24,9 +35,8 @@ export default function BlogPostTitle(props) {
         date,
         tags,
         description,
+        slug,
     } = frontmatter;
-
-    console.log(frontmatter)
 
     return (
         <div>
@@ -34,11 +44,14 @@ export default function BlogPostTitle(props) {
                 {tags.map((t)=>(<Tag value={t} />))}
             </Tags>
             <Title>
-                {title}
+                <Link to={`/blogs/${slug}`}>  {title} </Link>
             </Title>
-            <h5>
+            <Date>
                 {date}
-            </h5>
+            </Date>
+            <p>
+                {description}
+            </p>
         </div>
     );
 

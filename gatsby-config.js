@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         label: 'Blog',
-        path: '/blog'
+        path: '/blogs'
       },
     ],
     contacts: {

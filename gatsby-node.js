@@ -1,10 +1,10 @@
 const path = require('path')
-/*
+
 exports.createPages = async ({graphql, actions}) => {
     const blogPost = path.resolve(`./src/components/blog/BlogPost.js`)
     const { data } = await graphql(`
         query {
-            allMdx {
+            allMdx(filter: {frontmatter: {draft: {eq: false}}}) {
                 nodes {
                     body
                     frontmatter {
@@ -30,18 +30,23 @@ exports.createPages = async ({graphql, actions}) => {
     const posts = data.allMdx.nodes;
 
     posts.forEach((post, index) => {
-        const previous = index === posts.length - 1 ? null : posts[index + 1].node
-        const next = index === 0 ? null : posts[index - 1].node
+        const previous = (index === posts.length - 1) ? null : posts[index + 1].node
+        const next = (index === 0) ? null : posts[index - 1].node
+        const {
+            frontmatter,
+        } = post;
+        const {
+            slug,
+        } = frontmatter;
 
         actions.createPage({
-            path: post.slug,
+            path: `/blogs/${slug}`,
             component: blogPost,
             context: {
-                slug: post.slug,
+                slug,
                 previous,
                 next,
             },
         });
     })
-
-}*/
+}

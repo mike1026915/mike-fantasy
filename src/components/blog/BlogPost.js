@@ -1,22 +1,59 @@
 import React from 'react'
+import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import styled from 'styled-components';
 
-import Layout from '../Layout'
+import Layout from '../Layout';
+import SEO from '../SEO';
 
+const StyledMetadata = styled.div`
+    display: flex;
+    border-bottom: solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+`
 class BlogPost extends React.Component {
 
     render() {
-        const post = this.props;
-        console.log(this.props.pageContext)
+        const {
+            data,
+            pageContext,
+            location,
+        } = this.props;
+        const {
+            mdx,
+            site,
+        } = data;
+        const authorName = site.siteMetadata.name;
+        const {
+            body,
+            timeToRead,
+            wordCount,
+            frontmatter,
+        } = mdx
+        const totalWords = wordCount.words;
+        const {
+            date,
+            description,
+            slug,
+            tags,
+            title,
+        } = frontmatter;
 
         return (
             <Layout>
-                <SEO title={post.frontmatter.title} description={post.excerpt} />
-                <h1>{post.frontmatter.title}</h1>
-                <p>
-                    {post.frontmatter.date}
-                </p>
-                <MDXRenderer>{post.body}</MDXRenderer>
+                <SEO title={title} description={description} />
+                <h1>{title}</h1>
+                <StyledMetadata>
+                    <p>
+                        {date},
+                    </p>
+                    <p> {timeToRead} minute to read </p>
+                </StyledMetadata>
+
+
+                <MDXRenderer>{body}</MDXRenderer>
                 <hr/>
             </Layout>
         )
@@ -24,7 +61,7 @@ class BlogPost extends React.Component {
 }
 
 export default BlogPost;
-/*
+
 export const pageQuery = graphql`
     query($slug: String!) {
         site {
@@ -32,17 +69,23 @@ export const pageQuery = graphql`
                 name
             }
         }
-        mdx(slug: { eq: $slug } ) {
-            id
-            excerpt(pruneLength: 160)
-            frontmatter {
-                title
-                date(formatString: "MMMM DD, YYYY")
-            }
+        mdx(frontmatter: {draft: {eq: false}, slug: {eq: $slug}}) {
             body
+            frontmatter {
+                date(formatString: "MMMM DD, YYYY")
+                title
+                slug
+                tags
+                draft
+                description
+            }
+            id
+            wordCount {
+                words
+            }
+            timeToRead
             slug
             tableOfContents
-            timeToRead
         }
     }
-`*/
+`
