@@ -74,13 +74,29 @@
     ],
     "experience": [
         {
+            "role": "Lead Software Engineer",
+            "company": "VYOND",
+            "location": "Taipei, Taiwan",
+            "project": "Vyond",
+            "url": "https://www.vyond.com/",
+            "start": "01/2022",
+            "end": "10/2022",
+            "description": "Online SaaS Animation Software Tool for Businesses",
+            "events": [
+                "Being a project leader to develop new features of our SaaS product with engineers, designers, data specialists, animators and PMs between Taiwan and Hong Kong",
+                "Hire talented engineers into teams and provide coach guideline",
+                "Review the technical specification and provides suggestions to engineers",
+                "Collaborate with machine learning team to provide AI features to users."
+            ]
+        },
+        {
             "role": "Senior Software Engineer",
             "company": "VYOND",
             "location": "Taipei, Taiwan",
             "project": "Vyond",
             "url": "https://www.vyond.com/",
             "start": "01/2020",
-            "end": "NOW",
+            "end": "12/2021",
             "description": "Online SaaS Animation Software Tool for Businesses",
             "events": [
                 "Being a project leader to develop new features of our SaaS product with engineers, designers, data specialists, animators and PMs between Taiwan and Hong Kong",
