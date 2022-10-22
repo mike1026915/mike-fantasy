@@ -111,10 +111,11 @@ function Experience(props) {
             />
             <ExperienceItems>
                 {
-                    experience.map((e) => {
+                    experience.map((e, index) => {
                         return (
                             <ExperienceItem
                                 { ...e }
+                                key={`experience_${index}`}
                             />
                         )
                     })

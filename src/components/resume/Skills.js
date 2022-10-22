@@ -24,7 +24,7 @@ function Skills(props) {
                 text="Skills"
             />
 
-            {skills.map((skill) => {
+            {skills.map((skill, index) => {
                 const {
                     items,
                     title,
@@ -36,23 +36,26 @@ function Skills(props) {
                 );
 
                 return (
-                    <>
+                    <React.Fragment
+                        key={`Skill_category_${index}`}
+                    >
                         <div>
                             {category}
                         </div>
                         <TagList>
                             {
-                                items.map((item) => {
+                                items.map((item, index) => {
                                     return (
                                         <Tag
                                             value={item}
+                                            key={`Skill_${index}`}
                                         />
                                     )
-                                })
+                                 })
                             }
                         </TagList>
 
-                    </>
+                    </React.Fragment>
                 );
             })}
 

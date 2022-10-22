@@ -17,9 +17,10 @@ function Hobby(props) {
             />
             <TagList>
                 {
-                    hobby.map((h) => (
+                    hobby.map((h, index) => (
                         <Tag
                             value={h}
+                            key={`hobby_${index}`}
                         />
                     ))
                 }

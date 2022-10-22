@@ -94,10 +94,11 @@ function Education(props) {
             />
             <EducationItems>
                 {
-                    education.map((e) => {
+                    education.map((e, index) => {
                         return (
                             <ExperienceItem
                                 { ...e }
+                                key={`education_${index}`}
                             />
                         )
                     })

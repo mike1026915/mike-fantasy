@@ -61,6 +61,7 @@ const Typography = createGlobalStyle`
     letter-spacing: 0.05rem;
     font-size: 1.751rem;
     padding-bottom: 0.5rem;
+    font-weight: 700;
   }
 
   h1 {
