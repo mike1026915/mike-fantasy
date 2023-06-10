@@ -21,31 +21,88 @@
         {
             "title": "General",
             "items": [
-                "Web Application Development", "System Software Development", "Test Plan and Cases Design", "Automation Testing", "Regression Testing", "Performance Testing Design and Improvement", "Continuous Integration and Delivery", "Agile and Scrum experience", "Certified Scrum Master",
-                "Trend Micro Certified Cyber Security Professional", "Members mentoring", "Communication", "Project Planning, Managing and Leading", "Quick Learning"
+                "Web Application Development",
+                "System Software Development",
+                "Test Plan and Cases Design",
+                "Automation Testing",
+                "Regression Testing",
+                "Performance Testing Design and Improvement",
+                "Continuous Integration and Delivery",
+                "Agile and Scrum experience",
+                "Certified Scrum Master",
+                "Trend Micro Certified Cyber Security Professional",
+                "Members mentoring",
+                "Communication",
+                "Project Planning, Managing and Leading",
+                "Quick Learning"
             ]
         },
         {
             "title": "Programming Languages",
             "items": [
-                "JavaScript", "Python", "Shell Script", "Java", "C/C++", "C#", "Perl"
+                "JavaScript",
+                "Python",
+                "Shell Script",
+                "Java",
+                "C/C++",
+                "C#",
+                "Perl",
+                "Ruby",
+                "TypeScript"
             ]
         },
         {
             "title": "Web Developments",
             "items": [
-                "React.js", "Redux", "Node.js", "Express.js", "MySQL", "Redis","HTML5", "CSS3", "SCSS", "Gatsby.js", "Next.js", "Restful API", "Open API", "ava", "Cypress","AWS Services", "ELK"
+                "React.js",
+                "Redux",
+                "Node.js",
+                "Express.js",
+                "MySQL",
+                "Redis",
+                "HTML5",
+                "CSS3",
+                "SCSS",
+                "Gatsby.js",
+                "Next.js",
+                "Restful API",
+                "Open API",
+                "ava",
+                "Cypress",
+                "AWS Services",
+                "ELK",
+                "Ruby on Rails"
             ]
         },
         {
             "title": "Tools & Platforms",
             "items": [
-                "Linux", "Windows", "MacOS","git", "Perforce", "VSCode", "QEMU", "VirtualBox", "Docker", "Jenkins", "Postman", "Jmeter", "Vyond", "Trello", "Jira", "Selenium"
+                "Linux",
+                "Windows",
+                "MacOS",
+                "git",
+                "Perforce",
+                "VSCode",
+                "QEMU",
+                "VirtualBox",
+                "Docker",
+                "Jenkins",
+                "Postman",
+                "Jmeter",
+                "Vyond",
+                "Trello",
+                "Jira",
+                "Selenium",
+                "PosgreSQL"
             ]
         },
         {
             "title": "Natural Languages",
-            "items": [ "English (Business Fluency, TOEIC 940)", "Chinese (Native Speaker)", "Japanese (Beginner)" ]
+            "items": [
+                "English (Business Fluency, TOEIC 940)",
+                "Chinese (Native Speaker)",
+                "Japanese (Beginner)"
+            ]
         }
     ],
     "summary": "A competent software engineer, adaptive quick learner, committed team player, and communicative project leader. Participated in developing security system software and large SaaS web service. Both products have more than million of users around the world. With the 10-year experience including software development, software testing, support engineer and project leader, I really love working with a fantastic team to make creative products to help our clients to solve their problems. ",
@@ -73,6 +130,19 @@
         }
     ],
     "experience": [
+        {
+            "role": "Senior Full Stack Engineer",
+            "company": "Placements.io",
+            "location": "Taipei, Taiwan",
+            "project": "Placements.io",
+            "url": "https://placements.io/",
+            "start": "11/2022",
+            "end": "now",
+            "description": "Advertise Order Management System",
+            "events": [
+                "Develop feature with React/Redux with TypeScript as frontend and Ruby on Rails as backend, collacorating with U.S. team"
+            ]
+        },
         {
             "role": "Lead Software Engineer",
             "company": "VYOND",
@@ -198,5 +268,12 @@
     "projects": [],
     "name": "Mike Fang",
     "chineseName": "方鍾豪",
-    "hobby": ["Reading", "Cooking", "Traveling", "Singing" , "Chatting with Friends", "Life"]
+    "hobby": [
+        "Reading",
+        "Cooking",
+        "Traveling",
+        "Singing",
+        "Chatting with Friends",
+        "Enjoying Life with my family"
+    ]
 }
