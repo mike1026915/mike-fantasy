@@ -105,7 +105,7 @@
             ]
         }
     ],
-    "summary": "As an accomplished software engineer with a proven track record, I excel in adapting quickly to new technologies and environments while remaining a committed team player and communicative leader. I am proud to have played a key role in developing secure software systems and large-scale SaaS web services that have been used by millions of users worldwide. With a decade of experience in software development, testing, support, and project leadership, I am passionate about collaborating with exceptional teams to create innovative solutions that address complex business challenges. Let's work together to make an impact and transform the world through technology.",
+    "summary": "I’m a Lead Software Engineer with over 10 years of experience across cybersecurity, SaaS, digital advertising, and HR tech. My core strengths lie in full-stack development (TypeScript, Next.js, NestJS, PostgreSQL, AWS), system design, and team leadership. Throughout my career, I’ve led cross-functional engineering teams and driven end-to-end development of key products—from internal platforms to large-scale web services. I’ve successfully managed project timelines, recruited and coached engineers, and created a culture of ownership and technical excellence. My leadership approach emphasizes clarity, trust, and long-term code quality. Beyond coding, I focus on building scalable and maintainable systems that align with business goals. Whether optimizing performance, designing architectures, or mentoring engineers, I aim to deliver real-world impact through technology.",
     "education": [
         {
             "school": "National Chiao Tung University",
@@ -131,13 +131,28 @@
     ],
     "experience": [
         {
+            "role": "Lead Software Engineer",
+            "company": "Bruce HR Consulting",
+            "location": "Taipei, Taiwan",
+            "project": "BHRC CRM",
+            "url": "https://www.brucehr.com.tw/",
+            "start": "12/2024",
+            "end": "now",
+            "description": "AI SaaS Customer Relationship Management for Headhunters",
+            "events": [
+                "Lead the SaaS product development",
+                "Backend: JavaScript/TypeScript, Nest.js, PostgreSQL, Redis, MongoDB, AWS, Docker",
+                "FrontEnd: JavaScript/TypeScript, Next.js, Tailwind, shadcn/ui, Coolify"
+            ]
+        },
+        {
             "role": "Senior Full Stack Engineer",
             "company": "Placements.io",
             "location": "Taipei, Taiwan",
             "project": "Placements.io",
             "url": "https://placements.io/",
             "start": "11/2022",
-            "end": "now",
+            "end": "10/2024",
             "description": "Advertise Order Management System",
             "events": [
                 "Develop feature with React/Redux with TypeScript as frontend and Ruby on Rails as backend, collacorating with U.S. team"
