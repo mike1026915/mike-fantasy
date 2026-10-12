@@ -12,23 +12,23 @@ The home page is a resume rendered from `src/data/profile.json`. Blog posts are 
 - MDX for posts
 - Netlify CMS at `/admin`
 
-Use Node 16.18.0. This repo targets Gatsby 2, and the `sharp` native module does not run on current Node 22. Netlify is set to Node 16.18.0. Yarn 4.6 is declared in `package.json`.
+Netlify builds with Node 16.18.0 and npm. `sharp` is pinned to 0.29.3 so image processing has a prebuilt binary on Apple Silicon and on that Netlify Node version.
 
 ## Scripts
 
 ```shell
-yarn
-yarn develop
+npm install
+npm run develop
 ```
 
-`yarn start` is the same as `yarn develop`. The dev server is at http://localhost:8000.
+`npm start` is the same as `npm run develop`. The dev server is at http://localhost:8000.
 
 | Command | What it does |
 | --- | --- |
-| `yarn develop` | Start the dev server |
-| `yarn build` | Build the static site into `public/` |
-| `yarn serve` | Serve the production build |
-| `yarn clean` | Clear the Gatsby cache |
+| `npm run develop` | Start the dev server |
+| `npm run build` | Build the static site into `public/` |
+| `npm run serve` | Serve the production build |
+| `npm run clean` | Clear the Gatsby cache |
 
 ## Routes
 
