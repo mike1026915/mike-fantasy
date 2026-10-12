@@ -135,8 +135,8 @@
             "url": "https://www.nycu.edu.tw/",
             "score": "95/100",
             "GPA": "4.3/4.3",
-            "start": "09/2007",
-            "end": "06/2011",
+            "start": "09/2011",
+            "end": "07/2013",
             "thesis": "A Decision-theoretic Data Prefetch Algorithm for Reducing Latency and Amortizing Traffic of Mobile Applications."
         },
         {
@@ -156,7 +156,7 @@
             "company": "Bruce HR Consulting",
             "location": "Taipei, Taiwan",
             "project": "BHRC CRM",
-            "url": "https://www.brucehr.com.tw/",
+            "url": "https://app.brucehr.com.tw/",
             "start": "12/2024",
             "end": "now",
             "description": "Sole lead software engineer of BHRC's internal recruitment, sales and market-research CRM. I designed, built and operate the whole platform: backend, frontend, database, AI, cloud and deployment. Used daily by consultants, sales and leadership across tens of thousands of candidate profiles.",
@@ -331,7 +331,7 @@
             "company": "CAMEO Info Tech",
             "location": "HsinChu, Taiwan",
             "project": "",
-            "url": "https://www.trendmicro.com/en_us/business/products/network/advanced-threat-protection.html",
+            "url": "https://cameo.tw/tw/",
             "start": "07/2011",
             "end": "04/2013",
             "description": "Android and iOS Application Development",
