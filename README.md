@@ -12,7 +12,7 @@ The home page is a resume rendered from `src/data/profile.json`. Blog posts are 
 - MDX for posts
 - Netlify CMS at `/admin`
 
-Netlify builds with Node 16.18.0 and npm. `sharp` is pinned to 0.29.3 so image processing has a prebuilt binary on Apple Silicon and on that Netlify Node version.
+Netlify builds with Node 16.18.0 and npm. `sharp` is pinned to 0.29.3 so image processing has a prebuilt binary on Apple Silicon and on that Netlify Node version. On Node 17 and newer, the Gatsby scripts enable OpenSSL's legacy provider so webpack 4 can still hash files. Node 16 does not receive that flag.
 
 ## Scripts
 

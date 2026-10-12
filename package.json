@@ -8,10 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "develop": "node scripts/run-gatsby.js develop",
+    "start": "node scripts/run-gatsby.js develop",
+    "build": "node scripts/run-gatsby.js build",
+    "serve": "node scripts/run-gatsby.js serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
