@@ -13,14 +13,18 @@ module.exports = {
     title: "Mike Fantasy",
     name: "Mike Fang",
     siteUrl: 'https://www.mike-fang.com',
-    description: "Mike Fang 's personal website and blog.",
+    description: "Engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.",
     url: "https://www.mike-fang.com",
     intro: "Try my best to do right things with right people then enjoy an easy life!",
     copyright: '© All rights reserved.',
     menus: [
       {
-        label: 'Resume',
+        label: 'Home',
         path: '/'
+      },
+      {
+        label: 'Resume',
+        path: '/resume'
       },
       {
         label: 'Blog',

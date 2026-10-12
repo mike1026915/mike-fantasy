@@ -2,7 +2,7 @@
 
 Personal website and resume for Mike Fang. The live site is [mike-fang.com](https://www.mike-fang.com).
 
-The home page is a resume rendered from `src/data/profile.json`. Blog posts are MDX files under `src/blogs`, published at `/blogs/<slug>`.
+The home page is a brand overview and `/resume` is the full resume, both rendered from `src/data/profile.json`. Blog posts are MDX files under `src/blogs`, published at `/blogs/<slug>`.
 
 ## Stack
 
@@ -34,14 +34,15 @@ npm run develop
 
 | Path | Source |
 | --- | --- |
-| `/` | Resume from `src/data/profile.json` |
+| `/` | Brand overview from the `brand` block in `src/data/profile.json` |
+| `/resume` | Full resume from `src/data/profile.json` |
 | `/blogs` | Published posts (`draft: false`) |
 | `/blogs/<slug>` | One post, created in `gatsby-node.js` |
 | `/admin` | Netlify CMS |
 
 ## Edit the resume
 
-All resume content lives in `src/data/profile.json`: summary, contacts, experience, education, skills, and hobbies.
+All resume content lives in `src/data/profile.json`: summary, contacts, experience, education, skills, and hobbies. The `brand` block holds the home page copy: title, positioning line, proof points, selected work, and signature skills.
 
 An experience entry can use a flat `events` list, or a `sections` list when the role needs grouped headings. With `sections`, the `description` renders in italics and each section title is a heading. Wrap a phrase in `**double asterisks**` to render it bold.
 
@@ -87,7 +88,9 @@ Netlify CMS writes the same shape through `/admin`. Its config is `static/admin/
 
 ```text
 src/data/profile.json          Resume content
-src/pages/index.js             Resume page
+src/pages/index.js             Brand home page
+src/pages/resume.js            Resume page
+src/components/brand/          Home page sections
 src/pages/blogs.js             Blog index
 src/components/resume/         Resume sections
 src/components/blog/           Post layout

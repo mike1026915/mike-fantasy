@@ -218,7 +218,7 @@
             "end": "10/2024",
             "description": "Advertise Order Management System",
             "events": [
-                "Develop feature with React/Redux with TypeScript as frontend and Ruby on Rails as backend, collacorating with U.S. team"
+                "Develop feature with React/Redux with TypeScript as frontend and Ruby on Rails as backend, collaborating with U.S. team"
             ]
         },
         {
@@ -343,6 +343,65 @@
         }
     ],
     "title": "Lead Software Engineer / Team Leader",
+    "brand": {
+        "title": "Engineering Leader",
+        "line": "Engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.",
+        "proofPoints": [
+            {
+                "value": "Top 100",
+                "text": "candidates matched to a job opening across the entire candidate database in one click",
+                "domain": "HR tech"
+            },
+            {
+                "value": "60%",
+                "text": "fewer unnecessary video generation requests after designing a request scheduler",
+                "domain": "SaaS"
+            },
+            {
+                "value": "~40%",
+                "text": "higher retention from the onboarding improvement task force",
+                "domain": "SaaS"
+            }
+        ],
+        "selectedWork": [
+            {
+                "domain": "HR tech",
+                "name": "BHRC CRM",
+                "company": "Bruce HR Consulting",
+                "role": "Lead Software Engineer",
+                "summary": "Sole lead engineer of the recruitment, sales and market-research CRM used daily by consultants, sales and leadership. Designed and run the backend, frontend, database, AI features and deployment, including AI candidate–job matching across tens of thousands of profiles."
+            },
+            {
+                "domain": "SaaS",
+                "name": "Vyond",
+                "company": "VYOND",
+                "role": "Lead Software Engineer",
+                "summary": "Led SaaS feature work with engineers, designers, data specialists, animators and PMs across Taiwan and Hong Kong. Designed a request scheduler that cut unnecessary video generation requests by 60%, and hired and coached engineers."
+            },
+            {
+                "domain": "AdTech",
+                "name": "Placements.io",
+                "company": "Placements.io",
+                "role": "Senior Full Stack Engineer",
+                "summary": "Developed features with React/Redux with TypeScript as frontend and Ruby on Rails as backend, collaborating with U.S. team."
+            },
+            {
+                "domain": "Cybersecurity",
+                "name": "Deep Discovery (U-Sandbox)",
+                "company": "Trend Micro",
+                "role": "Senior Software Engineer",
+                "summary": "Designed the sandbox module update process to shorten response time for new threats, and built a sandbox result analysis framework to improve malware detection."
+            }
+        ],
+        "signatureSkills": [
+            "Full-stack development",
+            "System design",
+            "Engineering leadership",
+            "Scalable product delivery",
+            "AI product engineering",
+            "Cybersecurity systems"
+        ]
+    },
     "projects": [],
     "name": "Mike Fang",
     "chineseName": "方鍾豪",

@@ -37,7 +37,7 @@ export default function SEO( {children, subTitle, location, ogType, image}){
             <meta property="og:description" content={description} key="ogdesc"/>
 
             {/** Twitter Card */}
-            <meta name="twitter:card" content={description} />
+            <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@mike1026915" />
             <meta name="twitter:creator" content="@mike1026915" />
 

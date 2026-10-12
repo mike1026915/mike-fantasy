@@ -22,6 +22,7 @@ export default function BlogPage({data}) {
     const posts = data.allMdx.nodes.filter((p) => (!p.draft)).map((p) => {
         return (
             <BlogPostTitle
+                key={p.id}
                 post={p}
             />
         );
@@ -36,7 +37,11 @@ export default function BlogPage({data}) {
                 {`LOGGER.INFO({ Mike })`}
             </StyledHeader>
             <PostsBlock>
-                {posts}
+                {posts.length > 0 ? posts : (
+                    <p>
+                        No posts published yet. Writing is on the way.
+                    </p>
+                )}
             </PostsBlock>
         </Layout>
     );
