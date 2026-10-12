@@ -30,15 +30,53 @@ const Period = styled.div`
     font-size: 1.5rem;
 `;
 
-const Description = styled.ul`
+const Description = styled.div`
 `;
-const Project = styled.div`
-    margin-top: 1.5rem;
+
+const Lead = styled.p`
+    margin: 0.2rem 0 0;
+    font-style: italic;
+    font-weight: 400;
 `;
 
 const EventList = styled.ul`
-
+    margin: 0.4rem 0 0;
+    padding-left: 2rem;
 `;
+
+const SectionList = styled(EventList)`
+    li {
+        font-weight: 400;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+`;
+
+const SectionHeading = styled.h4`
+    margin: 1.6rem 0 0.2rem;
+    font-family: 'OpenSans', 'Roboto', 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+`;
+
+function renderInline(text) {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+
+    return parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            return (
+                <strong key={index}>
+                    {part.slice(2, -2)}
+                </strong>
+            );
+        }
+
+        return part;
+    });
+}
 
 const ExperienceItem = (props) => {
     const {
@@ -50,7 +88,8 @@ const ExperienceItem = (props) => {
         start,
         end,
         description,
-        events
+        events = [],
+        sections = []
     } = props;
 
     return (
@@ -73,24 +112,47 @@ const ExperienceItem = (props) => {
             </Header>
             <Description>
                 { project ? (
-                    <>
-                        <a href={url}>
-                            {project}
-                        </a>
-                        <br/>
-                    </>
+                    <a href={url}>
+                        {project}
+                    </a>
                 ) : null}
-                {description}
+                {description ? (
+                    sections.length > 0 ? (
+                        <Lead>
+                            {description}
+                        </Lead>
+                    ) : (
+                        <>
+                            <br />
+                            {description}
+                        </>
+                    )
+                ) : null}
             </Description>
-            <EventList>
-                {events.map((event) => {
-                    return (
-                        <li>
-                            {event}
+            {sections.length > 0 ? (
+                sections.map((section) => (
+                    <div key={section.title}>
+                        <SectionHeading>
+                            {section.title}
+                        </SectionHeading>
+                        <SectionList>
+                            {section.events.map((event, index) => (
+                                <li key={`${section.title}-${index}`}>
+                                    {renderInline(event)}
+                                </li>
+                            ))}
+                        </SectionList>
+                    </div>
+                ))
+            ) : (
+                <EventList>
+                    {events.map((event, index) => (
+                        <li key={index}>
+                            {renderInline(event)}
                         </li>
-                    );
-                })}
-            </EventList>
+                    ))}
+                </EventList>
+            )}
         </>
     )
 }

@@ -34,6 +34,10 @@
                 "Members mentoring",
                 "Communication",
                 "Project Planning, Managing and Leading",
+                "Full-stack Development",
+                "System Design",
+                "Access Control",
+                "Mobile Application Development",
                 "Quick Learning"
             ]
         },
@@ -48,7 +52,9 @@
                 "C#",
                 "Perl",
                 "Ruby",
-                "TypeScript"
+                "TypeScript",
+                "Lua",
+                "Objective-C"
             ]
         },
         {
@@ -57,7 +63,9 @@
                 "React.js",
                 "Redux",
                 "Node.js",
+                "NestJS",
                 "Express.js",
+                "Flask",
                 "MySQL",
                 "Redis",
                 "HTML5",
@@ -75,6 +83,18 @@
             ]
         },
         {
+            "title": "AI",
+            "items": [
+                "LLM Application Development",
+                "Text Embeddings",
+                "Semantic Search",
+                "pgvector",
+                "Model Evaluation",
+                "Claude Code",
+                "Cursor"
+            ]
+        },
+        {
             "title": "Tools & Platforms",
             "items": [
                 "Linux",
@@ -83,6 +103,7 @@
                 "git",
                 "Perforce",
                 "VSCode",
+                "Lighthouse",
                 "QEMU",
                 "VirtualBox",
                 "Docker",
@@ -93,7 +114,7 @@
                 "Trello",
                 "Jira",
                 "Selenium",
-                "PosgreSQL"
+                "PostgreSQL"
             ]
         },
         {
@@ -138,11 +159,53 @@
             "url": "https://www.brucehr.com.tw/",
             "start": "12/2024",
             "end": "now",
-            "description": "AI SaaS Customer Relationship Management for Headhunters",
-            "events": [
-                "Lead the SaaS product development",
-                "Backend: JavaScript/TypeScript, Nest.js, PostgreSQL, Redis, MongoDB, AWS, Docker",
-                "FrontEnd: JavaScript/TypeScript, Next.js, Tailwind, shadcn/ui, Coolify"
+            "description": "Lead engineer for BHRC CRM, the company’s internal recruitment and sales platform",
+            "sections": [
+                {
+                    "title": "Product impact",
+                    "events": [
+                        "Built and run the CRM behind BHRC’s recruiting business. It’s used daily by consultants, sales and leadership, manages a candidate database of **tens of thousands of profiles**, and covers the whole hiring flow from sourcing to placement.",
+                        "Built a **Salary Report** that shows pay against years of experience across the candidate database. Consultants can filter by job function, location, project, job opening and date, remove outliers, and export the chart. They use it to give clients and candidates salary advice backed by data.",
+                        "Built a **Sales Sheet** module that tracks consultant targets, deals and replacement hires in one place, replacing spreadsheet-based tracking."
+                    ]
+                },
+                {
+                    "title": "AI & search features",
+                    "events": [
+                        "Built **AI candidate–job matching** that finds the **top 100 candidates for a job opening across the entire candidate database** in one click. It compares candidates and the job description on 5 areas (must-have skills, domain experience, functional experience, education, overall profile), combined with hard requirement filters and normalized skill names.",
+                        "Kept matching **fast and cheap**: similarity is calculated inside the database (pgvector), and each candidate’s text embeddings are reused until their profile changes. Running a match again costs **almost nothing in AI spend**.",
+                        "Built an **AI resume-vs-job match review** that gives a match score with reasons for and against, strengths, red flags and suggested improvements. Consultants can then ask the AI follow-up questions about the match.",
+                        "Launched an **AI Earning Call Reader** that has turned **175 earnings calls** into hiring leads for consultants in its first two months. It includes a model-evaluation step so AI upgrades are checked before rollout.",
+                        "Launched an **AI Data Explorer** that lets non-technical staff ask questions about CRM data in plain English, without filing report requests.",
+                        "Built **AI usage and cost dashboards** with per-user breakdowns, so leadership can see and control LLM spending for the first time."
+                    ]
+                },
+                {
+                    "title": "Performance & engineering speed",
+                    "events": [
+                        "Made backend builds **6× faster (~12s → ~2s)** by moving to the SWC compiler.",
+                        "Made linting **12× faster (~25s → ~2s)** by moving to oxlint, keeping 77 of 84 existing lint rules.",
+                        "Cut frontend build time by **~23% (~31s → ~24s)** and type-checking by **~28% (15.8s → 11.3s)** by trimming the bundle.",
+                        "Sped up page loads across the main dashboards by running server requests in parallel, caching shared reference data and loading heavy tables and charts only when needed, guided by Lighthouse audits."
+                    ]
+                },
+                {
+                    "title": "AI-assisted engineering (Claude Code & Cursor)",
+                    "events": [
+                        "Set up an AI-first engineering workflow in which Claude Code and Cursor follow the same rules from **one shared instruction file**.",
+                        "Wrote **36 custom Claude Code skills and 18 Cursor rules** that make agents follow team standards: spec-first design, safe database migrations, security and performance audits, and verification before any change counts as done.",
+                        "Used AI agents to run security audits, performance reviews and UI design critiques, then shipped the fixes, all gated by **automated tests and type checks**.",
+                        "Set up safe AI-agent access: agents **can’t read secrets** and get **least-privilege access** to data."
+                    ]
+                },
+                {
+                    "title": "Key challenge: redesigning access control without disrupting users",
+                    "events": [
+                        "**Problem:** An internal review found that access rules were broader than the business intended, so some users could see records outside their responsibilities.",
+                        "**Solution:** Redesigned authorization so access follows each user’s real working relationship to a record, and applied it consistently across every feature that touches that data.",
+                        "**Result:** Fixed it with no downtime, no data migration and no disruption for legitimate users."
+                    ]
+                }
             ]
         },
         {
@@ -279,7 +342,7 @@
             ]
         }
     ],
-    "title": "Senior Software Engineer / Team Leader",
+    "title": "Lead Software Engineer / Team Leader",
     "projects": [],
     "name": "Mike Fang",
     "chineseName": "方鍾豪",
