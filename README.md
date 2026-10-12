@@ -12,7 +12,7 @@ The home page is a resume rendered from `src/data/profile.json`. Blog posts are 
 - MDX for posts
 - Netlify CMS at `/admin`
 
-Use Node 14. This repo targets Gatsby 2, and the `sharp` native module plus the `esm` preload in the npm scripts do not run on current Node 22. Yarn 4.6 is declared in `package.json`.
+Use Node 16.18.0. This repo targets Gatsby 2, and the `sharp` native module does not run on current Node 22. Netlify is set to Node 16.18.0. Yarn 4.6 is declared in `package.json`.
 
 ## Scripts
 
