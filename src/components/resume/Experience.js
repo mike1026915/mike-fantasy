@@ -56,7 +56,7 @@ const SectionList = styled(EventList)`
 
 const SectionHeading = styled.h4`
     margin: 1.6rem 0 0.2rem;
-    font-family: 'OpenSans', 'Roboto', 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'OpenSansBold', 'OpenSans', 'Roboto', 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 1.75rem;
     font-style: normal;
     font-weight: 700;

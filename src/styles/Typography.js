@@ -4,6 +4,7 @@ import Sora from '../assets/fonts/Sora-Medium.ttf';
 import Montserrat from '../assets/fonts/Montserrat-Medium.ttf';
 import Roboto from '../assets/fonts//Roboto-Light.ttf';
 import OpenSans from '../assets/fonts/OpenSans-Light.ttf';
+import OpenSansBold from '../assets/fonts/OpenSans-Bold.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
@@ -23,6 +24,12 @@ const Typography = createGlobalStyle`
   @font-face {
     font-family: OpenSans;
     src: url(${OpenSans});
+  }
+
+  @font-face {
+    font-family: OpenSansBold;
+    src: url(${OpenSansBold});
+    font-weight: 700;
   }
 
   html {
