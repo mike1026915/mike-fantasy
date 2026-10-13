@@ -6,7 +6,7 @@ const { post } = Astro.props;
 const { title, date, tags, description, slug, lang } = post.data;
 ---
 
-<div lang={lang}>
+<article lang={lang}>
   <div class="tags">
     {tags.map((t: string) => (
       <Tag value={t} />
@@ -15,23 +15,27 @@ const { title, date, tags, description, slug, lang } = post.data;
   <h2>
     <a href={`/blogs/${slug}/`}> {title} </a>
   </h2>
-  <h5>{formatDate(date)}</h5>
-  <p>{description}</p>
-</div>
+  <p class="date">
+    <time datetime={date.toISOString()}>{formatDate(date)}</time>
+  </p>
+  <p class="description">{description}</p>
+</article>
 
 <style>
-  .tags {
-    display: flex;
+  article {
+    margin-bottom: 3.5rem;
   }
 
-  .tags :global(p) {
-    margin-right: 5px;
-    font-size: 1rem;
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.5rem;
   }
 
   h2 {
     letter-spacing: 0.05rem;
     word-spacing: 0.25rem;
+    margin: 0.5rem 0 0.25rem;
   }
 
   h2 a {
@@ -39,7 +43,19 @@ const { title, date, tags, description, slug, lang } = post.data;
     text-decoration: none;
   }
 
-  h5 {
+  h2 a:hover {
+    text-decoration: underline;
+  }
+
+  .date {
     font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .description {
+    max-width: 76rem;
+    font-weight: 400;
+    line-height: 1.7;
   }
 </style>
