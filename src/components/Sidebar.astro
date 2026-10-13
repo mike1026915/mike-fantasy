@@ -38,15 +38,13 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
 
 <aside class="sidebar" data-open="false">
   <div class="switch-bar">
-    <button
-      class="switch"
-      type="button"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      aria-controls="sidebar-content"
-    >
+    <a class="bar-name" href="/">
+      {name}
+    </a>
+    <button class="switch" type="button" aria-expanded="false" aria-controls="sidebar-content">
+      <span>Menu</span>
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
-        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
       </svg>
     </button>
   </div>
@@ -124,17 +122,29 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     box-sizing: border-box;
   }
 
+  .bar-name {
+    display: none;
+  }
+
   .switch {
     visibility: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
     background: none;
-    color: var(--grey);
+    color: var(--white);
     border: 2px solid var(--grey);
     border-radius: 5px;
-    padding: 5px;
-    margin: 15px 8px;
-    height: fit-content;
+    padding: 0 1rem;
+    font-family: var(--sans);
+    font-size: 1.5rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.5s ease 0s;
+  }
+
+  .switch svg {
+    transition: transform 0.2s ease;
   }
 
   .switch:hover {
@@ -200,13 +210,14 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   .menus li {
     list-style-type: none;
     font-size: 1.5rem;
-    margin: 1rem 0;
+    margin: 0;
     font-family: var(--sans);
     font-weight: 600;
   }
 
   .menus a {
     display: inline-block;
+    padding: 1.2rem 0;
     transition: transform 0.2s ease;
     transform-origin: left center;
   }
@@ -221,21 +232,21 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
 
   .contacts {
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 -1.3rem;
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: 0.2rem;
   }
 
   .contacts li {
     list-style-type: none;
-    margin: 1rem 0;
+    margin: 0;
   }
 
   .contacts a {
     display: flex;
-    padding: 0.5rem;
+    padding: 1.3rem;
   }
 
   .contacts svg {
@@ -257,39 +268,53 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   }
 
   @media (max-width: 960px) {
+    /* A labelled top bar instead of a 50px rail, so every page shows the name,
+       the menu and (when open) the contacts. */
     .sidebar {
-      width: 50px;
-      padding-left: 0;
-      padding-right: 0;
+      width: 100%;
+      min-height: 0;
+      max-height: 100vh;
+      overflow-y: auto;
+      right: 0;
     }
 
-    .sidebar .content {
-      display: none;
+    .switch-bar {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 5.6rem;
+      padding: 0 1.2rem;
+    }
+
+    .bar-name {
+      display: block;
+      font-family: var(--sans);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-decoration: none;
     }
 
     .switch {
       visibility: visible;
-      margin: 8px;
-      top: 0;
-      left: 0;
-      position: fixed;
-      transform: rotate(180deg);
     }
 
-    .sidebar[data-open='true'] {
-      width: var(--side-panel-size);
-      padding-left: var(--side-panel-left-padding);
-      padding-right: var(--side-panel-right-padding);
+    .sidebar .content {
+      display: none;
+      padding: 0 1.5rem 2rem;
+      box-sizing: border-box;
     }
 
     .sidebar[data-open='true'] .content {
       display: flex;
     }
 
-    .sidebar[data-open='true'] .switch {
-      position: static;
-      margin: 15px 8px;
-      transform: rotate(0);
+    .sidebar[data-open='true'] .switch svg {
+      transform: rotate(180deg);
+    }
+
+    .avatar {
+      width: 12rem;
+      height: 12rem;
     }
   }
 </style>
