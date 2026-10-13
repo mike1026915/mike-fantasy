@@ -3,6 +3,13 @@ import SectionTitle from './SectionTitle.astro';
 import { inlineMarkup } from '../../lib/text';
 
 const { experience } = Astro.props;
+
+// Lets the home page deep-link to a role; keep in sync with SelectedWork.astro.
+const anchor = (company: string, role: string) =>
+  `${company} ${role}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 ---
 
 <SectionTitle text="Experience" />
@@ -13,7 +20,7 @@ const { experience } = Astro.props;
 
     return (
       <>
-        <div class="row">
+        <div class="row" id={anchor(e.company, e.role)}>
           <h3 class="role">{e.role}</h3>
           <div class="period">
             {e.start} - {e.end}
@@ -60,6 +67,7 @@ const { experience } = Astro.props;
 
 <style>
   .row {
+    scroll-margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;

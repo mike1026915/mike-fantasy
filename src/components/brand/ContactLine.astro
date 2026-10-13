@@ -1,26 +1,38 @@
 ---
+import ContactButtons from './ContactButtons.astro';
+
 const { contacts } = Astro.props;
 ---
 
-<div class="contact-line">
-  <a href={contacts.linkedin.link} target="_blank" rel="noopener noreferrer">
-    LinkedIn
-  </a>
-  <a href={contacts.email.link}>{contacts.email.text}</a>
-  <a href="/resume/">Full resume</a>
-</div>
+<section class="contact">
+  <p class="invite">
+    Open to conversations about engineering leadership and AI product engineering.
+  </p>
+  <ContactButtons contacts={contacts} resume="page" />
+  <p class="address">
+    <a href={contacts.email.link}>{contacts.email.text}</a>
+  </p>
+</section>
 
 <style>
-  .contact-line {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    padding: 2rem 0;
+  .contact {
+    padding: 2.5rem 0 2rem;
     border-top: 0.2rem solid var(--light-green);
-    font-size: 1.75rem;
   }
 
-  a {
-    color: var(--dark-green);
+  .invite {
+    max-width: 60rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--sans);
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: normal;
+  }
+
+  .address {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
   }
 </style>
