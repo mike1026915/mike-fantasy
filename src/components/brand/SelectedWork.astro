@@ -10,7 +10,9 @@ const { work } = Astro.props;
     <article>
       <div class="domain">{item.domain}</div>
       <h3>{item.name}</h3>
-      <div class="meta">{item.role}, {item.company}</div>
+      <div class="meta">
+        {item.role}, {item.company}
+      </div>
       <p>{item.summary}</p>
       <a href="/resume/">Read more in resume</a>
     </article>
@@ -61,7 +63,7 @@ const { work } = Astro.props;
     color: var(--dark-green);
   }
 
-  @media (max-width: 125vh) {
+  @media (max-width: 960px) {
     .grid {
       grid-template-columns: 1fr;
     }

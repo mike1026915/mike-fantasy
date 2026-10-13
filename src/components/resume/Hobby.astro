@@ -8,5 +8,7 @@ const { hobby } = Astro.props;
 
 <SectionTitle text="Hobby" />
 <TagList>
-  {hobby.map((h: string) => <Tag value={h} />)}
+  {hobby.map((h: string) => (
+    <Tag value={h} />
+  ))}
 </TagList>

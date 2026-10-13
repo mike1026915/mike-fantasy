@@ -15,9 +15,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 >
   <h1 class="heading">{`LOGGER.INFO({ Mike })`}</h1>
   <div class="posts">
-    {posts.length > 0
-      ? posts.map((post) => <PostTitle post={post} />)
-      : <p>No posts published yet. Writing is on the way.</p>}
+    {posts.length > 0 ? (
+      posts.map((post) => <PostTitle post={post} />)
+    ) : (
+      <p>No posts published yet. Writing is on the way.</p>
+    )}
   </div>
 </Layout>
 

@@ -10,10 +10,14 @@ const { education } = Astro.props;
     <>
       <div class="row">
         <h3 class="degree">{e.degree}</h3>
-        <div class="period">{e.start} - {e.end}</div>
+        <div class="period">
+          {e.start} - {e.end}
+        </div>
       </div>
       <div class="row">
-        <h4><a href={e.url}> {e.school} </a></h4>
+        <h4>
+          <a href={e.url}> {e.school} </a>
+        </h4>
         <h4 class="location">{e.location}</h4>
       </div>
       {e.thesis && (

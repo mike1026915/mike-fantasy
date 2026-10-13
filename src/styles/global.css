@@ -1,24 +1,7 @@
-@font-face {
-  font-family: Sora;
-  src: url('/fonts/Sora-Medium.ttf');
-}
-@font-face {
-  font-family: Montserrat;
-  src: url('/fonts/Montserrat-Medium.ttf');
-}
-@font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto-Light.ttf');
-}
-@font-face {
-  font-family: OpenSans;
-  src: url('/fonts/OpenSans-Light.ttf');
-}
-@font-face {
-  font-family: OpenSansBold;
-  src: url('/fonts/OpenSans-Bold.ttf');
-  font-weight: 700;
-}
+/* Self-hosted variable fonts (woff2, font-display: swap, unicode-range subsets). */
+@import '@fontsource-variable/sora';
+@import '@fontsource-variable/open-sans';
+@import '@fontsource-variable/montserrat';
 
 :root {
   --black: #404449;
@@ -30,17 +13,22 @@
   --dark-green: #6a6e4f;
   --red: #96244e;
   --brown: #615400;
-  --side-panel-size: 30vh;
+  /* Scales with the viewport height like the avatar (25vh), within sane bounds. */
+  --side-panel-size: clamp(24rem, 30vh, 50rem);
   --side-panel-left-padding: 5%;
   --side-panel-right-padding: 1%;
-  --sans: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --body: 'OpenSans', 'Roboto', 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --sans:
+    'Sora Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  --body:
+    'Open Sans Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
 }
 
 html {
-  font-size: 10px;
+  /* 62.5% keeps 1rem = 10px by default but follows the browser's font size setting. */
+  font-size: 62.5%;
   min-height: 100vh;
-  height: 100vh;
   overflow-x: hidden;
   font-family: var(--sans);
 }
@@ -68,19 +56,28 @@ main {
 
 aside {
   font-weight: 500;
-  color: var(--grey);
+  color: var(--white);
   display: flex;
   flex-direction: column;
 }
 
 aside q {
-  font-family: 'Montserrat', 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    'Montserrat Variable',
+    'Sora Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   font-style: italic;
   font-weight: 300;
 }
 
 aside a {
-  color: var(--grey);
+  color: var(--white);
   text-decoration-color: var(--brown);
 }
 
@@ -91,7 +88,7 @@ li {
   letter-spacing: 0.05rem;
   font-size: 1.751rem;
   padding-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h1 {
@@ -146,8 +143,28 @@ mark,
   margin: 0.5rem;
 }
 
-.tag:hover {
-  color: #333;
-  background: var(--light-green);
-  cursor: pointer;
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 1rem 1.5rem;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  transform: translateY(-100%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 0.3rem solid var(--blue);
+  outline-offset: 0.2rem;
+}
+
+aside :focus-visible {
+  outline-color: var(--white);
 }

@@ -1,31 +1,40 @@
 ---
 import '../styles/global.css';
 import SEO from '../components/SEO.astro';
+import type { Props as SEOProps } from '../components/SEO.astro';
 import Sidebar from '../components/Sidebar.astro';
 
+type Props = SEOProps;
+
 const seo = Astro.props;
+const { lang = 'en' } = seo;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <SEO {...seo} />
   </head>
   <body>
+    <a class="skip-link" href="#main">
+      Skip to main content
+    </a>
     <div class="page">
       <Sidebar />
-      <main class="content">
+      <main class="content" id="main" tabindex="-1">
         <slot />
       </main>
     </div>
-    <script is:inline>
+    <script>
       // Netlify Identity invite, recovery and confirmation links land on the site
       // root with a token in the hash. Load the widget only then, so normal visits
       // do not pay for it, and send the user to the CMS once they are logged in.
       if (/(invite|recovery|confirmation|email_change)_token=/.test(window.location.hash)) {
-        var identity = document.createElement('script');
+        const identity = document.createElement('script');
         identity.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
-        identity.onload = function () {
-          window.netlifyIdentity.on('login', function () {
+        identity.onload = () => {
+          (
+            window as unknown as { netlifyIdentity: { on(event: string, cb: () => void): void } }
+          ).netlifyIdentity.on('login', () => {
             window.location.href = '/admin/';
           });
         };
@@ -41,6 +50,7 @@ const seo = Astro.props;
   }
 
   .content {
+    outline: none;
     background-color: var(--light-grey);
     min-height: 100vh;
     height: 100%;
@@ -49,13 +59,15 @@ const seo = Astro.props;
     transition: all 0.5s ease 0s;
   }
 
-  @media (min-width: 125vh) {
+  @media (min-width: 961px) {
     .content {
-      margin-left: calc(var(--side-panel-size) + var(--side-panel-left-padding) + var(--side-panel-right-padding));
+      margin-left: calc(
+        var(--side-panel-size) + var(--side-panel-left-padding) + var(--side-panel-right-padding)
+      );
     }
   }
 
-  @media (max-width: 125vh) {
+  @media (max-width: 960px) {
     .content {
       margin-left: 50px;
     }
