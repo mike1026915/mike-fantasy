@@ -45,6 +45,14 @@ collections:
         default: true
         hint: "Drafts are not listed and get no page. Turn off to publish."
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: "Updated"
+        name: "updated"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+        hint: "Optional. Set when you revise a published post; used as dateModified for search engines."
       - label: "Description"
         name: "description"
         widget: "text"

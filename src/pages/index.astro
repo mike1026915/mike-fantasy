@@ -8,12 +8,16 @@ import Tag from '../components/Tag.astro';
 import TagList from '../components/TagList.astro';
 import ContactLine from '../components/brand/ContactLine.astro';
 import resume from '../data/profile.json';
-import { buildPersonSchema } from '../lib/schema';
+import { buildPersonSchema, buildWebSiteSchema } from '../lib/schema';
 
 const { brand } = resume;
 ---
 
-<Layout pathname="/" ogType="profile" jsonLd={buildPersonSchema(brand.title, resume.chineseName)}>
+<Layout
+  pathname="/"
+  ogType="profile"
+  jsonLd={[buildWebSiteSchema(), buildPersonSchema(brand.title, resume.chineseName)]}
+>
   <Hero
     name={resume.name}
     chineseName={resume.chineseName}

@@ -47,3 +47,5 @@ public/manifest.webmanifest
 public/sitemap.xml
 public/favicon-*.png
 .venv/
+# Impeccable design-critique output (generated)
+.impeccable/critique/
