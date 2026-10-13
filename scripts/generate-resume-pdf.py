@@ -53,21 +53,24 @@ FOOTER_SITE = 'mike-fang.com'
 PUBLIC_EMAIL = os.environ.get('RESUME_PUBLIC_EMAIL', '').strip()
 
 LATIN_FONTS = {
-    'Resume': 'LiberationSans-Regular.ttf',
-    'Resume-Bold': 'LiberationSans-Bold.ttf',
-    'Resume-Italic': 'LiberationSans-Italic.ttf',
-    'Resume-BoldItalic': 'LiberationSans-BoldItalic.ttf',
+    'Resume': ('LiberationSans-Regular.ttf', 'Arial.ttf'),
+    'Resume-Bold': ('LiberationSans-Bold.ttf', 'Arial Bold.ttf'),
+    'Resume-Italic': ('LiberationSans-Italic.ttf', 'Arial Italic.ttf'),
+    'Resume-BoldItalic': ('LiberationSans-BoldItalic.ttf',
+                          'Arial Bold Italic.ttf'),
 }
 LATIN_DIRS = [
     *filter(None, [os.environ.get('RESUME_FONT_DIR')]),
     '/usr/share/fonts/truetype/liberation',
     '/usr/share/fonts/liberation',
     '/Library/Fonts',
+    '/System/Library/Fonts/Supplemental',  # macOS: Arial, metric-compatible
 ]
 CJK_FONTS = [
     *filter(None, [os.environ.get('RESUME_CJK_FONT')]),
     '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',
     '/usr/share/fonts/wenquanyi/wqy-zenhei/wqy-zenhei.ttc',
+    '/System/Library/Fonts/STHeiti Light.ttc',  # macOS
 ]
 
 # The parts of profile.json that end up in the PDF. Keep in sync with
@@ -79,20 +82,21 @@ ACCENT = colors.HexColor('#2f6f4f')
 MUTED = colors.HexColor('#555555')
 
 
-def find_font(filename):
+def find_font(filenames):
     for directory in LATIN_DIRS:
-        path = Path(directory) / filename
-        if path.exists():
-            return str(path)
+        for filename in filenames:
+            path = Path(directory) / filename
+            if path.exists():
+                return str(path)
     sys.exit(
-        f'Font not found: {filename}\n'
+        f'Font not found: {" / ".join(filenames)}\n'
         f'Searched: {", ".join(LATIN_DIRS)}\n'
         'Install Liberation Sans or set RESUME_FONT_DIR.')
 
 
 def register_fonts():
-    for name, filename in LATIN_FONTS.items():
-        pdfmetrics.registerFont(TTFont(name, find_font(filename)))
+    for name, filenames in LATIN_FONTS.items():
+        pdfmetrics.registerFont(TTFont(name, find_font(filenames)))
     pdfmetrics.registerFontFamily(
         'Resume', normal='Resume', bold='Resume-Bold',
         italic='Resume-Italic', boldItalic='Resume-BoldItalic')

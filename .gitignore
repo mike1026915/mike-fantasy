@@ -46,3 +46,4 @@ public/webpack.stats.json
 public/manifest.webmanifest
 public/sitemap.xml
 public/favicon-*.png
+.venv/
