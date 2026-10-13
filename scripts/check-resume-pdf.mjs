@@ -4,7 +4,16 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
-const PDF_FIELDS = ['name', 'chineseName', 'title', 'summary', 'experience', 'education', 'skills'];
+const PDF_FIELDS = [
+  'name',
+  'chineseName',
+  'title',
+  'summary',
+  'summaryHighlights',
+  'experience',
+  'education',
+  'skills',
+];
 
 const sortKeys = (value) => {
   if (Array.isArray(value)) return value.map(sortKeys);

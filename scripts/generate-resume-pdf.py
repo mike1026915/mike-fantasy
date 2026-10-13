@@ -72,7 +72,7 @@ CJK_FONTS = [
 
 # The parts of profile.json that end up in the PDF. Keep in sync with
 # scripts/check-resume-pdf.mjs.
-PDF_FIELDS = ('name', 'chineseName', 'title', 'summary', 'experience',
+PDF_FIELDS = ('name', 'chineseName', 'title', 'summary', 'summaryHighlights', 'experience',
               'education', 'skills')
 
 ACCENT = colors.HexColor('#2f6f4f')
@@ -265,7 +265,9 @@ def main():
         topMargin=14 * mm, bottomMargin=18 * mm)
     story = (header(profile)
              + section('Summary')
-             + [Paragraph(rich(profile['summary']), STYLES['body'])]
+             + [Paragraph(rich(profile['summary']), STYLES['body']),
+                Spacer(1, 3),
+                bullets(profile['summaryHighlights'])]
              + experience(profile) + education(profile) + skills(profile))
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
     strip_metadata(OUTPUT)

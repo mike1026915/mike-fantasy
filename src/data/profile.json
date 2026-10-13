@@ -126,7 +126,7 @@
             ]
         }
     ],
-    "summary": "I’m a Lead Software Engineer with over 10 years of experience across cybersecurity, SaaS, digital advertising, and HR tech. My core strengths lie in full-stack development (TypeScript, Next.js, NestJS, PostgreSQL, AWS), system design, and team leadership. Throughout my career, I’ve led cross-functional engineering teams and driven end-to-end development of key products—from internal platforms to large-scale web services. I’ve successfully managed project timelines, recruited and coached engineers, and created a culture of ownership and technical excellence. My leadership approach emphasizes clarity, trust, and long-term code quality. Beyond coding, I focus on building scalable and maintainable systems that align with business goals. Whether optimizing performance, designing architectures, or mentoring engineers, I aim to deliver real-world impact through technology.",
+    "summary": "Engineering leader with 10+ years across cybersecurity, SaaS, AdTech and HR tech. I lead full-stack teams (TypeScript, Next.js, NestJS, PostgreSQL, AWS), design scalable systems, and grow engineers through hiring, coaching and clear technical direction. Today I am the sole lead engineer of an AI-powered recruiting CRM, and I run an AI-first engineering workflow with Claude Code and Cursor. Open to conversations about engineering leadership and AI product engineering.",
     "education": [
         {
             "school": "National Chiao Tung University",
@@ -348,8 +348,8 @@
         "line": "Engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.",
         "proofPoints": [
             {
-                "value": "175",
-                "text": "earnings calls turned into hiring leads by an AI reader in its first two months",
+                "value": "6–12×",
+                "text": "faster backend builds and linting (~12s → ~2s, ~25s → ~2s) after modernising the toolchain",
                 "domain": "HR tech",
                 "context": "BHRC CRM · Lead Software Engineer · 2024–present"
             },
@@ -415,5 +415,12 @@
         "Singing",
         "Chatting with Friends",
         "Enjoying Life with my family"
+    ],
+    "summaryHighlights": [
+        "Redesigned access control in a production CRM with **no downtime**, no data migration and no disruption for legitimate users.",
+        "Built **AI candidate–job matching** across tens of thousands of profiles; embeddings are reused until a profile changes, so re-running a match costs almost nothing in AI spend.",
+        "Set up an **AI-first engineering workflow**: 36 Claude Code skills and 18 Cursor rules from one shared instruction file, with agents that cannot read secrets and every change gated by automated tests and type checks.",
+        "Made backend builds **6× faster** and linting **12× faster** (~12s → ~2s, ~25s → ~2s).",
+        "Cut unnecessary video generation requests by **60%** with a request scheduler, and lifted onboarding retention by **~40%** at Vyond."
     ]
 }

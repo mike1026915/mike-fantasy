@@ -23,7 +23,7 @@ import { buildPersonSchema } from '../lib/schema';
     title={resume.title}
     contacts={resume.contacts}
   />
-  <Summary summary={resume.summary} />
+  <Summary summary={resume.summary} highlights={resume.summaryHighlights} />
   <div class="columns">
     <div class="left">
       <Experience experience={resume.experience} />

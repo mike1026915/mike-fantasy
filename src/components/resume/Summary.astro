@@ -1,17 +1,41 @@
 ---
-const { summary } = Astro.props;
+import { inlineMarkup } from '../../lib/text';
+
+const { summary, highlights = [] } = Astro.props;
 ---
 
-<p>{summary}</p>
+<section>
+  <p class="summary">{summary}</p>
+  {highlights.length > 0 && (
+    <ul>
+      {highlights.map((item: string) => (
+        <li set:html={inlineMarkup(item)} />
+      ))}
+    </ul>
+  )}
+</section>
 
 <style>
-  p {
+  section {
     padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 0.2rem solid var(--light-green);
+  }
+
+  .summary {
     font-size: 1.75rem;
     letter-spacing: 0.025em;
     line-height: 1.625;
     font-family: var(--body);
+  }
+
+  ul {
+    margin: 0.5rem 0 0;
+    padding-left: 2rem;
+  }
+
+  li {
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
 </style>
