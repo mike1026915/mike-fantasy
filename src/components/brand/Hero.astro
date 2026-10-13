@@ -1,33 +1,43 @@
 ---
-const { name, chineseName, title, line } = Astro.props;
+import ContactButtons from './ContactButtons.astro';
+
+const { name, chineseName, title, line, contacts } = Astro.props;
 ---
 
 <header>
   <h1>
     <span lang="zh-Hant">{chineseName}</span> {name}
   </h1>
-  <h3>{title}</h3>
-  <p>{line}</p>
+  <p class="role">{title}</p>
+  <p class="line">{line}</p>
+  <ContactButtons contacts={contacts} />
 </header>
 
 <style>
   header {
     border-bottom: 0.2rem solid var(--light-green);
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
   }
 
   h1 {
     margin-bottom: 0.5rem;
   }
 
-  h3 {
+  /* A tagline, not a heading: keeps the h1 -> h2 outline intact. */
+  .role {
     margin-bottom: 1.5rem;
+    font-family: var(--sans);
+    font-size: 2.34rem;
+    font-weight: 300;
+    letter-spacing: normal;
+    padding-bottom: 0;
   }
 
-  p {
-    font-size: 2.4rem;
+  .line {
+    font-size: clamp(2.2rem, 2.2vw, 2.8rem);
     line-height: 1.5;
     font-weight: 400;
-    max-width: 80rem;
+    max-width: 90rem;
+    margin-bottom: 2rem;
   }
 </style>

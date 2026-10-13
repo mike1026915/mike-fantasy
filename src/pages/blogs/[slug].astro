@@ -4,6 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../siteConfig';
 import { formatDate, readingMinutes } from '../../lib/text';
 import { resolveSocialImage } from '../../lib/social';
+import ContactLine from '../../components/brand/ContactLine.astro';
+import profile from '../../data/profile.json';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
@@ -49,12 +51,12 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
   }}
 >
   <h1>{title}</h1>
-  <div class="metadata">
-    <p>{formatDate(date)},</p>
-    <p>&nbsp;{readingMinutes(post.body)} minute to read</p>
-  </div>
+  <p class="metadata">
+    <time datetime={date.toISOString()}>{formatDate(date)}</time> · {readingMinutes(post.body)} min
+    read
+  </p>
 
-  <div lang={lang}>
+  <div class="prose" lang={lang}>
     <Content />
   </div>
   <hr />
@@ -74,15 +76,27 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
       )}
     </div>
   </nav>
+  <ContactLine contacts={profile.contacts} />
 </Layout>
 
 <style>
   .metadata {
-    display: flex;
-    border-bottom: solid;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    border-bottom: 0.2rem solid var(--light-green);
+    padding: 1rem 0;
     margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  /* Cap the measure so long posts stay readable on wide screens. */
+  .prose {
+    max-width: 76rem;
+  }
+
+  .prose :global(p),
+  .prose :global(li) {
+    font-weight: 400;
+    line-height: 1.7;
+    padding-bottom: 1rem;
   }
 
   .pager {

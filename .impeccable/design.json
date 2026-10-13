@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T05:52:57.843175+00:00",
+  "title": "Design System: Mike Fang",
+  "extensions": {
+    "colorMeta": {
+      "moss-ledger": {
+        "role": "primary",
+        "displayName": "Moss Ledger",
+        "canonical": "#6a6e4f",
+        "oklch": "oklch(53% 0.046 114)",
+        "tonalRamp": [
+          "#0b0d00",
+          "#252711",
+          "#41452b",
+          "#616447",
+          "#828668",
+          "#a4a88c",
+          "#c8ccb2",
+          "#eef1d9"
+        ]
+      },
+      "sage-rule": {
+        "role": "primary",
+        "displayName": "Sage Rule",
+        "canonical": "#7d9a64",
+        "oklch": "oklch(65% 0.083 131)",
+        "tonalRamp": [
+          "#040f00",
+          "#1a2b08",
+          "#354922",
+          "#526a3d",
+          "#718d59",
+          "#93b07c",
+          "#b9d3a3",
+          "#dff8cb"
+        ]
+      },
+      "field-ink": {
+        "role": "neutral",
+        "displayName": "Field Ink",
+        "canonical": "#404449",
+        "oklch": "oklch(38% 0.010 254)",
+        "tonalRamp": [
+          "#090b0f",
+          "#22252a",
+          "#3e4247",
+          "#5e6266",
+          "#7f8387",
+          "#a2a5aa",
+          "#c6c9cd",
+          "#eceff2"
+        ]
+      },
+      "deep-tide": {
+        "role": "neutral",
+        "displayName": "Deep Tide",
+        "canonical": "#093e47",
+        "oklch": "oklch(34% 0.054 212)",
+        "tonalRamp": [
+          "#000f16",
+          "#002b33",
+          "#1a4952",
+          "#406971",
+          "#648a92",
+          "#8aacb3",
+          "#b0d0d6",
+          "#d9f4fa"
+        ]
+      },
+      "page-paper": {
+        "role": "neutral",
+        "displayName": "Page Paper",
+        "canonical": "#eeeeee",
+        "oklch": "oklch(95% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "card-white": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "mist-grey": {
+        "role": "neutral",
+        "displayName": "Mist Grey",
+        "canonical": "#dce0e2",
+        "oklch": "oklch(90% 0.005 229)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242526",
+          "#404243",
+          "#5f6263",
+          "#808384",
+          "#a2a6a7",
+          "#c6cacc",
+          "#ebeff1"
+        ]
+      },
+      "ledger-ink": {
+        "role": "neutral",
+        "displayName": "Ledger Ink",
+        "canonical": "#2b2f33",
+        "oklch": "oklch(30% 0.009 248)",
+        "tonalRamp": [
+          "#090b0e",
+          "#222529",
+          "#3e4246",
+          "#5e6266",
+          "#7f8386",
+          "#a2a5a9",
+          "#c6c9cd",
+          "#eceff2"
+        ]
+      },
+      "moss-link": {
+        "role": "neutral",
+        "displayName": "Moss Link",
+        "canonical": "#4a4d37",
+        "oklch": "oklch(41% 0.035 114)",
+        "tonalRamp": [
+          "#0b0c01",
+          "#252715",
+          "#41442f",
+          "#61644e",
+          "#828570",
+          "#a4a794",
+          "#c8cbb9",
+          "#eef0e0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page identity: name on Home and Resume, uppercase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles over a Sage Rule bar."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles and job headings."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "One-line positioning statement."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs and list items."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase domain tags."
+      },
+      "stat": {
+        "displayName": "Stat",
+        "purpose": "Quantified result leading each proof point."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Links, role lines, dates and context lines."
+      },
+      "base": {
+        "displayName": "Base",
+        "purpose": "Em base for default heading sizes; not for reading text."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "nudge",
+        "value": "transform 0.2s ease",
+        "purpose": "Sidebar link nudges 0.8rem right on hover."
+      },
+      {
+        "name": "panel",
+        "value": "all 0.5s ease 0s",
+        "purpose": "Sidebar and content margin when the mobile panel opens."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "collapse",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Static skill or hobby pill.",
+      "html": "<div class=\"ds-tag-list\"><p class=\"ds-tag\">System Design</p><p class=\"ds-tag\">AI product engineering</p></div>",
+      "css": ".ds-tag-list{display:flex;flex-wrap:wrap}.ds-tag{margin:.5rem;width:fit-content;background:#6a6e4f;color:#eee;padding:.75rem;border-radius:15px;font-size:1.5rem;font-family:'Sora Variable',sans-serif}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Download PDF action on the resume header.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Download PDF</a>",
+      "css": ".ds-btn-outline{display:inline-block;padding:.4rem 1rem;border:.15rem solid #6a6e4f;border-radius:.3rem;font-size:1rem;text-decoration:none;color:#6a6e4f;font-family:'Sora Variable',sans-serif;transition:none}.ds-btn-outline:hover{background:#6a6e4f;color:#fff}.ds-btn-outline:focus-visible{outline:.3rem solid #093e47;outline-offset:.2rem}"
+    },
+    {
+      "name": "Work Card",
+      "kind": "card",
+      "refersTo": "work-card",
+      "description": "Selected-work entry with a moss top rule.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-domain\">HR tech</div><h3>BHRC CRM</h3><div class=\"ds-meta\">Lead Software Engineer, Bruce HR Consulting</div><p>Sole lead engineer of the recruitment CRM used daily by consultants.</p><a href=\"#\">Read more in resume</a></article>",
+      "css": ".ds-card{background:#fff;padding:2rem;border-top:.4rem solid #6a6e4f;color:#404449}.ds-card p{font-family:'Open Sans Variable',sans-serif;font-size:1.751rem;font-weight:400;line-height:1.6;margin:0}.ds-domain{font-size:1.3rem;text-transform:uppercase;letter-spacing:.1rem;color:#6a6e4f}.ds-card h3{font-weight:500;margin:.5rem 0}.ds-meta{font-size:1.4rem;font-style:italic;margin-bottom:1rem}.ds-card a{display:inline-block;margin-top:1rem;font-size:1.5rem;color:#6a6e4f}"
+    },
+    {
+      "name": "Proof Point",
+      "kind": "custom",
+      "refersTo": "proof-point",
+      "description": "Quantified result with domain label and left rule.",
+      "html": "<div class=\"ds-proof\"><div class=\"ds-value\">60%</div>fewer unnecessary video generation requests<div class=\"ds-domain\">SaaS</div><div class=\"ds-context\">Vyond · Senior Software Engineer</div></div>",
+      "css": ".ds-proof{padding:0 0 0 1.5rem;border-left:.4rem solid #7d9a64;font-weight:400;color:#404449}.ds-value{font-size:3.2rem;color:#6a6e4f}.ds-domain{font-size:1.3rem;text-transform:uppercase;letter-spacing:.1rem;margin-top:.5rem}.ds-context{font-size:1.3rem;margin-top:.3rem}"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Headline over a thick Sage Rule bar.",
+      "html": "<h2 class=\"ds-section\">Selected Work</h2>",
+      "css": ".ds-section{margin:0 0 1.5rem;font-weight:500;font-size:3rem;border-bottom:1rem solid #7d9a64;color:#404449;font-family:'Sora Variable',sans-serif}"
+    },
+    {
+      "name": "Sidebar Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Cover-green navigation with nudge on hover.",
+      "html": "<nav class=\"ds-nav\"><ul><li><a href=\"#\" aria-current=\"page\">Home</a></li><li><a href=\"#\">Resume</a></li><li><a href=\"#\">Blog</a></li></ul></nav>",
+      "css": ".ds-nav{background:#6a6e4f;padding:2rem}.ds-nav ul{margin:0;padding:0}.ds-nav li{list-style:none;margin:1rem 0;font:600 1.5rem 'Sora Variable',sans-serif}.ds-nav a{display:inline-block;color:#fff;text-decoration-color:#dce0e2;transition:transform .2s ease;transform-origin:left center}.ds-nav a:hover:not([aria-current=page]){transform:translateX(.8rem)}.ds-nav a[aria-current=page]{text-decoration-thickness:.2rem}.ds-nav a:focus-visible{outline:.3rem solid #fff;outline-offset:.2rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Field Notebook",
+    "overview": "A comfortable notebook carried through mountains, forest, coast and fields: moss-green cover on the left, a pale paper page on the right, thick green rules marking each entry. The tone is practical, gentle and organised, with flat surfaces and ruled lines instead of boxes and shadows.",
+    "keyCharacteristics": [
+      "A fixed moss-green sidebar (the cover) beside a pale-grey page (the paper).",
+      "Flat and shadowless; structure comes from thick green rules, left borders and tonal blocks.",
+      "A single natural green family used for rules, accents and identity.",
+      "Sora for headings and labels, Open Sans for reading text.",
+      "Numbers and domain labels are the visual focal points, not ornaments."
+    ],
+    "rules": [
+      {
+        "name": "The Green Family Rule",
+        "body": "Only the two greens express identity. Do not introduce a third accent hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rule Line Rule",
+        "body": "Section structure is drawn with Sage Rule lines, not boxes, fills or shadows.",
+        "section": "colors"
+      },
+      {
+        "name": "The Root-10 Rule",
+        "body": "The root is 62.5% so 1rem equals 10px by default; always specify sizes in rem.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quiet Quote Rule",
+        "body": "Montserrat italic appears only in the sidebar quote.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-On-Paper Rule",
+        "body": "Surfaces never lift; hover is a color change, a nudge or opacity, never a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do build hierarchy with Sage Rule lines and tonal blocks (Card White on Page Paper).",
+      "Do keep one green family: Moss Ledger for identity and fills, Sage Rule for lines.",
+      "Do use rem units against the 62.5% root, and keep reading text at or above 1.75rem.",
+      "Do lead with the number or outcome when presenting a result, followed by its domain label.",
+      "Do keep a visible focus ring (Deep Tide, or white in the sidebar) on every interactive element.",
+      "Do mark Chinese text with lang=\"zh-Hant\"."
+    ],
+    "donts": [
+      "Don't add box-shadows, glows or lifted cards.",
+      "Don't introduce a third accent hue or gradients.",
+      "Don't put Sage Rule (#7d9a64) behind white text or as small text on Page Paper; it is a line color, not a text color.",
+      "Don't use Montserrat italic outside the sidebar quote.",
+      "Don't round cards or sections; only small controls and tags are rounded.",
+      "Don't add decorative imagery or icons that do not carry information."
+    ]
+  }
+}

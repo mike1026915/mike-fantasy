@@ -1,0 +1,82 @@
+---
+import { RESUME_PDF_PATH } from '../../siteConfig';
+
+const { contacts, resume = 'pdf' } = Astro.props;
+---
+
+<div class="buttons">
+  <a class="primary" href={contacts.email.link}>
+    Email Mike
+  </a>
+  <a href={contacts.linkedin.link} target="_blank" rel="noopener noreferrer">
+    LinkedIn
+  </a>
+  {resume === 'pdf' ? (
+    <a class="tertiary" href={RESUME_PDF_PATH} download rel="nofollow">
+      Resume PDF
+    </a>
+  ) : (
+    <a class="tertiary" href="/resume/">
+      Full resume
+    </a>
+  )}
+</div>
+
+<style>
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 4.4rem;
+    padding: 0 2.2rem;
+    border: 0.2rem solid var(--dark-green);
+    border-radius: 0.3rem;
+    font-family: var(--sans);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark-green);
+  }
+
+  a:hover {
+    background: var(--dark-green);
+    color: var(--white);
+  }
+
+  .primary {
+    background: var(--dark-green);
+    color: var(--white);
+  }
+
+  @media (max-width: 960px) {
+    .buttons {
+      gap: 0.5rem 1rem;
+    }
+
+    a {
+      padding: 0 1.6rem;
+    }
+
+    .tertiary {
+      border-color: transparent;
+      padding: 0 0.6rem;
+      text-decoration: underline;
+    }
+
+    .tertiary:hover {
+      background: none;
+      color: var(--dark-green);
+    }
+  }
+
+  .primary:hover {
+    background: color-mix(in srgb, var(--dark-green) 70%, black);
+    border-color: color-mix(in srgb, var(--dark-green) 70%, black);
+    color: var(--white);
+  }
+</style>

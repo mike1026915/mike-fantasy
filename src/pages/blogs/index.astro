@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PostTitle from '../../components/blog/PostTitle.astro';
+import ContactLine from '../../components/brand/ContactLine.astro';
+import profile from '../../data/profile.json';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -21,12 +23,13 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
       <p>No posts published yet. Writing is on the way.</p>
     )}
   </div>
+  <ContactLine contacts={profile.contacts} />
 </Layout>
 
 <style>
   .heading {
     word-spacing: 1rem;
-    display: flex;
+    overflow-wrap: anywhere;
     border-bottom: 0.2rem solid var(--light-green);
     padding-bottom: 1.5rem;
     margin-bottom: 1rem;

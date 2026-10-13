@@ -2,6 +2,13 @@
 import SectionTitle from '../resume/SectionTitle.astro';
 
 const { work } = Astro.props;
+
+// Same slug as the id Experience.astro puts on each role on /resume/.
+const anchor = (company: string, role: string) =>
+  `${company} ${role}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 ---
 
 <SectionTitle text="Selected Work" />
@@ -14,7 +21,12 @@ const { work } = Astro.props;
         {item.role}, {item.company}
       </div>
       <p>{item.summary}</p>
-      <a href="/resume/">Read more in resume</a>
+      <a
+        href={`/resume/#${anchor(item.company, item.role)}`}
+        aria-label={`Read more about ${item.name} in resume`}
+      >
+        Read more in resume
+      </a>
     </article>
   ))}
 </div>
@@ -22,8 +34,11 @@ const { work } = Astro.props;
 <style>
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 2rem;
+    /* SectionTitle's 1.5rem bottom margin collapses with this; -0.5rem nets 1rem
+       without touching the resume page's titles. */
+    margin-top: -0.5rem;
     margin-bottom: 3rem;
   }
 
@@ -33,9 +48,19 @@ const { work } = Astro.props;
     border-top: 0.4rem solid var(--dark-green);
   }
 
+  /* The lead story spans the row; the other three share one row beneath it. */
+  article:first-child {
+    grid-column: 1 / -1;
+  }
+
+  article:first-child h3 {
+    font-size: 3rem;
+  }
+
   article p {
     font-weight: 400;
     line-height: 1.6;
+    max-width: 76rem;
   }
 
   .domain {
@@ -51,21 +76,22 @@ const { work } = Astro.props;
   }
 
   .meta {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-style: italic;
     margin-bottom: 1rem;
   }
 
   a {
     display: inline-block;
-    margin-top: 1rem;
+    padding: 1.3rem 0;
+    margin-top: 0;
     font-size: 1.5rem;
     color: var(--dark-green);
   }
 
-  @media (max-width: 960px) {
+  @media (min-width: 1280px) {
     .grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

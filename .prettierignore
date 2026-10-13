@@ -6,3 +6,5 @@ public/
 src/content/
 .vscode/
 scripts/resume-pdf.sha256
+.impeccable/
+.venv-resume/

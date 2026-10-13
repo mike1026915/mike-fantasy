@@ -16,6 +16,7 @@ const { proofPoints } = Astro.props;
 <style>
   ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     margin: 2.5rem 0;
     padding: 0;
@@ -23,15 +24,18 @@ const { proofPoints } = Astro.props;
 
   li {
     list-style-type: none;
-    flex: 1;
+    flex: 1 1 24rem;
     padding: 0 0 0 1.5rem;
     border-left: 0.4rem solid var(--light-green);
     font-weight: 400;
   }
 
   .value {
-    font-size: 3.2rem;
-    color: var(--dark-green);
+    font-family: var(--sans);
+    font-size: clamp(4rem, 6vw, 5.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: color-mix(in srgb, var(--dark-green) 70%, black);
   }
 
   .domain {
@@ -42,14 +46,8 @@ const { proofPoints } = Astro.props;
   }
 
   .context {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-top: 0.3rem;
     color: var(--black);
-  }
-
-  @media (max-width: 960px) {
-    ul {
-      flex-direction: column;
-    }
   }
 </style>

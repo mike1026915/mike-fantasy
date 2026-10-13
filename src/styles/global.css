@@ -12,7 +12,6 @@
   --light-green: #7d9a64;
   --dark-green: #6a6e4f;
   --red: #96244e;
-  --brown: #615400;
   /* Scales with the viewport height like the avatar (25vh), within sane bounds. */
   --side-panel-size: clamp(24rem, 30vh, 50rem);
   --side-panel-left-padding: 5%;
@@ -26,6 +25,7 @@
 }
 
 html {
+  scroll-padding-top: 7rem;
   /* 62.5% keeps 1rem = 10px by default but follows the browser's font size setting. */
   font-size: 62.5%;
   min-height: 100vh;
@@ -79,7 +79,6 @@ aside q {
 main a {
   /* Darkened --dark-green so link text keeps enough contrast on the grey page. */
   color: color-mix(in srgb, var(--dark-green) 70%, black);
-  text-decoration-color: var(--light-green);
 }
 
 main a:hover {
@@ -88,7 +87,7 @@ main a:hover {
 
 aside a {
   color: var(--white);
-  text-decoration-color: var(--brown);
+  text-decoration-color: var(--grey);
 }
 
 p,
@@ -102,6 +101,7 @@ li {
 }
 
 h1 {
+  font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
@@ -146,7 +146,7 @@ mark,
   width: fit-content;
   background: var(--dark-green);
   color: var(--light-grey);
-  padding: 0.75rem;
+  padding: 0.8rem 1rem;
   border-radius: 15px;
   font-size: 1.5rem;
   font-family: var(--sans);
@@ -162,7 +162,7 @@ mark,
   background: var(--white);
   color: var(--black);
   font-family: var(--sans);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   transform: translateY(-100%);
 }
 
