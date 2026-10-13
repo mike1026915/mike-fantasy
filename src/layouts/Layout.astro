@@ -54,7 +54,10 @@ const { lang = 'en' } = seo;
     background-color: var(--light-grey);
     min-height: 100vh;
     height: 100%;
-    width: 100%;
+    /* Fill the space beside the fixed sidebar; width:100% plus the margin overflowed the viewport. */
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 3%;
     transition: all 0.5s ease 0s;
   }
