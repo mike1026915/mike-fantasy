@@ -12,7 +12,8 @@
     "start": "node scripts/run-gatsby.js develop",
     "build": "node scripts/run-gatsby.js build",
     "serve": "node scripts/run-gatsby.js serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "resume:pdf": "python3 scripts/generate-resume-pdf.py"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",

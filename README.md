@@ -29,6 +29,7 @@ npm run develop
 | `npm run build` | Build the static site into `public/` |
 | `npm run serve` | Serve the production build |
 | `npm run clean` | Clear the Gatsby cache |
+| `npm run resume:pdf` | Regenerate `static/Mike-Fang-Resume.pdf` from `profile.json` |
 
 ## Routes
 
@@ -99,3 +100,23 @@ gatsby-config.js               Site metadata and plugins
 gatsby-node.js                 Blog page creation
 static/admin/config.yml        Netlify CMS
 ```
+
+## Resume PDF
+
+The "Download PDF" button on `/resume` links to `static/Mike-Fang-Resume.pdf`, served at `/Mike-Fang-Resume.pdf`. The file is generated from `src/data/profile.json` and committed, so Netlify does not need Python.
+
+After editing the resume, regenerate it and commit the result:
+
+```shell
+pip install reportlab pypdf
+npm run resume:pdf
+```
+
+The script needs the Liberation Sans fonts and a CJK font (WenQuanYi Zen Hei) for the Chinese name; see the constants at the top of `scripts/generate-resume-pdf.py` for the paths.
+
+Privacy settings:
+
+- The PDF only contains information that is already public on the site. The email is left out; set `RESUME_PUBLIC_EMAIL` when generating to include one.
+- Every page has a footer with the site and the update month.
+- All document metadata (author, creator, producer, dates, XMP) is stripped.
+- `netlify.toml` sends `X-Robots-Tag: noindex` for the PDF, and `static/robots.txt` asks AI crawlers to skip it. Search engines are not blocked in `robots.txt` so they can see the `noindex` header.

@@ -5,7 +5,7 @@ import { MdMail } from "react-icons/md";
 import { MdWeb } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 
-import { RESPONSIVE_BOUNDARY } from '../../constants/constants';
+import { RESPONSIVE_BOUNDARY, RESUME_PDF_PATH } from '../../constants/constants';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -22,6 +22,22 @@ const Title = styled.h3`
 
 const Left = styled.div`
     width: 66.67%;
+`
+
+const DownloadLink = styled.a`
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    border: 0.15rem solid var(--dark-green);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--dark-green);
+
+    &:hover {
+        background: var(--dark-green);
+        color: white;
+    }
 `
 
 const Right = styled.div`
@@ -105,6 +121,13 @@ const Header = (props) => {
                 <Title>
                     {title}
                 </Title>
+                <DownloadLink
+                    href={RESUME_PDF_PATH}
+                    download
+                    rel="nofollow"
+                >
+                    Download PDF
+                </DownloadLink>
             </Left>
             <Right>
                 {contactItems}
