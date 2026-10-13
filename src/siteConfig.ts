@@ -10,6 +10,7 @@ export const siteConfig = {
     { label: 'Resume', path: '/resume/' },
     { label: 'Blog', path: '/blogs/' },
   ],
+  twitter: '@mike1026915',
   contacts: {
     email: 'mailto:me@mike-fang.com',
     github: 'https://github.com/mike1026915/',

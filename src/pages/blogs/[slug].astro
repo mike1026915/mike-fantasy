@@ -1,16 +1,15 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../siteConfig';
 import { formatDate, readingMinutes } from '../../lib/text';
 import { resolveSocialImage } from '../../lib/social';
+import { getPublishedPosts } from '../../lib/posts';
 import ContactLine from '../../components/brand/ContactLine.astro';
 import profile from '../../data/profile.json';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const posts = await getPublishedPosts();
 
   // Sorted newest first: the neighbour at index + 1 is the older post.
   return posts.map((post, index) => ({
@@ -50,7 +49,9 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
     author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.siteUrl },
   }}
 >
-  <a class="back" href="/blogs/">← Blog</a>
+  <a class="back" href="/blogs/">
+    ← Blog
+  </a>
   <h1>{title}</h1>
   <p class="metadata">
     <time datetime={date.toISOString()}>{formatDate(date)}</time> · {readingMinutes(post.body)} min
