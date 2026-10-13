@@ -13,7 +13,7 @@
     # SAMEORIGIN rather than DENY keeps the CMS preview and any own-site embeds working.
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
     # Enforced on every page. The Netlify Identity widget (invite / recovery links)
     # is the only third-party script on public pages. /admin gets its own, looser
     # policy below because Decap CMS loads from unpkg.com.
