@@ -14,12 +14,18 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
-    # Report-Only for now: it logs violations in the browser console without
-    # blocking anything. The Netlify Identity widget (invite / recovery links) and
-    # the /admin CMS load third-party scripts, so check the console on those flows,
-    # then rename this header to Content-Security-Policy to enforce it. /admin loads
-    # Decap CMS from unpkg.com and will log violations; that is expected.
-    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' https://identity.netlify.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+    # Enforced on every page. The Netlify Identity widget (invite / recovery links)
+    # is the only third-party script on public pages. /admin gets its own, looser
+    # policy below because Decap CMS loads from unpkg.com.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://identity.netlify.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+
+# The CMS shell. Listed after /* so this Content-Security-Policy replaces the
+# strict one above for /admin only. Decap CMS needs its script from unpkg.com,
+# inline styles, blob: previews and the GitHub API (git-gateway).
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob: https:; font-src 'self' data: https://unpkg.com; connect-src 'self' https://api.github.com https://identity.netlify.com https://*.netlify.com; frame-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'"
 
 # Keep the resume PDF out of search results and caches. Do not block it in
 # robots.txt for Googlebot: crawlers must be able to fetch it to see this header.
