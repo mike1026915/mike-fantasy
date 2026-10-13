@@ -1,0 +1,69 @@
+---
+import SectionTitle from '../resume/SectionTitle.astro';
+
+const { work } = Astro.props;
+---
+
+<SectionTitle text="Selected Work" />
+<div class="grid">
+  {work.map((item: any) => (
+    <article>
+      <div class="domain">{item.domain}</div>
+      <h3>{item.name}</h3>
+      <div class="meta">{item.role}, {item.company}</div>
+      <p>{item.summary}</p>
+      <a href="/resume">Read more in resume</a>
+    </article>
+  ))}
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  article {
+    background: var(--white);
+    padding: 2rem;
+    border-top: 0.4rem solid var(--dark-green);
+  }
+
+  article p {
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .domain {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: var(--dark-green);
+  }
+
+  h3 {
+    font-weight: 500;
+    margin: 0.5rem 0;
+  }
+
+  .meta {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--dark-green);
+  }
+
+  @media (max-width: 125vh) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  repo: mike1026915/mike-fantasy
+  branch: main
+
+publish_mode: editorial_workflow
+media_folder: "public/uploads"
+public_folder: "/uploads"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    extension: "md"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }

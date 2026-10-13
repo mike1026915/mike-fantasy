@@ -4,7 +4,7 @@
     pip install reportlab pypdf
     python3 scripts/generate-resume-pdf.py
 
-The output is committed to static/, so the Netlify build does not need Python.
+The output is committed to public/, so the Netlify build does not need Python.
 
 Privacy choices:
 - Only information that is already public on the site goes into the PDF.
@@ -35,7 +35,7 @@ from reportlab.platypus import (HRFlowable, KeepTogether, ListFlowable,
 
 ROOT = Path(__file__).resolve().parent.parent
 PROFILE = ROOT / 'src' / 'data' / 'profile.json'
-OUTPUT = ROOT / 'static' / 'Mike-Fang-Resume.pdf'
+OUTPUT = ROOT / 'public' / 'Mike-Fang-Resume.pdf'
 
 SITE = 'https://www.mike-fang.com'
 FOOTER_SITE = 'mike-fang.com'

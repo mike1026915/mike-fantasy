@@ -1,0 +1,12 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import Tag from '../Tag.astro';
+import TagList from '../TagList.astro';
+
+const { hobby } = Astro.props;
+---
+
+<SectionTitle text="Hobby" />
+<TagList>
+  {hobby.map((h: string) => <Tag value={h} />)}
+</TagList>

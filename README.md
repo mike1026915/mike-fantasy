@@ -2,34 +2,33 @@
 
 Personal website and resume for Mike Fang. The live site is [mike-fang.com](https://www.mike-fang.com).
 
-The home page is a brand overview and `/resume` is the full resume, both rendered from `src/data/profile.json`. Blog posts are MDX files under `src/blogs`, published at `/blogs/<slug>`.
+The home page is a brand overview and `/resume` is the full resume, both rendered from `src/data/profile.json`. Blog posts are Markdown or MDX files under `src/content/blog`, published at `/blogs/<slug>`.
 
 ## Stack
 
-- [Gatsby](https://www.gatsbyjs.com/) 2
-- React 16
-- styled-components
-- MDX for posts
-- Netlify CMS at `/admin`
+- [Astro](https://astro.build/) 7, static output
+- Astro components with scoped CSS
+- Markdown / MDX content collections for posts
+- Decap CMS (formerly Netlify CMS) at `/admin`
+- `@astrojs/sitemap` and `@astrojs/rss`
 
-Netlify builds with Node 16.18.0 and npm. `sharp` is pinned to 0.29.3 so image processing has a prebuilt binary on Apple Silicon and on that Netlify Node version. On Node 17 and newer, the Gatsby scripts enable OpenSSL's legacy provider so webpack 4 can still hash files. Node 16 does not receive that flag.
+Astro 7 needs Node 22.12 or newer. Netlify builds with Node 22.12.0 (see `netlify.toml`) and publishes `dist/`.
 
 ## Scripts
 
 ```shell
 npm install
-npm run develop
+npm run dev
 ```
 
-`npm start` is the same as `npm run develop`. The dev server is at http://localhost:8000.
+`npm start` is the same as `npm run dev`. The dev server is at http://localhost:4321.
 
 | Command | What it does |
 | --- | --- |
-| `npm run develop` | Start the dev server |
-| `npm run build` | Build the static site into `public/` |
-| `npm run serve` | Serve the production build |
-| `npm run clean` | Clear the Gatsby cache |
-| `npm run resume:pdf` | Regenerate `static/Mike-Fang-Resume.pdf` from `profile.json` |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Build the static site into `dist/` |
+| `npm run preview` | Serve the production build |
+| `npm run resume:pdf` | Regenerate `public/Mike-Fang-Resume.pdf` from `profile.json` |
 
 ## Routes
 
@@ -38,8 +37,9 @@ npm run develop
 | `/` | Brand overview from the `brand` block in `src/data/profile.json` |
 | `/resume` | Full resume from `src/data/profile.json` |
 | `/blogs` | Published posts (`draft: false`) |
-| `/blogs/<slug>` | One post, created in `gatsby-node.js` |
-| `/admin` | Netlify CMS |
+| `/blogs/<slug>` | One post, from `src/content/blog` |
+| `/rss.xml` | RSS feed of published posts |
+| `/admin` | Decap CMS |
 
 ## Edit the resume
 
@@ -67,7 +67,7 @@ Entries without `sections` stay a single bullet list.
 
 ## Add a blog post
 
-Create `src/blogs/<title>/index.mdx` (or `.md`). Posts with `draft: true` are left out of the blog index and are not given a page.
+Create `src/content/blog/<slug>.md` (or `.mdx`). Posts with `draft: true` are left out of the blog index and are not given a page.
 
 ```md
 ---
@@ -83,27 +83,28 @@ description: "Short summary used on the blog index."
 Post body.
 ```
 
-Netlify CMS writes the same shape through `/admin`. Its config is `static/admin/config.yml`.
+Decap CMS writes the same shape through `/admin`. Its config is `public/admin/config.yml`.
 
 ## Layout
 
 ```text
 src/data/profile.json          Resume content
-src/pages/index.js             Brand home page
-src/pages/resume.js            Resume page
+src/siteConfig.ts              Site title, description, menus, contacts
+src/content.config.ts          Blog collection schema
+src/content/blog/              Markdown / MDX posts
+src/pages/                     Routes: index, resume, blogs, rss.xml, 404
+src/layouts/Layout.astro       Page shell: head, sidebar, content
+src/components/SEO.astro       Per-page meta tags, canonical, JSON-LD
 src/components/brand/          Home page sections
-src/pages/blogs.js             Blog index
 src/components/resume/         Resume sections
-src/components/blog/           Post layout
-src/blogs/                     MDX posts
-gatsby-config.js               Site metadata and plugins
-gatsby-node.js                 Blog page creation
-static/admin/config.yml        Netlify CMS
+src/components/blog/           Blog index entry
+src/lib/                       Text helpers and the Person JSON-LD
+public/                        Fonts, resume PDF, robots.txt, /admin
 ```
 
 ## Resume PDF
 
-The "Download PDF" button on `/resume` links to `static/Mike-Fang-Resume.pdf`, served at `/Mike-Fang-Resume.pdf`. The file is generated from `src/data/profile.json` and committed, so Netlify does not need Python.
+The "Download PDF" button on `/resume` links to `public/Mike-Fang-Resume.pdf`, served at `/Mike-Fang-Resume.pdf`. The file is generated from `src/data/profile.json` and committed, so Netlify does not need Python.
 
 After editing the resume, regenerate it and commit the result:
 
@@ -119,4 +120,4 @@ Privacy settings:
 - The PDF only contains information that is already public on the site. The email is left out; set `RESUME_PUBLIC_EMAIL` when generating to include one.
 - Every page has a footer with the site and the update month.
 - All document metadata (author, creator, producer, dates, XMP) is stripped.
-- `netlify.toml` sends `X-Robots-Tag: noindex` for the PDF, and `static/robots.txt` asks AI crawlers to skip it. Search engines are not blocked in `robots.txt` so they can see the `noindex` header.
+- `netlify.toml` sends `X-Robots-Tag: noindex` for the PDF, and `public/robots.txt` asks AI crawlers to skip it. Search engines are not blocked in `robots.txt` so they can see the `noindex` header.

@@ -1,0 +1,104 @@
+---
+import { RESUME_PDF_PATH } from '../../siteConfig';
+
+const { name, chineseName, title, contacts } = Astro.props;
+
+const ICONS: Record<string, { path: string; viewBox: string }> = {
+  linkedin: {
+    path: 'M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z',
+    viewBox: '0 0 24 24',
+  },
+  email: {
+    path: 'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z',
+    viewBox: '0 0 24 24',
+  },
+  website: {
+    path: 'M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z',
+    viewBox: '0 0 24 24',
+  },
+  location: {
+    path: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
+    viewBox: '0 0 24 24',
+  },
+};
+---
+
+<header>
+  <div class="left">
+    <h1>{chineseName} {name}</h1>
+    <h3>{title}</h3>
+    <a class="download" href={RESUME_PDF_PATH} download rel="nofollow">Download PDF</a>
+  </div>
+  <div class="right">
+    {Object.entries(contacts).map(([key, contact]: [string, any]) => (
+      <div class="contact">
+        <svg viewBox={ICONS[key].viewBox} width="1em" height="1em" fill="currentColor" aria-hidden="true">
+          <path d={ICONS[key].path} />
+        </svg>
+        &nbsp;
+        <a href={contact.link} target="_blank" rel="noopener noreferrer">{contact.text}</a>
+      </div>
+    ))}
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.2rem solid var(--light-green);
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .left {
+    width: 66.67%;
+  }
+
+  .download {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    border: 0.15rem solid var(--dark-green);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--dark-green);
+  }
+
+  .download:hover {
+    background: var(--dark-green);
+    color: white;
+  }
+
+  .contact {
+    display: flex;
+  }
+
+  @media (min-width: 125vh) {
+    .right {
+      width: 33.33%;
+      display: flex;
+      flex-direction: column;
+      justify-items: space-between;
+      border-left: 0.2rem solid var(--light-green);
+      padding-left: 1.5rem;
+      padding-bottom: 0.5rem;
+      padding-top: 1rem;
+    }
+
+    .right a {
+      font-size: 1.5rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  @media (max-width: 125vh) {
+    .right {
+      display: none;
+    }
+  }
+</style>

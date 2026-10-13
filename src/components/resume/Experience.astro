@@ -1,0 +1,103 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import { inlineMarkup } from '../../lib/text';
+
+const { experience } = Astro.props;
+---
+
+<SectionTitle text="Experience" />
+<div>
+  {experience.map((e: any) => {
+    const sections = e.sections ?? [];
+    const events = e.events ?? [];
+
+    return (
+      <>
+        <div class="row">
+          <h3 class="role">{e.role}</h3>
+          <div class="period">{e.start} - {e.end}</div>
+        </div>
+        <div class="row">
+          <h4>{e.company}</h4>
+          <h4 class="location">{e.location}</h4>
+        </div>
+        <div>
+          {e.project && <a href={e.url}>{e.project}</a>}
+          {e.description && (
+            sections.length > 0 ? (
+              <p class="lead">{e.description}</p>
+            ) : (
+              <>
+                <br />
+                {e.description}
+              </>
+            )
+          )}
+        </div>
+        {sections.length > 0 ? (
+          sections.map((section: any) => (
+            <div>
+              <h4 class="section-heading">{section.title}</h4>
+              <ul class="events sections">
+                {section.events.map((event: string) => (
+                  <li set:html={inlineMarkup(event)} />
+                ))}
+              </ul>
+            </div>
+          ))
+        ) : (
+          <ul class="events">
+            {events.map((event: string) => (
+              <li set:html={inlineMarkup(event)} />
+            ))}
+          </ul>
+        )}
+      </>
+    );
+  })}
+</div>
+
+<style>
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .role {
+    text-decoration: underline;
+  }
+
+  .period,
+  .location {
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    margin: 0.2rem 0 0;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .events {
+    margin: 0.4rem 0 0;
+    padding-left: 2rem;
+  }
+
+  .sections :global(li) {
+    font-weight: 400;
+  }
+
+  .sections :global(strong) {
+    font-weight: 700;
+  }
+
+  .section-heading {
+    margin: 1.6rem 0 0.2rem;
+    font-family: 'OpenSansBold', 'OpenSans', 'Roboto', 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+</style>
