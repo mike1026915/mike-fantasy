@@ -5,7 +5,7 @@ const { contacts, resume = 'pdf' } = Astro.props;
 ---
 
 <div class="buttons">
-  <a class="primary" href={contacts.email.link}>
+  <a class="primary" href={contacts.email.link} data-copy-email={contacts.email.text}>
     Email Mike
   </a>
   <a href={contacts.linkedin.link} target="_blank" rel="noopener noreferrer">
@@ -21,6 +21,24 @@ const { contacts, resume = 'pdf' } = Astro.props;
     </a>
   )}
 </div>
+
+<script>
+  // Copy the address, then let the default mailto: navigation open the mail app.
+  document.querySelectorAll<HTMLAnchorElement>('[data-copy-email]').forEach((link) => {
+    const label = link.textContent;
+    let timer: number | undefined;
+    link.addEventListener('click', () => {
+      navigator.clipboard
+        ?.writeText(link.dataset.copyEmail ?? '')
+        .then(() => {
+          link.textContent = 'Email copied!';
+          clearTimeout(timer);
+          timer = window.setTimeout(() => (link.textContent = label), 2000);
+        })
+        .catch(() => {});
+    });
+  });
+</script>
 
 <style>
   .buttons {
