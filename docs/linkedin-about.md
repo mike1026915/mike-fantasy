@@ -1,6 +1,6 @@
 # LinkedIn About
 
-Paste the text below into LinkedIn → Profile → About (limit 2,600 characters; this is 2067).
+Paste the text below into LinkedIn → Profile → About (limit 2,600 characters; this is 2101).
 The website summary and highlights on `/resume` and in the PDF are the short version of this text.
 Keep them in sync when you edit either one.
 
@@ -17,7 +17,7 @@ Highlights
 • Redesigned access control in a production CRM with no downtime, no data migration and no disruption for legitimate users
 • Built AI candidate–job matching across tens of thousands of profiles; embeddings are reused until a profile changes, so re-running a match costs almost nothing in AI spend
 • Set up an AI-first engineering workflow: 36 Claude Code skills and 18 Cursor rules from one shared instruction file, with agents that cannot read secrets
-• Made backend builds 6× faster and linting 12× faster (~12s → ~2s, ~25s → ~2s)
+• Built an AI Resume Builder that saves consultants about 40% of the time they spend writing and managing resumes
 • Designed a request scheduler that cut unnecessary video generation requests by 60%, and led an onboarding task force that lifted retention by ~40% (Vyond)
 • Designed the sandbox update process and built the result analysis framework for Trend Micro Deep Discovery
 

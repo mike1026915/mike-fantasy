@@ -180,7 +180,7 @@
                         "Launched an **AI Data Explorer** that lets non-technical staff ask questions about CRM data in plain English, without filing report requests.",
                         "Built an **AI Resume Builder** that saves consultants about **40% of the time** they spend writing and managing resumes.",
                         "Built **AI usage and cost dashboards** with per-user breakdowns, so leadership can see and control LLM spending for the first time.",
-                        "Reduced unnecessary AI token spend by **10%**."
+                        "Reduced unnecessary AI token spend by **10%** by choosing a model that fits each feature."
                     ]
                 },
                 {
@@ -423,7 +423,7 @@
         "Redesigned access control in a production CRM with **no downtime**, no data migration and no disruption for legitimate users.",
         "Built **AI candidate–job matching** across tens of thousands of profiles; embeddings are reused until a profile changes, so re-running a match costs almost nothing in AI spend.",
         "Set up an **AI-first engineering workflow**: 36 Claude Code skills and 18 Cursor rules from one shared instruction file, with agents that cannot read secrets and every change gated by automated tests and type checks.",
-        "Made backend builds **6× faster** and linting **12× faster** (~12s → ~2s, ~25s → ~2s).",
+        "Built an **AI Resume Builder** that saves consultants about **40% of the time** they spend writing and managing resumes.",
         "Cut unnecessary video generation requests by **60%** with a request scheduler, and lifted onboarding retention by **~40%** at Vyond."
     ]
 }
