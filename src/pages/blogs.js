@@ -31,7 +31,9 @@ export default function BlogPage({data}) {
     return (
         <Layout>
             <SEO
-                subTitle="Blog"
+                title="Blog"
+                description="Notes from Mike Fang on software engineering, building products, and leading teams."
+                pathname="/blogs/"
             />
             <StyledHeader>
                 {`LOGGER.INFO({ Mike })`}

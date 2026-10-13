@@ -10,10 +10,10 @@ module.exports = {
     FAST_DEV: true,
   },
   siteMetadata: {
-    title: "Mike Fantasy",
+    title: "Mike Fang (方鍾豪) | Engineering Leader, Full-stack & AI",
     name: "Mike Fang",
     siteUrl: 'https://www.mike-fang.com',
-    description: "Engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.",
+    description: "Mike Fang is an engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.",
     url: "https://www.mike-fang.com",
     intro: "Try my best to do right things with right people then enjoy an easy life!",
     copyright: '© All rights reserved.',

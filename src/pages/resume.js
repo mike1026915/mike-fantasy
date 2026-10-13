@@ -50,7 +50,9 @@ export default function ResumePage() {
     return (
         <Layout>
             <SEO
-                subTitle="Resume"
+                title="Resume"
+                description="Resume of Mike Fang: experience leading full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity."
+                pathname="/resume/"
                 ogType="profile"
             />
             <Header

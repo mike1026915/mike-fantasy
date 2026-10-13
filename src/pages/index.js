@@ -3,7 +3,8 @@ import React from 'react';
 import resume from '../data/profile';
 
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import SEO, { buildPersonSchema } from '../components/SEO';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 import Tag from '../components/Tag';
 import TagList from '../components/TagList';
 import SectionTitle from '../components/resume/SectionTitle';
@@ -14,12 +15,18 @@ import ContactLine from '../components/brand/ContactLine';
 
 export default function IndexPage() {
     const { brand } = resume;
+    const { siteMetadata } = useSiteMetadata();
 
     return (
         <Layout>
             <SEO
-                subTitle="Home"
+                pathname="/"
                 ogType="profile"
+                jsonLd={buildPersonSchema({
+                    siteMetadata,
+                    jobTitle: brand.title,
+                    alternateName: resume.chineseName,
+                })}
             />
             <Hero
                 name={resume.name}
