@@ -11,7 +11,7 @@ export const siteConfig = {
     { label: 'Blog', path: '/blogs/' },
   ],
   contacts: {
-    email: 'mailto:mike1026915.cs96@g2.nctu.edu.tw',
+    email: 'mailto:me@mike-fang.com',
     github: 'https://github.com/mike1026915/',
     linkedin: 'https://www.linkedin.com/in/mike1026915/',
     instagram: 'https://www.instagram.com/mike1026915/',
