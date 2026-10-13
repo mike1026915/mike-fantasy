@@ -8,6 +8,10 @@
             "link": "https://www.linkedin.com/in/mike1026915/",
             "text": "My LinkedIn"
         },
+        "github": {
+            "link": "https://github.com/mike1026915/",
+            "text": "My GitHub"
+        },
         "website": {
             "link": "https://www.mike-fang.com",
             "text": "My Personal Website"
@@ -158,7 +162,7 @@
             "project": "BHRC CRM",
             "url": "https://app.brucehr.com.tw/",
             "start": "12/2024",
-            "end": "now",
+            "end": "present",
             "description": "Sole lead software engineer of BHRC's internal recruitment, sales and market-research CRM. I designed, built and operate the whole platform: backend, frontend, database, AI, cloud and deployment. Used daily by consultants, sales and leadership across tens of thousands of candidate profiles.",
             "sections": [
                 {

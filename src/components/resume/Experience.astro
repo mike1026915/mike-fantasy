@@ -67,6 +67,16 @@ const { experience } = Astro.props;
 
   .role {
     text-decoration: underline;
+    margin-top: 1.6rem;
+  }
+
+  .row + .row {
+    margin-top: 0.4rem;
+  }
+
+  .row + div > a {
+    display: inline-block;
+    margin-top: 0.6rem;
   }
 
   .period,
@@ -76,7 +86,8 @@ const { experience } = Astro.props;
   }
 
   .lead {
-    margin: 0.2rem 0 0;
+    margin: 0.8rem 0 0;
+    line-height: 1.7;
     font-style: italic;
     font-weight: 400;
   }
@@ -86,8 +97,12 @@ const { experience } = Astro.props;
     padding-left: 2rem;
   }
 
-  .sections :global(li) {
+  .events :global(li) {
     font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.6;
+    padding-bottom: 0.6rem;
+    color: #2b2f33;
   }
 
   .sections :global(strong) {

@@ -76,6 +76,16 @@ aside q {
   font-weight: 300;
 }
 
+main a {
+  /* Darkened --dark-green so link text keeps enough contrast on the grey page. */
+  color: color-mix(in srgb, var(--dark-green) 70%, black);
+  text-decoration-color: var(--light-green);
+}
+
+main a:hover {
+  color: var(--blue);
+}
+
 aside a {
   color: var(--white);
   text-decoration-color: var(--brown);
