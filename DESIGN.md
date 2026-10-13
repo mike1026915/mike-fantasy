@@ -201,7 +201,7 @@ Mostly square and ruled. Cards and sections have no rounding; separation is by 0
 ### Tags
 
 - **Style:** Moss Ledger pill (15px radius), Page Paper text, Sora 1.5rem, 0.8rem 1rem padding, 0.5rem margin; wrapped in a flex-wrap list.
-- **Use:** Blog tags only. Static, not interactive. Skills and hobbies on the resume are a run-in text list separated by Sage Rule middots, because a wall of pills reads as buttons.
+- **Use:** Skills, hobbies and blog tags. Static, not interactive.
 
 ### Cards / Containers
 

@@ -24,12 +24,6 @@ import { buildPersonSchema } from '../lib/schema';
     title={resume.title}
     contacts={resume.contacts}
   />
-  <nav class="jump" aria-label="On this page">
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#hobby">Hobby</a>
-  </nav>
   <Summary summary={resume.summary} highlights={resume.summaryHighlights} />
   <div class="columns">
     <div class="left">
@@ -45,21 +39,6 @@ import { buildPersonSchema } from '../lib/schema';
 </Layout>
 
 <style>
-  .jump {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 2.5rem;
-    padding-top: 0.5rem;
-  }
-
-  .jump a {
-    display: inline-block;
-    padding: 1.1rem 0;
-    font-family: var(--sans);
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
   .columns {
     display: flex;
   }
