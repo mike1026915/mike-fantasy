@@ -21,11 +21,12 @@
 
 # The CMS shell. Listed after /* so this Content-Security-Policy replaces the
 # strict one above for /admin only. Decap CMS needs its script from unpkg.com,
-# inline styles, blob: previews and the GitHub API (git-gateway).
+# inline styles, blob: previews and the GitHub API (git-gateway). 'unsafe-eval'
+# is required: Decap CMS evaluates its config/widgets with eval and fails to load without it.
 [[headers]]
   for = "/admin/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob: https:; font-src 'self' data: https://unpkg.com; connect-src 'self' https://api.github.com https://identity.netlify.com https://*.netlify.com; frame-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob: https:; font-src 'self' data: https://unpkg.com; connect-src 'self' https://api.github.com https://identity.netlify.com https://*.netlify.com; frame-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'"
 
 # Keep the resume PDF out of search results and caches. Do not block it in
 # robots.txt for Googlebot: crawlers must be able to fetch it to see this header.
