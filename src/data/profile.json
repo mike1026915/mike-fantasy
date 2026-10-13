@@ -6,11 +6,15 @@
         },
         "linkedin": {
             "link": "https://www.linkedin.com/in/mike1026915/",
-            "text": "LinkedIn"
+            "text": "My LinkedIn"
         },
         "github": {
             "link": "https://github.com/mike1026915/",
-            "text": "GitHub"
+            "text": "My GitHub"
+        },
+        "website": {
+            "link": "https://www.mike-fang.com",
+            "text": "My Personal Website"
         },
         "location": {
             "link": "https://en.wikipedia.org/wiki/Taipei",
