@@ -44,9 +44,14 @@ typography:
     fontSize: '1.5rem'
     fontWeight: 400
     lineHeight: 'normal'
+  invite:
+    fontFamily: "'Sora Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    fontSize: 'clamp(1.8rem, 1.45vw, 2.2rem)'
+    fontWeight: 400
+    lineHeight: 1.4
   lead:
     fontFamily: "'Open Sans Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-    fontSize: '2.4rem'
+    fontSize: 'clamp(2.2rem, 2.2vw, 2.8rem)'
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: '0.05rem'
@@ -153,8 +158,9 @@ A restrained, earthy palette: two greens carry identity, a cool charcoal carries
 - **Display** (700, 4rem / 40px, uppercase): Page identity: the name on Home and Resume. Chinese name is set in the same line with `lang="zh-Hant"`.
 - **Headline** (500, 3rem / 30px): Section titles, always sitting on a 1rem Sage Rule bar.
 - **Title** (300 default, 500 in cards, 2.34rem): Card titles and job headings.
-- **Lead** (400, 2.4rem, line-height 1.5, max 80rem): The one-line positioning statement under the name.
+- **Lead** (400, clamp(2.2rem, 2.2vw, 2.8rem), line-height 1.5, max 90rem): The one-line positioning statement under the name.
 - **Body** (500, 1.751rem, 0.05rem tracking): Paragraphs and list items. Long resume bullets use weight 400, line-height 1.6 to 1.7.
+- **Invite** (400, clamp(1.8rem, 1.45vw, 2.2rem), line-height 1.4): The closing invitation sentence; scaled so it fits on one line on desktop.
 - **Small** (400, 1.5rem): Links, role lines, dates, context lines under a stat.
 - **Label** (500, 1.3rem, 0.1rem tracking, uppercase): Domain tags such as HR TECH, SAAS, ADTECH.
 
