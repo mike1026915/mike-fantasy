@@ -1,0 +1,153 @@
+@font-face {
+  font-family: Sora;
+  src: url('/fonts/Sora-Medium.ttf');
+}
+@font-face {
+  font-family: Montserrat;
+  src: url('/fonts/Montserrat-Medium.ttf');
+}
+@font-face {
+  font-family: Roboto;
+  src: url('/fonts/Roboto-Light.ttf');
+}
+@font-face {
+  font-family: OpenSans;
+  src: url('/fonts/OpenSans-Light.ttf');
+}
+@font-face {
+  font-family: OpenSansBold;
+  src: url('/fonts/OpenSans-Bold.ttf');
+  font-weight: 700;
+}
+
+:root {
+  --black: #404449;
+  --blue: #093e47;
+  --white: #ffffff;
+  --grey: #dce0e2;
+  --light-grey: #eeeeee;
+  --light-green: #7d9a64;
+  --dark-green: #6a6e4f;
+  --red: #96244e;
+  --brown: #615400;
+  --side-panel-size: 30vh;
+  --side-panel-left-padding: 5%;
+  --side-panel-right-padding: 1%;
+  --sans: 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --body: 'OpenSans', 'Roboto', 'Sora', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-size: 10px;
+  min-height: 100vh;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--sans);
+}
+
+body {
+  font-size: 2rem;
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  height: 8px;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  font-weight: 500;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  font-weight: 500;
+  color: var(--grey);
+  display: flex;
+  flex-direction: column;
+}
+
+aside q {
+  font-family: 'Montserrat', 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+aside a {
+  color: var(--grey);
+  text-decoration-color: var(--brown);
+}
+
+p,
+li {
+  margin: 0;
+  font-family: var(--body);
+  letter-spacing: 0.05rem;
+  font-size: 1.751rem;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 500;
+  margin: 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  margin: 0;
+}
+
+mark,
+.mark {
+  background: var(--light-green);
+  padding: 0 2px 2px 2px;
+  margin: 0;
+  display: inline;
+  line-height: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Tags (skills, hobbies, blog tags) */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.tag {
+  width: fit-content;
+  background: var(--dark-green);
+  color: var(--light-grey);
+  padding: 0.75rem;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-family: var(--sans);
+  margin: 0.5rem;
+}
+
+.tag:hover {
+  color: #333;
+  background: var(--light-green);
+  cursor: pointer;
+}

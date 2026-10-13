@@ -1,0 +1,48 @@
+---
+const { proofPoints } = Astro.props;
+---
+
+<ul>
+  {proofPoints.map((point: any) => (
+    <li>
+      <div class="value">{point.value}</div>
+      {point.text}
+      <div class="domain">{point.domain}</div>
+    </li>
+  ))}
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    gap: 2rem;
+    margin: 2.5rem 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    flex: 1;
+    padding: 0 0 0 1.5rem;
+    border-left: 0.4rem solid var(--light-green);
+    font-weight: 400;
+  }
+
+  .value {
+    font-size: 3.2rem;
+    color: var(--dark-green);
+  }
+
+  .domain {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 125vh) {
+    ul {
+      flex-direction: column;
+    }
+  }
+</style>

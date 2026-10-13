@@ -1,0 +1,59 @@
+---
+import { siteConfig } from '../siteConfig';
+import previewImage from '../images/preview.png';
+import iconImage from '../images/icon.png';
+
+interface Props {
+  /** Page title. Omit on the home page to use the site title as is. */
+  title?: string;
+  description?: string;
+  /** Used for the canonical and og:url, e.g. "/resume/". Omit with `noindex`. */
+  pathname?: string;
+  /** Keep the page out of search results and skip the canonical. */
+  noindex?: boolean;
+  ogType?: string;
+  /** Absolute URL; falls back to the site preview image. */
+  image?: string;
+  /** Object or array of objects serialised as JSON-LD. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description = siteConfig.description,
+  pathname,
+  noindex = false,
+  ogType = 'website',
+  image = `${siteConfig.siteUrl}${previewImage.src}`,
+  jsonLd,
+} = Astro.props;
+
+const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.title;
+const url = pathname ? `${siteConfig.siteUrl}${pathname}` : undefined;
+// `<` is escaped so a value such as "</script>" cannot end the JSON-LD block.
+const jsonLdText = jsonLd && JSON.stringify(jsonLd).replace(/</g, '\\u003c');
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{pageTitle}</title>
+{url && !noindex && <link rel="canonical" href={url} />}
+{noindex && <meta name="robots" content="noindex" />}
+<link rel="icon" type="image/png" href={iconImage.src} />
+<link rel="alternate" type="application/rss+xml" title={siteConfig.name} href="/rss.xml" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="description" content={description} />
+
+{url && !noindex && <meta property="og:url" content={url} />}
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:image" content={image} />
+<meta property="og:site_name" content={siteConfig.name} />
+<meta property="og:description" content={description} />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@mike1026915" />
+<meta name="twitter:creator" content="@mike1026915" />
+
+{jsonLdText && <script type="application/ld+json" set:html={jsonLdText} />}

@@ -1,0 +1,24 @@
+---
+const { contacts } = Astro.props;
+---
+
+<div class="contact-line">
+  <a href={contacts.linkedin.link} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href={contacts.email.link}>{contacts.email.text}</a>
+  <a href="/resume/">Full resume</a>
+</div>
+
+<style>
+  .contact-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-top: 0.2rem solid var(--light-green);
+    font-size: 1.75rem;
+  }
+
+  a {
+    color: var(--dark-green);
+  }
+</style>

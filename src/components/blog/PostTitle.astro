@@ -1,0 +1,41 @@
+---
+import Tag from '../Tag.astro';
+import { formatDate } from '../../lib/text';
+
+const { post } = Astro.props;
+const { title, date, tags, description, slug } = post.data;
+---
+
+<div>
+  <div class="tags">
+    {tags.map((t: string) => <Tag value={t} />)}
+  </div>
+  <h2><a href={`/blogs/${slug}/`}> {title} </a></h2>
+  <h5>{formatDate(date)}</h5>
+  <p>{description}</p>
+</div>
+
+<style>
+  .tags {
+    display: flex;
+  }
+
+  .tags :global(p) {
+    margin-right: 5px;
+    font-size: 1rem;
+  }
+
+  h2 {
+    letter-spacing: 0.05rem;
+    word-spacing: 0.25rem;
+  }
+
+  h2 a {
+    color: var(--dark-green);
+    text-decoration: none;
+  }
+
+  h5 {
+    font-style: italic;
+  }
+</style>

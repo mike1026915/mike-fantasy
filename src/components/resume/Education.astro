@@ -1,0 +1,44 @@
+---
+import SectionTitle from './SectionTitle.astro';
+
+const { education } = Astro.props;
+---
+
+<SectionTitle text="Education" />
+<div>
+  {education.map((e: any) => (
+    <>
+      <div class="row">
+        <h3 class="degree">{e.degree}</h3>
+        <div class="period">{e.start} - {e.end}</div>
+      </div>
+      <div class="row">
+        <h4><a href={e.url}> {e.school} </a></h4>
+        <h4 class="location">{e.location}</h4>
+      </div>
+      {e.thesis && (
+        <ul>
+          <li> Thesis: {e.thesis} </li>
+        </ul>
+      )}
+    </>
+  ))}
+</div>
+
+<style>
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .degree {
+    text-decoration: underline;
+  }
+
+  .period,
+  .location {
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+</style>

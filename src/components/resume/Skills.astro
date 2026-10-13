@@ -1,0 +1,27 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import Tag from '../Tag.astro';
+import TagList from '../TagList.astro';
+
+const { skills } = Astro.props;
+---
+
+<div class="skills">
+  <SectionTitle text="Skills" />
+  {skills.map((skill: any) => (
+    <>
+      <div>
+        <h3>{skill.title}</h3>
+      </div>
+      <TagList>
+        {skill.items.map((item: string) => <Tag value={item} />)}
+      </TagList>
+    </>
+  ))}
+</div>
+
+<style>
+  .skills {
+    margin-bottom: 3rem;
+  }
+</style>

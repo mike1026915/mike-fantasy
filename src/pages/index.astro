@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/brand/Hero.astro';
+import ProofPoints from '../components/brand/ProofPoints.astro';
+import SelectedWork from '../components/brand/SelectedWork.astro';
+import ContactLine from '../components/brand/ContactLine.astro';
+import SectionTitle from '../components/resume/SectionTitle.astro';
+import Tag from '../components/Tag.astro';
+import TagList from '../components/TagList.astro';
+import resume from '../data/profile.json';
+import { buildPersonSchema } from '../lib/schema';
+
+const { brand } = resume;
+---
+
+<Layout
+  pathname="/"
+  ogType="profile"
+  jsonLd={buildPersonSchema(brand.title, resume.chineseName)}
+>
+  <Hero name={resume.name} chineseName={resume.chineseName} title={brand.title} line={brand.line} />
+  <ProofPoints proofPoints={brand.proofPoints} />
+  <SelectedWork work={brand.selectedWork} />
+  <SectionTitle text="What I Bring" />
+  <TagList>
+    {brand.signatureSkills.map((skill) => <Tag value={skill} />)}
+  </TagList>
+  <ContactLine contacts={resume.contacts} />
+</Layout>

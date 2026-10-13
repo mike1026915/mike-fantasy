@@ -1,1 +1,0 @@
-export const RESPONSIVE_BOUNDARY = '125vh';
