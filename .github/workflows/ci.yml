@@ -28,9 +28,9 @@ jobs:
         run: npm run lint
       - name: Type check
         run: npm run check
+      - name: Build (tests inspect dist)
+        run: npm run build
       - name: Unit tests
         run: npm test
       - name: Resume PDF is up to date
         run: npm run resume:check
-      - name: Build
-        run: npm run build
