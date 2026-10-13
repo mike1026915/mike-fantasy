@@ -166,7 +166,8 @@
                     "events": [
                         "Built and run the CRM behind BHRC’s recruiting business. It’s used daily by consultants, sales and leadership, manages a candidate database of **tens of thousands of profiles**, and covers the whole hiring flow from sourcing to placement.",
                         "Built a **Salary Report** that shows pay against years of experience across the candidate database. Consultants can filter by job function, location, project, job opening and date, remove outliers, and export the chart. They use it to give clients and candidates salary advice backed by data.",
-                        "Built a **Sales Sheet** module that tracks consultant targets, deals and replacement hires in one place, replacing spreadsheet-based tracking."
+                        "Built a **Sales Sheet** module that tracks consultant targets, deals and replacement hires in one place, replacing spreadsheet-based tracking.",
+                        "Built **pipeline metrics** that help the team **forecast sales numbers**."
                     ]
                 },
                 {
@@ -177,7 +178,9 @@
                         "Built an **AI resume-vs-job match review** that gives a match score with reasons for and against, strengths, red flags and suggested improvements. Consultants can then ask the AI follow-up questions about the match.",
                         "Launched an **AI Earning Call Reader** that has turned **175 earnings calls** into hiring leads for consultants in its first two months. It includes a model-evaluation step so AI upgrades are checked before rollout.",
                         "Launched an **AI Data Explorer** that lets non-technical staff ask questions about CRM data in plain English, without filing report requests.",
-                        "Built **AI usage and cost dashboards** with per-user breakdowns, so leadership can see and control LLM spending for the first time."
+                        "Built an **AI Resume Builder** that saves consultants about **40% of the time** they spend writing and managing resumes.",
+                        "Built **AI usage and cost dashboards** with per-user breakdowns, so leadership can see and control LLM spending for the first time.",
+                        "Reduced unnecessary AI token spend by **10%**."
                     ]
                 },
                 {
