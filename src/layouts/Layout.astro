@@ -17,6 +17,21 @@ const seo = Astro.props;
         <slot />
       </main>
     </div>
+    <script is:inline>
+      // Netlify Identity invite, recovery and confirmation links land on the site
+      // root with a token in the hash. Load the widget only then, so normal visits
+      // do not pay for it, and send the user to the CMS once they are logged in.
+      if (/(invite|recovery|confirmation|email_change)_token=/.test(window.location.hash)) {
+        var identity = document.createElement('script');
+        identity.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+        identity.onload = function () {
+          window.netlifyIdentity.on('login', function () {
+            window.location.href = '/admin/';
+          });
+        };
+        document.head.appendChild(identity);
+      }
+    </script>
   </body>
 </html>
 
