@@ -36,6 +36,7 @@ const anchor = (company: string, role: string) =>
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 3rem;
   }
 
@@ -48,7 +49,6 @@ const anchor = (company: string, role: string) =>
   /* The lead story spans the row; the other three share one row beneath it. */
   article:first-child {
     grid-column: 1 / -1;
-    border-top-width: 0.8rem;
   }
 
   article:first-child h3 {

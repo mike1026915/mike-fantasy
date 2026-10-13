@@ -1,5 +1,5 @@
 ---
-import { RESUME_PDF_PATH } from '../../siteConfig';
+import ContactButtons from '../brand/ContactButtons.astro';
 
 const { name, chineseName, title, contacts } = Astro.props;
 
@@ -33,9 +33,7 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
       <span lang="zh-Hant">{chineseName}</span> {name}
     </h1>
     <p class="role">{title}</p>
-    <a class="download" href={RESUME_PDF_PATH} download rel="nofollow">
-      Download PDF
-    </a>
+    <ContactButtons contacts={contacts} />
   </div>
   <div class="right">
     {Object.entries(contacts).map(([key, contact]: [string, any]) => (
@@ -64,7 +62,7 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     display: flex;
     justify-content: space-between;
     border-bottom: 0.2rem solid var(--light-green);
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 
   h1 {
@@ -77,28 +75,12 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
 
   /* A tagline, not a heading: keeps the h1 -> h2 outline intact. */
   .role {
+    margin-bottom: 1.5rem;
     font-family: var(--sans);
     font-size: 2.34rem;
     font-weight: 300;
     letter-spacing: normal;
     padding-bottom: 0;
-  }
-
-  .download {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    border: 0.15rem solid var(--dark-green);
-    border-radius: 0.3rem;
-    font-size: 1.5rem;
-    font-family: var(--sans);
-    text-decoration: none;
-    color: var(--dark-green);
-  }
-
-  .download:hover {
-    background: var(--dark-green);
-    color: white;
   }
 
   .contact {
@@ -135,10 +117,6 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   @media (max-width: 960px) {
     header {
       flex-direction: column;
-    }
-
-    h1 {
-      font-size: 3rem;
     }
 
     .left {

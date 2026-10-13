@@ -15,10 +15,10 @@ const { education } = Astro.props;
         </div>
       </div>
       <div class="row">
-        <h4>
+        <p class="school">
           <a href={e.url}> {e.school} </a>
-        </h4>
-        <h4 class="location">{e.location}</h4>
+        </p>
+        <p class="location">{e.location}</p>
       </div>
       {e.thesis && (
         <ul>
@@ -40,9 +40,21 @@ const { education } = Astro.props;
     text-decoration: underline;
   }
 
+  .school {
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: var(--sans);
+    letter-spacing: normal;
+    padding-bottom: 0;
+  }
+
   .period,
   .location {
     font-style: italic;
     font-size: 1.5rem;
+    font-weight: 300;
+    font-family: var(--sans);
+    letter-spacing: normal;
+    padding-bottom: 0;
   }
 </style>

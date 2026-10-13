@@ -1,14 +1,37 @@
 ---
 import SectionTitle from './SectionTitle.astro';
-import Tag from '../Tag.astro';
-import TagList from '../TagList.astro';
 
 const { hobby } = Astro.props;
 ---
 
 <SectionTitle text="Hobby" />
-<TagList>
+<ul>
   {hobby.map((h: string) => (
-    <Tag value={h} />
+    <li>{h}</li>
   ))}
-</TagList>
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.7;
+  }
+
+  li:not(:last-child)::after {
+    content: '\00b7';
+    margin: 0 0.7rem;
+    color: var(--light-green);
+    font-weight: 700;
+  }
+</style>

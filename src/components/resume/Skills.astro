@@ -1,7 +1,5 @@
 ---
 import SectionTitle from './SectionTitle.astro';
-import Tag from '../Tag.astro';
-import TagList from '../TagList.astro';
 
 const { skills } = Astro.props;
 ---
@@ -9,21 +7,51 @@ const { skills } = Astro.props;
 <div class="skills">
   <SectionTitle text="Skills" />
   {skills.map((skill: any) => (
-    <>
-      <div>
-        <h3>{skill.title}</h3>
-      </div>
-      <TagList>
+    <section>
+      <h3>{skill.title}</h3>
+      <ul>
         {skill.items.map((item: string) => (
-          <Tag value={item} />
+          <li>{item}</li>
         ))}
-      </TagList>
-    </>
+      </ul>
+    </section>
   ))}
 </div>
 
 <style>
   .skills {
     margin-bottom: 3rem;
+  }
+
+  section {
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Run-in text list: a wall of 70 pills read as buttons and hid the groups. */
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.7;
+  }
+
+  li:not(:last-child)::after {
+    content: '\00b7';
+    margin: 0 0.7rem;
+    color: var(--light-green);
+    font-weight: 700;
   }
 </style>

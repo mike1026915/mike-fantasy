@@ -1,9 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactLine from '../components/brand/ContactLine.astro';
 import { siteConfig } from '../siteConfig';
+import profile from '../data/profile.json';
 ---
 
-<Layout title="Page not found" noindex>
+<Layout
+  title="Page not found"
+  description="The page you are looking for does not exist or has moved."
+  noindex
+>
   <h1>Page not found</h1>
   <p class="lead">The page you are looking for does not exist or has moved.</p>
   <ul class="links">
@@ -13,24 +19,44 @@ import { siteConfig } from '../siteConfig';
       </li>
     ))}
   </ul>
+  <ContactLine contacts={profile.contacts} />
 </Layout>
 
 <style>
   .lead {
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 2rem;
     font-size: clamp(2.2rem, 2.2vw, 2.8rem);
   }
 
   .links {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 1rem 1.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  a {
+  .links li {
+    padding: 0;
+  }
+
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 4.4rem;
+    padding: 0 2.2rem;
+    border: 0.2rem solid var(--dark-green);
+    border-radius: 0.3rem;
+    font-family: var(--sans);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
     color: var(--dark-green);
+  }
+
+  .links a:hover {
+    background: var(--dark-green);
+    color: var(--white);
   }
 </style>

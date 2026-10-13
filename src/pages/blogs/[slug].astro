@@ -4,6 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../siteConfig';
 import { formatDate, readingMinutes } from '../../lib/text';
 import { resolveSocialImage } from '../../lib/social';
+import ContactLine from '../../components/brand/ContactLine.astro';
+import profile from '../../data/profile.json';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
@@ -74,6 +76,7 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
       )}
     </div>
   </nav>
+  <ContactLine contacts={profile.contacts} />
 </Layout>
 
 <style>

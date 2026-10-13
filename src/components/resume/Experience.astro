@@ -27,8 +27,8 @@ const anchor = (company: string, role: string) =>
           </div>
         </div>
         <div class="row">
-          <h4>{e.company}</h4>
-          <h4 class="location">{e.location}</h4>
+          <p class="company">{e.company}</p>
+          <p class="location">{e.location}</p>
         </div>
         <div>
           {e.project && <a href={e.url}>{e.project}</a>}
@@ -87,10 +87,22 @@ const anchor = (company: string, role: string) =>
     margin-top: 0.6rem;
   }
 
+  .company {
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: var(--sans);
+    letter-spacing: normal;
+    padding-bottom: 0;
+  }
+
   .period,
   .location {
     font-style: italic;
     font-size: 1.5rem;
+    font-weight: 300;
+    font-family: var(--sans);
+    letter-spacing: normal;
+    padding-bottom: 0;
   }
 
   .lead {

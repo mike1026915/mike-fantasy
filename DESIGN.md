@@ -15,7 +15,7 @@ colors:
 typography:
   display:
     fontFamily: "'Sora Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-    fontSize: '4rem'
+    fontSize: 'clamp(2.8rem, 5vw, 4rem)'
     fontWeight: 700
     lineHeight: 'normal'
     letterSpacing: 'normal'
@@ -155,7 +155,7 @@ A restrained, earthy palette: two greens carry identity, a cool charcoal carries
 
 - **Stat** (700, clamp(4rem, 6vw, 5.6rem), line-height 1.1, Moss Link color): The quantified result that leads each proof point.
 - **Base** (2rem on `body`): Not used for reading text. It is the em base the default heading sizes multiply (h1 = 2em = 4rem, h2 = 1.5em = 3rem), so changing it rescales every heading.
-- **Display** (700, 4rem / 40px, uppercase): Page identity: the name on Home and Resume. Chinese name is set in the same line with `lang="zh-Hant"`.
+- **Display** (700, clamp(2.8rem, 5vw, 4rem), uppercase): Page identity: the name on Home and Resume. Chinese name is set in the same line with `lang="zh-Hant"`.
 - **Headline** (500, 3rem / 30px): Section titles, always sitting on a 1rem Sage Rule bar.
 - **Title** (300 default, 500 in cards, 2.34rem): Card titles and job headings.
 - **Lead** (400, clamp(2.2rem, 2.2vw, 2.8rem), line-height 1.5, max 90rem): The one-line positioning statement under the name.
@@ -176,7 +176,7 @@ A two-column shell: a fixed sidebar of `clamp(24rem, 30vh, 50rem)` plus 5% / 1% 
 
 Spacing rhythm is built from 0.5, 1, 1.5, 2 and 3rem. Tight groups use 0.5 to 1rem; separate sections use 2 to 3rem.
 
-The single breakpoint is 960px. Below it the sidebar collapses to a 50px rail with a toggle, the content margin becomes 50px, proof points stack, and the grid becomes one column.
+The single breakpoint is 960px. Below it the sidebar becomes a top bar with a labelled menu toggle, the content column takes the full width, proof points stack, and the grid becomes one column.
 
 ## Elevation & Depth
 
@@ -202,7 +202,7 @@ Mostly square and ruled. Cards and sections have no rounding; separation is by 0
 ### Tags
 
 - **Style:** Moss Ledger pill (15px radius), Page Paper text, Sora 1.5rem, 0.8rem 1rem padding, 0.5rem margin; wrapped in a flex-wrap list.
-- **Use:** Skills, signature skills, hobbies and blog tags. Static, not interactive.
+- **Use:** Blog tags only. Static, not interactive. Skills and hobbies on the resume are a run-in text list separated by Sage Rule middots, because a wall of pills reads as buttons.
 
 ### Cards / Containers
 
@@ -214,7 +214,7 @@ Mostly square and ruled. Cards and sections have no rounding; separation is by 0
 
 - **Sidebar:** Moss Ledger background, white text. Portrait, name (3rem bold), italic quote, vertical menu in Sora 600 at 1.5rem, then icon-only contact links in white.
 - **States:** Hover nudges a link 0.8rem to the right; the current page is marked by a thicker 0.2rem underline.
-- **Mobile:** Collapses to a 50px rail with a toggle that expands the panel.
+- **Mobile:** Becomes a full-width top bar (name on the left, a labelled "Menu" toggle on the right) that opens the same panel beneath it. The content column uses the full width.
 
 ### Section title
 

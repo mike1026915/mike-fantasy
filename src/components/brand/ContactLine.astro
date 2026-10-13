@@ -1,14 +1,14 @@
 ---
 import ContactButtons from './ContactButtons.astro';
 
-const { contacts } = Astro.props;
+const { contacts, resume = 'page' } = Astro.props;
 ---
 
 <section class="contact">
   <p class="invite">
     Open to conversations about engineering leadership and AI product engineering.
   </p>
-  <ContactButtons contacts={contacts} resume="page" />
+  <ContactButtons contacts={contacts} resume={resume} />
   <p class="address">
     <a href={contacts.email.link}>{contacts.email.text}</a>
   </p>
@@ -16,6 +16,7 @@ const { contacts } = Astro.props;
 
 <style>
   .contact {
+    margin-top: 3rem;
     padding: 2.5rem 0 2rem;
     border-top: 0.2rem solid var(--light-green);
   }

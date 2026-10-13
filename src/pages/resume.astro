@@ -6,6 +6,7 @@ import Skills from '../components/resume/Skills.astro';
 import Hobby from '../components/resume/Hobby.astro';
 import Experience from '../components/resume/Experience.astro';
 import Education from '../components/resume/Education.astro';
+import ContactLine from '../components/brand/ContactLine.astro';
 import resume from '../data/profile.json';
 import { buildPersonSchema } from '../lib/schema';
 ---
@@ -34,6 +35,7 @@ import { buildPersonSchema } from '../lib/schema';
       <Hobby hobby={resume.hobby} />
     </div>
   </div>
+  <ContactLine contacts={resume.contacts} resume="pdf" />
 </Layout>
 
 <style>
