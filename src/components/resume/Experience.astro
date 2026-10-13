@@ -31,7 +31,11 @@ const anchor = (company: string, role: string) =>
           <p class="location">{e.location}</p>
         </div>
         <div>
-          {e.project && <a class="project" href={e.url}>{e.project} ↗</a>}
+          {e.project && (
+            <a class="project" href={e.url}>
+              {e.project} ↗
+            </a>
+          )}
           {e.description &&
             (sections.length > 0 ? (
               <p class="lead">{e.description}</p>
