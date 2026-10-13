@@ -83,6 +83,8 @@ description: "Short summary used on the blog index."
 Post body.
 ```
 
+Optional `socialImage` sets the post's `og:image` and JSON-LD image. Use a full URL or a site path such as `/uploads/cover.jpg` (files in `public/uploads/`); a bare file name is ignored and the site preview image is used.
+
 Decap CMS writes the same shape through `/admin`. Its config is `public/admin/config.yml`.
 
 ## Layout

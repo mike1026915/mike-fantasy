@@ -32,9 +32,11 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   <div class="right">
     {Object.entries(contacts).map(([key, contact]: [string, any]) => (
       <div class="contact">
-        <svg viewBox={ICONS[key].viewBox} width="1em" height="1em" fill="currentColor" aria-hidden="true">
-          <path d={ICONS[key].path} />
-        </svg>
+        {ICONS[key] && (
+          <svg viewBox={ICONS[key].viewBox} width="1em" height="1em" fill="currentColor" aria-hidden="true">
+            <path d={ICONS[key].path} />
+          </svg>
+        )}
         &nbsp;
         <a href={contact.link} target="_blank" rel="noopener noreferrer">{contact.text}</a>
       </div>

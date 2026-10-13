@@ -16,6 +16,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Social Image", name: "socialImage", widget: "image", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }

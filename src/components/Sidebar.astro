@@ -51,7 +51,7 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     </nav>
 
     <ul class="contacts">
-      {Object.entries(contacts).map(([key, href]) => (
+      {Object.entries(contacts).filter(([key]) => ICONS[key]).map(([key, href]) => (
         <li>
           <a href={href} rel="noopener noreferrer" target="_blank">
             <svg viewBox={ICONS[key].viewBox}>

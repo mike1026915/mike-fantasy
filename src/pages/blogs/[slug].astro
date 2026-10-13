@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../siteConfig';
 import { formatDate, readingMinutes } from '../../lib/text';
+import { resolveSocialImage } from '../../lib/social';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
@@ -21,7 +22,8 @@ export async function getStaticPaths() {
 }
 
 const { post, previous, next } = Astro.props;
-const { title, description, date, slug, tags } = post.data;
+const { title, description, date, slug, tags, socialImage } = post.data;
+const image = resolveSocialImage(socialImage);
 const { Content } = await render(post);
 const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
 ---
@@ -31,6 +33,7 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
   description={description}
   pathname={`/blogs/${slug}/`}
   ogType="article"
+  image={image}
   jsonLd={{
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -39,6 +42,7 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
     datePublished: date.toISOString(),
     keywords: tags,
     url,
+    ...(image && { image }),
     author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.siteUrl },
   }}
 >
