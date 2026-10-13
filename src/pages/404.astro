@@ -31,7 +31,7 @@ import profile from '../data/profile.json';
   .links {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 1.5rem;
+    gap: 0 3rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -42,21 +42,11 @@ import profile from '../data/profile.json';
   }
 
   .links a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 4.4rem;
-    padding: 0 2.2rem;
-    border: 0.2rem solid var(--dark-green);
-    border-radius: 0.3rem;
+    display: inline-block;
+    padding: 1.3rem 0;
     font-family: var(--sans);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
-    text-decoration: none;
     color: var(--dark-green);
-  }
-
-  .links a:hover {
-    background: var(--dark-green);
-    color: var(--white);
   }
 </style>

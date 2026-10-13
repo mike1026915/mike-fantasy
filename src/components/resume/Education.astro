@@ -4,29 +4,31 @@ import SectionTitle from './SectionTitle.astro';
 const { education } = Astro.props;
 ---
 
-<SectionTitle text="Education" />
-<div>
-  {education.map((e: any) => (
-    <>
-      <div class="row">
-        <h3 class="degree">{e.degree}</h3>
-        <div class="period">
-          {e.start} - {e.end}
+<div class="education">
+  <SectionTitle text="Education" />
+  <div>
+    {education.map((e: any) => (
+      <>
+        <div class="row">
+          <h3 class="degree">{e.degree}</h3>
+          <div class="period">
+            {e.start} - {e.end}
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <p class="school">
-          <a href={e.url}> {e.school} </a>
-        </p>
-        <p class="location">{e.location}</p>
-      </div>
-      {e.thesis && (
-        <ul>
-          <li> Thesis: {e.thesis} </li>
-        </ul>
-      )}
-    </>
-  ))}
+        <div class="row">
+          <p class="school">
+            <a href={e.url}> {e.school} </a>
+          </p>
+          <p class="location">{e.location}</p>
+        </div>
+        {e.thesis && (
+          <ul>
+            <li> Thesis: {e.thesis} </li>
+          </ul>
+        )}
+      </>
+    ))}
+  </div>
 </div>
 
 <style>
@@ -36,7 +38,12 @@ const { education } = Astro.props;
     align-items: flex-end;
   }
 
+  .education {
+    margin-top: 3rem;
+  }
+
   .degree {
+    flex: 1;
     text-decoration: underline;
   }
 
@@ -46,6 +53,12 @@ const { education } = Astro.props;
     font-family: var(--sans);
     letter-spacing: normal;
     padding-bottom: 0;
+  }
+
+  .period {
+    flex: none;
+    margin-left: 1.5rem;
+    white-space: nowrap;
   }
 
   .period,

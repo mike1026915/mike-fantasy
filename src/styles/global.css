@@ -12,7 +12,6 @@
   --light-green: #7d9a64;
   --dark-green: #6a6e4f;
   --red: #96244e;
-  --brown: #615400;
   /* Scales with the viewport height like the avatar (25vh), within sane bounds. */
   --side-panel-size: clamp(24rem, 30vh, 50rem);
   --side-panel-left-padding: 5%;
@@ -80,7 +79,6 @@ aside q {
 main a {
   /* Darkened --dark-green so link text keeps enough contrast on the grey page. */
   color: color-mix(in srgb, var(--dark-green) 70%, black);
-  text-decoration-color: var(--light-green);
 }
 
 main a:hover {
@@ -89,7 +87,7 @@ main a:hover {
 
 aside a {
   color: var(--white);
-  text-decoration-color: var(--brown);
+  text-decoration-color: var(--grey);
 }
 
 p,

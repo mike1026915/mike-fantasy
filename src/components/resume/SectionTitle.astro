@@ -2,7 +2,7 @@
 const { text } = Astro.props;
 ---
 
-<h2>{text}</h2>
+<h2 id={text.toLowerCase().replace(/\s+/g, '-')}>{text}</h2>
 
 <style>
   h2 {

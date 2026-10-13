@@ -11,7 +11,6 @@ colors:
   mist-grey: '#dce0e2'
   ledger-ink: '#2b2f33'
   moss-link: '#4a4d37'
-  tape-brown: '#615400'
 typography:
   display:
     fontFamily: "'Sora Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
@@ -135,7 +134,6 @@ A restrained, earthy palette: two greens carry identity, a cool charcoal carries
 - **Mist Grey** (#dce0e2): The sidebar's menu-toggle outline.
 - **Moss Link** (#4a4d37): Body links, Moss Ledger darkened 30% toward black so it holds contrast on Page Paper. Hover state is Deep Tide.
 - **Deep Tide** (#093e47): Link hover and the keyboard focus ring. A dark sea-teal used sparingly.
-- **Tape Brown** (#615400): Underline color of links inside the green sidebar, like tape on a notebook spine.
 
 ### Named Rules
 
@@ -195,7 +193,8 @@ Mostly square and ruled. Cards and sections have no rounding; separation is by 0
 ### Buttons
 
 - **Shape:** Slightly softened corners (0.3rem).
-- **Compact outline (Download PDF on the resume header):** Transparent fill, 0.15rem Moss Ledger border, Moss Ledger text, 1.4rem text, 0.6rem 1.2rem padding, no underline.
+- **Resume header:** one contact mechanism. A filled "Email Mike" button (same size as the primary) sits above the icon list (LinkedIn, GitHub, plain-text location) and a text "Download PDF" link.
+- **Small screens:** the third action in a button group becomes an underlined text link so two buttons plus a link fit one row.
 - **Hover:** Fills with Moss Ledger, text turns white.
 - **Focus:** 0.3rem Deep Tide outline with 0.2rem offset (white inside the sidebar).
 

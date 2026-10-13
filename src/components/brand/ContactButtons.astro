@@ -12,11 +12,13 @@ const { contacts, resume = 'pdf' } = Astro.props;
     LinkedIn
   </a>
   {resume === 'pdf' ? (
-    <a href={RESUME_PDF_PATH} download rel="nofollow">
+    <a class="tertiary" href={RESUME_PDF_PATH} download rel="nofollow">
       Resume PDF
     </a>
   ) : (
-    <a href="/resume/">Full resume</a>
+    <a class="tertiary" href="/resume/">
+      Full resume
+    </a>
   )}
 </div>
 
@@ -49,6 +51,27 @@ const { contacts, resume = 'pdf' } = Astro.props;
   .primary {
     background: var(--dark-green);
     color: var(--white);
+  }
+
+  @media (max-width: 960px) {
+    .buttons {
+      gap: 0.5rem 1rem;
+    }
+
+    a {
+      padding: 0 1.6rem;
+    }
+
+    .tertiary {
+      border-color: transparent;
+      padding: 0 0.6rem;
+      text-decoration: underline;
+    }
+
+    .tertiary:hover {
+      background: none;
+      color: var(--dark-green);
+    }
   }
 
   .primary:hover {

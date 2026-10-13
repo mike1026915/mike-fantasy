@@ -94,11 +94,25 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   const sidebar = document.querySelector<HTMLElement>('.sidebar');
   const toggle = sidebar?.querySelector<HTMLButtonElement>('.switch');
 
-  toggle?.addEventListener('click', () => {
-    if (!sidebar) return;
-    const open = sidebar.dataset.open !== 'true';
+  // The toggle only exists visually on small screens; on desktop the panel is always open.
+  const toggleShown = () => !!toggle && getComputedStyle(toggle).visibility !== 'hidden';
+
+  const setOpen = (open: boolean) => {
+    if (!sidebar || !toggle) return;
     sidebar.dataset.open = String(open);
     toggle.setAttribute('aria-expanded', String(open));
+  };
+
+  toggle?.addEventListener('click', () => {
+    const open = sidebar?.dataset.open !== 'true';
+    setOpen(open);
+    if (open) sidebar?.querySelector<HTMLElement>('#sidebar-content a')?.focus();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || sidebar?.dataset.open !== 'true' || !toggleShown()) return;
+    setOpen(false);
+    toggle?.focus();
   });
 </script>
 
@@ -216,8 +230,9 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   }
 
   .menus a {
-    display: inline-block;
-    padding: 1.2rem 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     transition: transform 0.2s ease;
     transform-origin: left center;
   }
@@ -287,7 +302,9 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     }
 
     .bar-name {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
       font-family: var(--sans);
       font-size: 1.8rem;
       font-weight: 700;

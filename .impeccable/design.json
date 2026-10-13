@@ -147,22 +147,6 @@
           "#c8cbb9",
           "#eef0e0"
         ]
-      },
-      "tape-brown": {
-        "role": "neutral",
-        "displayName": "Tape Brown",
-        "canonical": "#615400",
-        "oklch": "oklch(45% 0.092 99)",
-        "tonalRamp": [
-          "#130900",
-          "#2f2400",
-          "#4e4200",
-          "#6e621c",
-          "#8f8347",
-          "#b0a670",
-          "#d4ca99",
-          "#f8f0c3"
-        ]
       }
     },
     "typographyMeta": {
@@ -270,7 +254,7 @@
       "refersTo": "nav-link",
       "description": "Cover-green navigation with nudge on hover.",
       "html": "<nav class=\"ds-nav\"><ul><li><a href=\"#\" aria-current=\"page\">Home</a></li><li><a href=\"#\">Resume</a></li><li><a href=\"#\">Blog</a></li></ul></nav>",
-      "css": ".ds-nav{background:#6a6e4f;padding:2rem}.ds-nav ul{margin:0;padding:0}.ds-nav li{list-style:none;margin:1rem 0;font:600 1.5rem 'Sora Variable',sans-serif}.ds-nav a{display:inline-block;color:#fff;text-decoration-color:#615400;transition:transform .2s ease;transform-origin:left center}.ds-nav a:hover:not([aria-current=page]){transform:translateX(.8rem)}.ds-nav a[aria-current=page]{text-decoration-thickness:.2rem}.ds-nav a:focus-visible{outline:.3rem solid #fff;outline-offset:.2rem}"
+      "css": ".ds-nav{background:#6a6e4f;padding:2rem}.ds-nav ul{margin:0;padding:0}.ds-nav li{list-style:none;margin:1rem 0;font:600 1.5rem 'Sora Variable',sans-serif}.ds-nav a{display:inline-block;color:#fff;text-decoration-color:#dce0e2;transition:transform .2s ease;transform-origin:left center}.ds-nav a:hover:not([aria-current=page]){transform:translateX(.8rem)}.ds-nav a[aria-current=page]{text-decoration-thickness:.2rem}.ds-nav a:focus-visible{outline:.3rem solid #fff;outline-offset:.2rem}"
     }
   ],
   "narrative": {

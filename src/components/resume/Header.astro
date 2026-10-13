@@ -1,5 +1,5 @@
 ---
-import ContactButtons from '../brand/ContactButtons.astro';
+import { RESUME_PDF_PATH } from '../../siteConfig';
 
 const { name, chineseName, title, contacts } = Astro.props;
 
@@ -33,27 +33,38 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
       <span lang="zh-Hant">{chineseName}</span> {name}
     </h1>
     <p class="role">{title}</p>
-    <ContactButtons contacts={contacts} />
   </div>
   <div class="right">
-    {Object.entries(contacts).map(([key, contact]: [string, any]) => (
-      <div class="contact">
-        {ICONS[key] && (
-          <svg
-            viewBox={ICONS[key].viewBox}
-            width="24"
-            height="24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d={ICONS[key].path} />
-          </svg>
-        )}
-        <a href={contact.link} target="_blank" rel="noopener noreferrer">
-          {contact.text}
-        </a>
-      </div>
-    ))}
+    <a class="email-button" href={contacts.email.link}>
+      Email Mike
+    </a>
+    {Object.entries(contacts)
+      .filter(([key]) => key !== 'email')
+      .map(([key, contact]: [string, any]) => (
+        <div class="contact">
+          {ICONS[key] && (
+            <svg
+              viewBox={ICONS[key].viewBox}
+              width="24"
+              height="24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d={ICONS[key].path} />
+            </svg>
+          )}
+          {key === 'location' ? (
+            <span>{contact.text}</span>
+          ) : (
+            <a href={contact.link} target="_blank" rel="noopener noreferrer">
+              {contact.text}
+            </a>
+          )}
+        </div>
+      ))}
+    <a class="pdf" href={RESUME_PDF_PATH} download rel="nofollow">
+      Download PDF
+    </a>
   </div>
 </header>
 
@@ -75,12 +86,40 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
 
   /* A tagline, not a heading: keeps the h1 -> h2 outline intact. */
   .role {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     font-family: var(--sans);
     font-size: 2.34rem;
     font-weight: 300;
     letter-spacing: normal;
     padding-bottom: 0;
+  }
+
+  .email-button {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 4.4rem;
+    margin-bottom: 1rem;
+    padding: 0 2.2rem;
+    border-radius: 0.3rem;
+    background: var(--dark-green);
+    font-family: var(--sans);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .email-button:hover {
+    background: color-mix(in srgb, var(--dark-green) 70%, black);
+    color: var(--white);
+  }
+
+  .pdf {
+    margin-top: 0.6rem;
+    align-self: flex-start;
+    font-family: var(--sans);
+    font-size: 1.5rem;
   }
 
   .contact {
@@ -108,7 +147,7 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
       padding-top: 1rem;
     }
 
-    .right a {
+    .right a:not(.email-button) {
       font-size: 1.5rem;
     }
   }
@@ -126,12 +165,17 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     .right {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 0.5rem 2.5rem;
       padding-top: 1.5rem;
     }
 
-    .right a {
-      font-size: 1.5rem;
+    .email-button {
+      margin-bottom: 0;
+    }
+
+    .pdf {
+      margin-top: 0;
     }
   }
 </style>
