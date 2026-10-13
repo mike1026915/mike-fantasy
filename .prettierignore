@@ -1,0 +1,8 @@
+dist/
+.astro/
+node_modules/
+package-lock.json
+public/
+src/content/
+.vscode/
+scripts/resume-pdf.sha256

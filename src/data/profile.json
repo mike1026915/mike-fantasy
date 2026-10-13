@@ -75,7 +75,7 @@
                 "Next.js",
                 "Restful API",
                 "Open API",
-                "ava",
+                "AVA",
                 "Cypress",
                 "AWS Services",
                 "ELK",
@@ -348,19 +348,22 @@
         "line": "Engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.",
         "proofPoints": [
             {
-                "value": "Top 100",
-                "text": "candidates matched to a job opening across the entire candidate database in one click",
-                "domain": "HR tech"
+                "value": "175",
+                "text": "earnings calls turned into hiring leads by an AI reader in its first two months",
+                "domain": "HR tech",
+                "context": "BHRC CRM · Lead Software Engineer · 2024–present"
             },
             {
                 "value": "60%",
                 "text": "fewer unnecessary video generation requests after designing a request scheduler",
-                "domain": "SaaS"
+                "domain": "SaaS",
+                "context": "Vyond · Senior Software Engineer · 2020–2021"
             },
             {
                 "value": "~40%",
                 "text": "higher retention from the onboarding improvement task force",
-                "domain": "SaaS"
+                "domain": "SaaS",
+                "context": "Vyond · Software Engineer · 2018–2019"
             }
         ],
         "selectedWork": [

@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
 """Generate the downloadable resume PDF from src/data/profile.json.
 
-    pip install reportlab pypdf
+    pip install -r scripts/requirements.txt
     python3 scripts/generate-resume-pdf.py
+
+Fonts are looked up in the usual Linux and macOS locations. Override them with
+RESUME_FONT_DIR (a folder holding the four Liberation Sans .ttf files) and
+RESUME_CJK_FONT (a .ttc / .ttf file with Traditional Chinese glyphs).
+
+Besides the PDF, the script writes scripts/resume-pdf.sha256, a fingerprint of
+the profile data that goes into the PDF. `npm run resume:check` (run in CI)
+compares it with the current profile.json, so editing the resume without
+regenerating the PDF fails the build.
 
 The output is committed to public/, so the Netlify build does not need Python.
 
@@ -13,6 +22,7 @@ Privacy choices:
   copy is easy to recognise.
 - All document metadata (author, creator, producer, dates, XMP) is removed.
 """
+import hashlib
 import json
 import os
 import re
@@ -36,6 +46,7 @@ from reportlab.platypus import (HRFlowable, KeepTogether, ListFlowable,
 ROOT = Path(__file__).resolve().parent.parent
 PROFILE = ROOT / 'src' / 'data' / 'profile.json'
 OUTPUT = ROOT / 'public' / 'Mike-Fang-Resume.pdf'
+FINGERPRINT = ROOT / 'scripts' / 'resume-pdf.sha256'
 
 SITE = 'https://www.mike-fang.com'
 FOOTER_SITE = 'mike-fang.com'
@@ -48,11 +59,21 @@ LATIN_FONTS = {
     'Resume-BoldItalic': 'LiberationSans-BoldItalic.ttf',
 }
 LATIN_DIRS = [
+    *filter(None, [os.environ.get('RESUME_FONT_DIR')]),
     '/usr/share/fonts/truetype/liberation',
     '/usr/share/fonts/liberation',
     '/Library/Fonts',
 ]
-CJK_FONT = '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc'
+CJK_FONTS = [
+    *filter(None, [os.environ.get('RESUME_CJK_FONT')]),
+    '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',
+    '/usr/share/fonts/wenquanyi/wqy-zenhei/wqy-zenhei.ttc',
+]
+
+# The parts of profile.json that end up in the PDF. Keep in sync with
+# scripts/check-resume-pdf.mjs.
+PDF_FIELDS = ('name', 'chineseName', 'title', 'summary', 'experience',
+              'education', 'skills')
 
 ACCENT = colors.HexColor('#2f6f4f')
 MUTED = colors.HexColor('#555555')
@@ -63,7 +84,10 @@ def find_font(filename):
         path = Path(directory) / filename
         if path.exists():
             return str(path)
-    sys.exit(f'Font not found: {filename}. Install Liberation Sans.')
+    sys.exit(
+        f'Font not found: {filename}\n'
+        f'Searched: {", ".join(LATIN_DIRS)}\n'
+        'Install Liberation Sans or set RESUME_FONT_DIR.')
 
 
 def register_fonts():
@@ -72,9 +96,12 @@ def register_fonts():
     pdfmetrics.registerFontFamily(
         'Resume', normal='Resume', bold='Resume-Bold',
         italic='Resume-Italic', boldItalic='Resume-BoldItalic')
-    if not Path(CJK_FONT).exists():
-        sys.exit(f'CJK font not found: {CJK_FONT}')
-    pdfmetrics.registerFont(TTFont('ResumeCJK', CJK_FONT, subfontIndex=0))
+    cjk = next((f for f in CJK_FONTS if Path(f).exists()), None)
+    if cjk is None:
+        sys.exit(
+            f'No CJK font found. Searched: {", ".join(CJK_FONTS)}\n'
+            'Install WenQuanYi Zen Hei or set RESUME_CJK_FONT.')
+    pdfmetrics.registerFont(TTFont('ResumeCJK', cjk, subfontIndex=0))
 
 
 def style(name, **kwargs):
@@ -216,6 +243,18 @@ def strip_metadata(path):
         writer.write(out)
 
 
+def fingerprint(profile):
+    """SHA-256 of the profile fields used in the PDF, key order ignored."""
+    subset = {k: profile[k] for k in PDF_FIELDS}
+    subset['contacts'] = {
+        'location': profile['contacts']['location']['text'],
+        'linkedin': profile['contacts']['linkedin']['link'],
+    }
+    text = json.dumps(subset, sort_keys=True, ensure_ascii=False,
+                      separators=(',', ':'))
+    return hashlib.sha256(text.encode('utf-8')).hexdigest()
+
+
 def main():
     register_fonts()
     profile = json.loads(PROFILE.read_text(encoding='utf-8'))
@@ -230,6 +269,7 @@ def main():
              + experience(profile) + education(profile) + skills(profile))
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
     strip_metadata(OUTPUT)
+    FINGERPRINT.write_text(fingerprint(profile) + '\n')
     print(f'Wrote {OUTPUT.relative_to(ROOT)}')
 
 

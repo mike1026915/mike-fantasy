@@ -25,20 +25,32 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
 
 <header>
   <div class="left">
-    <h1>{chineseName} {name}</h1>
+    <h1>
+      <span lang="zh-Hant">{chineseName}</span> {name}
+    </h1>
     <h3>{title}</h3>
-    <a class="download" href={RESUME_PDF_PATH} download rel="nofollow">Download PDF</a>
+    <a class="download" href={RESUME_PDF_PATH} download rel="nofollow">
+      Download PDF
+    </a>
   </div>
   <div class="right">
     {Object.entries(contacts).map(([key, contact]: [string, any]) => (
       <div class="contact">
         {ICONS[key] && (
-          <svg viewBox={ICONS[key].viewBox} width="1em" height="1em" fill="currentColor" aria-hidden="true">
+          <svg
+            viewBox={ICONS[key].viewBox}
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            aria-hidden="true"
+          >
             <path d={ICONS[key].path} />
           </svg>
         )}
         &nbsp;
-        <a href={contact.link} target="_blank" rel="noopener noreferrer">{contact.text}</a>
+        <a href={contact.link} target="_blank" rel="noopener noreferrer">
+          {contact.text}
+        </a>
       </div>
     ))}
   </div>
@@ -80,7 +92,7 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     display: flex;
   }
 
-  @media (min-width: 125vh) {
+  @media (min-width: 961px) {
     .right {
       width: 33.33%;
       display: flex;
@@ -98,7 +110,7 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     }
   }
 
-  @media (max-width: 125vh) {
+  @media (max-width: 960px) {
     .right {
       display: none;
     }

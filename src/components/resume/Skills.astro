@@ -14,7 +14,9 @@ const { skills } = Astro.props;
         <h3>{skill.title}</h3>
       </div>
       <TagList>
-        {skill.items.map((item: string) => <Tag value={item} />)}
+        {skill.items.map((item: string) => (
+          <Tag value={item} />
+        ))}
       </TagList>
     </>
   ))}

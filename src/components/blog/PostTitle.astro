@@ -3,14 +3,18 @@ import Tag from '../Tag.astro';
 import { formatDate } from '../../lib/text';
 
 const { post } = Astro.props;
-const { title, date, tags, description, slug } = post.data;
+const { title, date, tags, description, slug, lang } = post.data;
 ---
 
-<div>
+<div lang={lang}>
   <div class="tags">
-    {tags.map((t: string) => <Tag value={t} />)}
+    {tags.map((t: string) => (
+      <Tag value={t} />
+    ))}
   </div>
-  <h2><a href={`/blogs/${slug}/`}> {title} </a></h2>
+  <h2>
+    <a href={`/blogs/${slug}/`}> {title} </a>
+  </h2>
   <h5>{formatDate(date)}</h5>
   <p>{description}</p>
 </div>

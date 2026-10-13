@@ -8,6 +8,7 @@ const { proofPoints } = Astro.props;
       <div class="value">{point.value}</div>
       {point.text}
       <div class="domain">{point.domain}</div>
+      {point.context && <div class="context">{point.context}</div>}
     </li>
   ))}
 </ul>
@@ -40,7 +41,13 @@ const { proofPoints } = Astro.props;
     margin-top: 0.5rem;
   }
 
-  @media (max-width: 125vh) {
+  .context {
+    font-size: 1.3rem;
+    margin-top: 0.3rem;
+    color: var(--black);
+  }
+
+  @media (max-width: 960px) {
     ul {
       flex-direction: column;
     }

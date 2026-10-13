@@ -11,7 +11,8 @@ const blog = defineCollection({
     // so local and Netlify builds agree (the page formats dates in UTC too).
     date: z.preprocess(
       (value) =>
-        typeof value === 'string' && /^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}(:\d{2}(\.\d+)?)?$/.test(value)
+        typeof value === 'string' &&
+        /^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}(:\d{2}(\.\d+)?)?$/.test(value)
           ? `${value.replace(' ', 'T')}Z`
           : value,
       z.coerce.date(),
@@ -19,6 +20,8 @@ const blog = defineCollection({
     description: z.string(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    // Language of the post body; sets <html lang> and og:locale.
+    lang: z.enum(['en', 'zh-Hant']).default('en'),
     socialImage: z.string().optional(),
   }),
 });

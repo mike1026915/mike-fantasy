@@ -3,7 +3,9 @@ const { name, chineseName, title, line } = Astro.props;
 ---
 
 <header>
-  <h1>{chineseName} {name}</h1>
+  <h1>
+    <span lang="zh-Hant">{chineseName}</span> {name}
+  </h1>
   <h3>{title}</h3>
   <p>{line}</p>
 </header>

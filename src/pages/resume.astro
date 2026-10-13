@@ -7,6 +7,7 @@ import Hobby from '../components/resume/Hobby.astro';
 import Experience from '../components/resume/Experience.astro';
 import Education from '../components/resume/Education.astro';
 import resume from '../data/profile.json';
+import { buildPersonSchema } from '../lib/schema';
 ---
 
 <Layout
@@ -14,8 +15,14 @@ import resume from '../data/profile.json';
   description="Resume of Mike Fang: experience leading full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity."
   pathname="/resume/"
   ogType="profile"
+  jsonLd={buildPersonSchema(resume.title, resume.chineseName)}
 >
-  <Header name={resume.name} chineseName={resume.chineseName} title={resume.title} contacts={resume.contacts} />
+  <Header
+    name={resume.name}
+    chineseName={resume.chineseName}
+    title={resume.title}
+    contacts={resume.contacts}
+  />
   <Summary summary={resume.summary} />
   <div class="columns">
     <div class="left">
@@ -34,7 +41,7 @@ import resume from '../data/profile.json';
     display: flex;
   }
 
-  @media (min-width: 125vh) {
+  @media (min-width: 961px) {
     .columns {
       flex-direction: row;
     }
@@ -53,7 +60,7 @@ import resume from '../data/profile.json';
     }
   }
 
-  @media (max-width: 125vh) {
+  @media (max-width: 960px) {
     .columns {
       flex-direction: column;
     }

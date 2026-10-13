@@ -3,15 +3,27 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "MikeFantasy",
-  "author": "mike_fang",
+  "description": "Personal website and resume of Mike Fang, built with Astro.",
+  "author": "Mike Fang <https://www.mike-fang.com>",
+  "license": "MIT",
+  "homepage": "https://www.mike-fang.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike1026915/mike-fantasy.git"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "resume:pdf": "python3 scripts/generate-resume-pdf.py"
+    "check": "astro check",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "resume:pdf": "python3 scripts/generate-resume-pdf.py",
+    "resume:check": "node scripts/check-resume-pdf.mjs"
   },
   "engines": {
     "node": ">=22.12.0"
@@ -20,6 +32,22 @@
     "@astrojs/mdx": "^8.0.3",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/montserrat": "^5.3.0",
+    "@fontsource-variable/open-sans": "^5.3.0",
+    "@fontsource-variable/sora": "^5.3.0",
     "astro": "^7.3.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "eslint-plugin-astro": "^1.7.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2",
+    "vitest": "^5.0.4",
+    "yaml": "^2.9.1"
   }
 }

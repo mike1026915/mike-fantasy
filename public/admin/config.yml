@@ -6,19 +6,52 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "public/uploads"
 public_folder: "/uploads"
+
+# The fields below mirror the blog schema in src/content.config.ts; a unit test
+# (src/lib/cms-config.test.ts) fails if the two drift apart.
+# The CMS only creates and lists .md posts. Hand-written .mdx posts are fine
+# in the repo but do not show up here.
 collections:
   - name: "blog"
     label: "Blog"
     folder: "src/content/blog"
     create: true
     extension: "md"
+    format: "frontmatter"
     slug: "{{slug}}"
+    summary: "{{title}} ({{date | date('YYYY-MM-DD')}})"
+    sortable_fields: ["date", "title"]
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Social Image", name: "socialImage", widget: "image", required: false }
-      - { label: "Draft", name: "draft", widget: "boolean", default: true }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+        hint: "Used in the URL: /blogs/<slug>/. Lowercase letters, numbers and hyphens."
+        pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Use lowercase letters, numbers and single hyphens only."]
+      - label: "Language"
+        name: "lang"
+        widget: "select"
+        options: ["en", "zh-Hant"]
+        default: "en"
+        hint: "Language of the post body (en = English, zh-Hant = Traditional Chinese)."
+      - label: "Social Image"
+        name: "socialImage"
+        widget: "image"
+        required: false
+        hint: "Optional cover for link previews (Open Graph). Uploads are served from /uploads/."
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: true
+        hint: "Drafts are not listed and get no page. Turn off to publish."
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "One or two sentences used on the blog index, in the RSS feed and in link previews."
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        default: []
       - { label: "Body", name: "body", widget: "markdown" }
