@@ -351,8 +351,8 @@
         "line": "Engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.",
         "proofPoints": [
             {
-                "value": "6–12×",
-                "text": "faster backend builds and linting (~12s → ~2s, ~25s → ~2s) after modernising the toolchain",
+                "value": "10%",
+                "text": "less unnecessary AI token spend by choosing a model that fits each feature",
                 "domain": "HR tech",
                 "context": "BHRC CRM · Lead Software Engineer · 2024–present"
             },
