@@ -51,8 +51,8 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
   <Content />
   <hr />
   <nav class="pager">
-    <div>{previous && <a href={`/blogs/${previous.slug}`} rel="prev">← {previous.title}</a>}</div>
-    <div>{next && <a href={`/blogs/${next.slug}`} rel="next">{next.title} →</a>}</div>
+    <div>{previous && <a href={`/blogs/${previous.slug}/`} rel="prev">← {previous.title}</a>}</div>
+    <div>{next && <a href={`/blogs/${next.slug}/`} rel="next">{next.title} →</a>}</div>
   </nav>
 </Layout>
 

@@ -7,8 +7,8 @@ export const siteConfig = {
   intro: 'Try my best to do right things with right people then enjoy an easy life!',
   menus: [
     { label: 'Home', path: '/' },
-    { label: 'Resume', path: '/resume' },
-    { label: 'Blog', path: '/blogs' },
+    { label: 'Resume', path: '/resume/' },
+    { label: 'Blog', path: '/blogs/' },
   ],
   contacts: {
     email: 'mailto:mike1026915.cs96@g2.nctu.edu.tw',
