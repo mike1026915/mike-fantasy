@@ -201,7 +201,7 @@ Mostly square and ruled. Cards and sections have no rounding; separation is by 0
 ### Cards / Containers
 
 - **Work card:** Card White background, 2rem padding, 0.4rem Moss Ledger top border, no radius, no shadow. Content order: uppercase domain label, name, italic role line, summary, "Read more" link.
-- **Work card:** the first card spans both columns with a 0.8rem top rule and a 3rem title; the other three stay in two columns. Each links to its role anchor on /resume/.
+- **Work card:** the first card spans both columns with a 0.8rem top rule and a 3rem title; the other three share one row of three columns at 1280px and wider, and stack in one column below that. Each links to its role anchor on /resume/.
 - **Proof point:** No box. A 0.4rem Sage Rule left border with 1.5rem padding; a Stat-size Moss Link figure leads, followed by the sentence, the uppercase domain and a 1.5rem context line. Three wrap into one column when narrower than about 24rem each.
 
 ### Navigation

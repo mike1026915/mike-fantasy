@@ -34,7 +34,7 @@ const anchor = (company: string, role: string) =>
 <style>
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-bottom: 3rem;
   }
@@ -45,6 +45,7 @@ const anchor = (company: string, role: string) =>
     border-top: 0.4rem solid var(--dark-green);
   }
 
+  /* The lead story spans the row; the other three share one row beneath it. */
   article:first-child {
     grid-column: 1 / -1;
     border-top-width: 0.8rem;
@@ -85,9 +86,9 @@ const anchor = (company: string, role: string) =>
     color: var(--dark-green);
   }
 
-  @media (max-width: 960px) {
+  @media (min-width: 1280px) {
     .grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
