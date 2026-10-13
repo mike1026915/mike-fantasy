@@ -6,8 +6,6 @@
 
 Personal website, resume and blog of Mike Fang, live at [mike-fang.com](https://www.mike-fang.com).
 
-![Home page screenshot](docs/screenshot.png)
-
 The home page is a brand overview and `/resume` is the full resume, both rendered from one data file, `src/data/profile.json`. Blog posts are Markdown or MDX files under `src/content/blog`, published at `/blogs/<slug>`.
 
 ## Stack
@@ -121,13 +119,17 @@ src/content/blog/              Markdown / MDX posts
 src/pages/                     Routes: index, resume, blogs, rss.xml, 404
 src/layouts/Layout.astro       Page shell: head, sidebar, content
 src/components/SEO.astro       Per-page meta tags, canonical, JSON-LD
+src/components/Sidebar.astro   Site navigation: side rail on desktop, labelled top bar on mobile
+src/components/Tag*.astro      Tag chip and tag list
 src/components/brand/          Home page sections
 src/components/resume/         Resume sections
 src/components/blog/           Blog index entry
-src/lib/                       Text helpers and the Person JSON-LD
+src/lib/                       Text helpers, og:image resolver and the Person JSON-LD
 public/                        Resume PDF, robots.txt, /admin CMS config, /uploads
 scripts/                       Resume PDF generator and its up-to-date check
-docs/                          README screenshot
+docs/                          LinkedIn About text (keep in sync with the resume summary)
+PRODUCT.md, DESIGN.md          Audience, tone and design system for the site (Impeccable)
+.impeccable/                   Design critiques and design tokens used by the Impeccable skill
 ```
 
 ## Resume PDF
