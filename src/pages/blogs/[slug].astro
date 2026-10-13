@@ -50,6 +50,7 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
     author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.siteUrl },
   }}
 >
+  <a class="back" href="/blogs/">← Blog</a>
   <h1>{title}</h1>
   <p class="metadata">
     <time datetime={date.toISOString()}>{formatDate(date)}</time> · {readingMinutes(post.body)} min
@@ -80,6 +81,21 @@ const url = `${siteConfig.siteUrl}/blogs/${slug}/`;
 </Layout>
 
 <style>
+  .back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    color: var(--dark-green);
+    text-decoration: none;
+  }
+
+  .back:hover {
+    text-decoration: underline;
+  }
+
   .metadata {
     border-bottom: 0.2rem solid var(--light-green);
     padding: 1rem 0;
