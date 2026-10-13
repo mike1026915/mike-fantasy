@@ -193,7 +193,7 @@ Mostly square and ruled. Cards and sections have no rounding; separation is by 0
 ### Buttons
 
 - **Shape:** Slightly softened corners (0.3rem).
-- **Resume header:** one contact mechanism. A filled "Email Mike" button (same size as the primary) sits above the icon list (LinkedIn, GitHub, plain-text location) and a text "Download PDF" link.
+- **Download PDF (resume header):** Compact outline button: transparent fill, 0.15rem Moss Ledger border, Moss Ledger text at 1.5rem, 0.4rem 1rem padding, fills on hover. The contact details sit in a ruled column to the right (email, LinkedIn, GitHub, location as icon + text links).
 - **Small screens:** the third action in a button group becomes an underlined text link so two buttons plus a link fit one row.
 - **Hover:** Fills with Moss Ledger, text turns white.
 - **Focus:** 0.3rem Deep Tide outline with 0.2rem offset (white inside the sidebar).
