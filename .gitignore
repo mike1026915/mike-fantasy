@@ -1,6 +1,48 @@
+# dependencies
 node_modules/
+
+# Astro build output and generated types
 dist/
 .astro/
+
+# environment variables
 .env
 .env.*
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS and editors
+.DS_Store
+.idea/
+
+# local notes
 note.md
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Netlify CLI
+.netlify/
+
+# Leftover Gatsby cache and build output.
+# Hand-written files in public/ (robots.txt, fonts, resume PDF, CMS config) stay tracked.
+.cache/
+public/page-data/
+public/static/
+public/icons/
+public/**/*.html
+public/**/*.js
+public/**/*.js.map
+public/**/*.js.LICENSE.txt
+public/chunk-map.json
+public/webpack.stats.json
+public/manifest.webmanifest
+public/sitemap.xml
+public/favicon-*.png
