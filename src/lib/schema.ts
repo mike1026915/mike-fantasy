@@ -19,3 +19,17 @@ export function buildPersonSchema(jobTitle: string, alternateName?: string) {
     sameAs: [contacts.linkedin, contacts.github],
   };
 }
+
+/** Lets search engines pick the site name ("Mike Fang") shown above results. */
+export function buildWebSiteSchema() {
+  const { name, siteUrl, description } = siteConfig;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name,
+    url: siteUrl,
+    description,
+    inLanguage: 'en',
+  };
+}

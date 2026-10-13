@@ -18,6 +18,8 @@ const blog = defineCollection({
           : value,
       z.coerce.date(),
     ),
+    // Set when a post is revised after publishing; becomes dateModified.
+    updated: z.coerce.date().optional(),
     description: z.string(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),

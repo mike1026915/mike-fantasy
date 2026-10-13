@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildPersonSchema } from './schema';
+import { buildPersonSchema, buildWebSiteSchema } from './schema';
 
 describe('buildPersonSchema', () => {
   it('describes the site owner as a schema.org Person', () => {
@@ -16,5 +16,15 @@ describe('buildPersonSchema', () => {
         expect.stringContaining('github.com'),
       ]),
     );
+  });
+});
+
+describe('buildWebSiteSchema', () => {
+  it('names the site and points at the canonical origin', () => {
+    const schema = buildWebSiteSchema();
+
+    expect(schema['@type']).toBe('WebSite');
+    expect(schema.name).toBe('Mike Fang');
+    expect(schema.url).toBe('https://www.mike-fang.com');
   });
 });
