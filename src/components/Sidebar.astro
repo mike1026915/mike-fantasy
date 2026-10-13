@@ -50,10 +50,12 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   </div>
   <div class="content" id="sidebar-content">
     <div class="me">
-      <div class="avatar">
-        <Image src={profilePicture} alt="Portrait of Mike Fang" width={400} draggable={false} />
-      </div>
-      <div class="name">{name}</div>
+      <a class="home" href="/">
+        <div class="avatar">
+          <Image src={profilePicture} alt="Portrait of Mike Fang" width={400} draggable={false} />
+        </div>
+        <div class="name">{name}</div>
+      </a>
       <q class="intro">{intro}</q>
     </div>
 
@@ -181,6 +183,10 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
     margin-bottom: 1.5rem;
   }
 
+  .home {
+    text-decoration: none;
+  }
+
   .avatar {
     width: 25vh;
     height: 25vh;
@@ -196,15 +202,15 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
   }
 
   .name {
-    font-size: 3rem;
+    font-size: 3.6rem;
     font-weight: bold;
   }
 
   .intro {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-style: italic;
     margin: 0.5rem 10% 0 0;
-    line-height: 2.1rem;
+    line-height: 2.4rem;
     letter-spacing: 0.05rem;
   }
 
@@ -223,7 +229,7 @@ const ICONS: Record<string, { path: string; viewBox: string }> = {
 
   .menus li {
     list-style-type: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 0;
     font-family: var(--sans);
     font-weight: 600;

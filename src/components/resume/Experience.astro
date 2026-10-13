@@ -31,7 +31,7 @@ const anchor = (company: string, role: string) =>
           <p class="location">{e.location}</p>
         </div>
         <div>
-          {e.project && <a href={e.url}>{e.project}</a>}
+          {e.project && <a class="project" href={e.url}>{e.project} ↗</a>}
           {e.description &&
             (sections.length > 0 ? (
               <p class="lead">{e.description}</p>
@@ -74,7 +74,7 @@ const anchor = (company: string, role: string) =>
   }
 
   .role {
-    text-decoration: underline;
+    font-weight: 600;
     margin-top: 1.6rem;
   }
 
@@ -82,14 +82,17 @@ const anchor = (company: string, role: string) =>
     margin-top: 0.4rem;
   }
 
-  .row + div > a {
+  .project {
     display: inline-block;
     margin-top: 0.6rem;
+    font-size: 1.6rem;
+    font-weight: 600;
   }
 
   .company {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 300;
+    color: #5a5f64;
     font-family: var(--sans);
     letter-spacing: normal;
     padding-bottom: 0;
@@ -114,8 +117,8 @@ const anchor = (company: string, role: string) =>
   .lead {
     margin: 0.8rem 0 0;
     line-height: 1.7;
-    font-style: italic;
     font-weight: 400;
+    color: #4a4f54;
   }
 
   .events {
@@ -137,9 +140,12 @@ const anchor = (company: string, role: string) =>
 
   .section-heading {
     margin: 1.6rem 0 0.2rem;
-    font-family: var(--body);
-    font-size: 1.75rem;
+    font-family: var(--sans);
+    font-size: 1.3rem;
     font-style: normal;
     font-weight: 700;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: var(--dark-green);
   }
 </style>

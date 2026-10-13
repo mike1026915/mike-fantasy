@@ -36,7 +36,9 @@ const anchor = (company: string, role: string) =>
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-top: 2.5rem;
+    /* SectionTitle's 1.5rem bottom margin collapses with this; -0.5rem nets 1rem
+       without touching the resume page's titles. */
+    margin-top: -0.5rem;
     margin-bottom: 3rem;
   }
 

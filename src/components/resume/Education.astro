@@ -44,11 +44,28 @@ const { education } = Astro.props;
 
   .degree {
     flex: 1;
-    text-decoration: underline;
+    font-weight: 600;
+    margin-top: 1.6rem;
+  }
+
+  .row + .row {
+    margin-top: 0.4rem;
+  }
+
+  ul {
+    margin: 0.4rem 0 0;
+    padding-left: 2rem;
+  }
+
+  li {
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.6;
+    color: #2b2f33;
   }
 
   .school {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 300;
     font-family: var(--sans);
     letter-spacing: normal;
