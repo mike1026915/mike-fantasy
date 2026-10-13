@@ -1,3 +1,8 @@
+---
+// Decap CMS shell. It lives in src/pages (not public/) so `astro dev` serves
+// /admin/ too; the CMS config stays in public/admin/config.yml.
+---
+
 <!doctype html>
 <html>
   <head>
@@ -7,6 +12,6 @@
     <title>Content Manager</title>
   </head>
   <body>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script is:inline src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
