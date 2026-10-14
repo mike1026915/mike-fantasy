@@ -145,7 +145,7 @@ npm run resume:pdf
 
 The script needs the Liberation Sans fonts and a CJK font (WenQuanYi Zen Hei) for the Chinese name. It looks in the usual Linux and macOS folders; point it elsewhere with `RESUME_FONT_DIR` (folder with the four Liberation Sans `.ttf` files) and `RESUME_CJK_FONT` (path to a font file with Traditional Chinese glyphs).
 
-It also writes `scripts/resume-pdf.sha256`, a fingerprint of the profile fields that appear in the PDF. `npm run resume:check` compares it with the current `profile.json`, so a resume edit without a regenerated PDF fails CI. Commit the PDF and the fingerprint together.
+It also writes `scripts/resume-pdf.sha256`, a fingerprint of the profile fields that appear in the PDF. `npm run resume:check` compares it with the current `profile.json`, so a resume edit without a regenerated PDF fails CI. Commit the PDF and the fingerprint together. The same check is step 5 of the finish checklist in `CLAUDE.md` (Claude Code) and `.cursor/rules/project-checks.mdc` (Cursor).
 
 Privacy settings:
 
