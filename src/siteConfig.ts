@@ -3,7 +3,7 @@ export const siteConfig = {
   name: 'Mike Fang',
   siteUrl: 'https://www.mike-fang.com',
   description:
-    'Mike Fang is an engineering leader building scalable full-stack products and teams across HR tech, SaaS, AdTech, and cybersecurity.',
+    'Mike Fang is an engineering leader building scalable full-stack products and teams across HR tech, media tech, ad tech, and cybersecurity.',
   intro: 'Try my best to do right things with right people then enjoy an easy life!',
   menus: [
     { label: 'Home', path: '/' },

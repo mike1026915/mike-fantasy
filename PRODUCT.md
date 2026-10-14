@@ -24,7 +24,7 @@ Success is a visitor contacting Mike (email or LinkedIn) about a role or an enga
 
 ## Positioning
 
-An engineering leader with 10+ years across cybersecurity, SaaS, AdTech and HR tech, who is today the sole lead engineer of an AI-powered recruiting CRM and runs an AI-first engineering workflow with Claude Code and Cursor. The claim that sets him apart is range plus quantified results: each domain has a measured outcome rather than a job title alone.
+An engineering leader with 10+ years across cybersecurity, media tech, ad tech and HR tech, who is today the sole lead engineer of an AI-powered recruiting CRM and runs an AI-first engineering workflow with Claude Code and Cursor. The claim that sets him apart is range plus quantified results: each domain has a measured outcome rather than a job title alone.
 
 ## Operating Context
 
@@ -51,7 +51,7 @@ An engineering leader with 10+ years across cybersecurity, SaaS, AdTech and HR t
 ## Evidence on Hand
 
 - Measured proof points in `profile.json`: ~10% less unnecessary AI token spend (BHRC CRM, 2024–present); 60% fewer unnecessary video generation requests via a request scheduler (Vyond); ~40% higher retention from the onboarding task force (Vyond).
-- Selected work: BHRC CRM (HR tech), Vyond (SaaS), Placements.io (AdTech), Trend Micro Deep Discovery U-Sandbox (cybersecurity).
+- Selected work: BHRC CRM (HR tech), Vyond (media tech), Placements.io (ad tech), Trend Micro Deep Discovery U-Sandbox (cybersecurity).
 - Nine roles of experience, education, skills, a committed resume PDF, a portrait (`src/images/Mike.jpg`), and one sample blog post.
 - No testimonials, client logos, case-study write-ups or press mentions exist. Do not fabricate them.
 

@@ -131,7 +131,7 @@
             ]
         }
     ],
-    "summary": "Engineering leader with 10+ years across cybersecurity, SaaS, AdTech and HR tech. I lead full-stack teams (TypeScript, Next.js, NestJS, PostgreSQL, AWS), design scalable systems, and grow engineers through hiring, coaching and clear technical direction. Today I am the sole lead engineer of an AI-powered recruiting CRM, and I run an AI-first engineering workflow with Claude Code and Cursor. Open to conversations about engineering leadership and AI product engineering.",
+    "summary": "Engineering leader with 10+ years across cybersecurity, media tech, ad tech and HR tech. I lead full-stack teams (TypeScript, Next.js, NestJS, PostgreSQL, AWS), design scalable systems, and grow engineers through hiring, coaching and clear technical direction. Today I am the sole lead engineer of an AI-powered recruiting CRM, and I run an AI-first engineering workflow with Claude Code and Cursor. Open to conversations about engineering leadership and AI product engineering.",
     "education": [
         {
             "school": "National Chiao Tung University",
@@ -353,12 +353,12 @@
     "title": "Lead Software Engineer / Team Leader",
     "brand": {
         "title": "Engineering Leader",
-        "line": "Engineering leader with 10+ years shipping products across cybersecurity, SaaS, AdTech and HR tech. Now building AI-first as the sole lead engineer of a recruiting platform, owning the whole stack from architecture to AI features to operations.",
+        "line": "Engineering leader with 10+ years shipping products across cybersecurity, media tech, ad tech and HR tech. Now building AI-first as the sole lead engineer of a recruiting platform, owning the whole stack from architecture to AI features to operations.",
         "proofPoints": [
             {
                 "value": "60%",
                 "text": "fewer unnecessary video generation requests after designing a request scheduler",
-                "domain": "SaaS",
+                "domain": "Media tech",
                 "context": "Vyond · Senior Software Engineer · 2020–2021"
             },
             {
@@ -370,7 +370,7 @@
             {
                 "value": "~40%",
                 "text": "higher retention from the onboarding improvement task force",
-                "domain": "SaaS",
+                "domain": "Media tech",
                 "context": "Vyond · Software Engineer · 2018–2019"
             }
         ],
@@ -383,14 +383,14 @@
                 "summary": "Sole lead engineer of a recruiting CRM used daily by consultants, sales and leadership. Designed, built and operate the whole platform end to end: backend, frontend, database, cloud, deployment and operations."
             },
             {
-                "domain": "SaaS",
+                "domain": "Media tech",
                 "name": "Vyond",
                 "company": "VYOND",
                 "role": "Lead Software Engineer",
                 "summary": "Led SaaS feature team across Taiwan and Hong Kong. Designed a request scheduler that cut unnecessary video generation requests by 60%, and hired and coached engineers."
             },
             {
-                "domain": "AdTech",
+                "domain": "Ad tech",
                 "name": "Placements.io",
                 "company": "Placements.io",
                 "role": "Senior Full Stack Engineer",

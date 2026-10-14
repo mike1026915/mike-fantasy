@@ -1,13 +1,13 @@
 # LinkedIn About
 
-Paste the text below into LinkedIn → Profile → About (limit 2,600 characters; this is 2101).
+Paste the text below into LinkedIn → Profile → About (limit 2,600 characters; this is 2115).
 The website summary and highlights on `/resume` and in the PDF are the short version of this text.
 Keep them in sync when you edit either one.
 
 ```text
-Engineering leader with 10+ years of experience building and scaling software across cybersecurity, SaaS, AdTech and HR tech.
+Engineering leader with 10+ years of experience building and scaling software across cybersecurity, media tech, ad tech and HR tech.
 
-I began in cybersecurity at Trend Micro (malware sandbox analysis), grew into a full-stack team lead at Vyond, leading engineers, designers, data specialists and PMs across Taiwan and Hong Kong, built ad-order management software with a U.S. team at Placements.io, and today I am the sole lead engineer of an AI-powered recruiting CRM at Bruce HR Consulting.
+I began in cybersecurity at Trend Micro (malware sandbox analysis), grew into a full-stack team lead at Vyond (SaaS), leading engineers, designers, data specialists and PMs across Taiwan and Hong Kong, built ad-order management software with a U.S. team at Placements.io, and today I am the sole lead engineer of an AI-powered recruiting CRM at Bruce HR Consulting.
 
 What I do best: full-stack delivery (TypeScript, React, Next.js, NestJS, Ruby on Rails, PostgreSQL, AWS), system design, and growing engineers through hiring, coaching and clear technical direction.
 

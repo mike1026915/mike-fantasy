@@ -237,7 +237,7 @@
       "kind": "custom",
       "refersTo": "proof-point",
       "description": "Quantified result with domain label and left rule.",
-      "html": "<div class=\"ds-proof\"><div class=\"ds-value\">60%</div>fewer unnecessary video generation requests<div class=\"ds-domain\">SaaS</div><div class=\"ds-context\">Vyond · Senior Software Engineer</div></div>",
+      "html": "<div class=\"ds-proof\"><div class=\"ds-value\">60%</div>fewer unnecessary video generation requests<div class=\"ds-domain\">Media tech</div><div class=\"ds-context\">Vyond · Senior Software Engineer</div></div>",
       "css": ".ds-proof{padding:0 0 0 1.5rem;border-left:.4rem solid #7d9a64;font-weight:400;color:#404449}.ds-value{font-size:3.2rem;color:#6a6e4f}.ds-domain{font-size:1.3rem;text-transform:uppercase;letter-spacing:.1rem;margin-top:.5rem}.ds-context{font-size:1.3rem;margin-top:.3rem}"
     },
     {
