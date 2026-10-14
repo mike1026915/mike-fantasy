@@ -380,7 +380,7 @@
                 "name": "BHRC CRM",
                 "company": "Bruce HR Consulting",
                 "role": "Lead Software Engineer",
-                "summary": "Sole lead engineer of a recruiting CRM used daily by consultants, sales and leadership. Built and run the whole stack, including AI candidate–job matching across tens of thousands of profiles."
+                "summary": "Sole lead engineer of a recruiting CRM used daily by consultants, sales and leadership. Designed, built and operate the whole platform end to end: backend, frontend, database, cloud, deployment and operations."
             },
             {
                 "domain": "SaaS",
