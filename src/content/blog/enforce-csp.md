@@ -3,8 +3,9 @@ title: 把 CSP 從 Report-Only 轉正
 slug: enforce-csp
 lang: zh-Hant
 draft: false
-date: 2026-10-13
-description: 個人網站的 Content-Security-Policy 掛了一陣子 Report-Only，這次改成強制執行，順便記下 /admin 後台踩到的 unsafe-eval。
+date: 2026-10-14
+description: 個人網站的 Content-Security-Policy 掛了一陣子 Report-Only，這次改成強制執行，順便記下
+  /admin 後台踩到的 unsafe-eval。
 tags:
   - Security
   - Netlify
