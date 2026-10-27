@@ -18,7 +18,7 @@ The home page is a brand overview and `/resume` is the full resume, both rendere
 - `@astrojs/sitemap` and `@astrojs/rss`
 - Vitest, ESLint, Prettier and `astro check`, run in GitHub Actions
 
-Astro 7 needs Node 22.12 or newer (`.nvmrc`). Netlify builds with Node 22.12.0 (see `netlify.toml`) and publishes `dist/`.
+Astro 7 needs Node 22.22 or newer (`.nvmrc`). Netlify builds with Node 22.22.0 (see `netlify.toml`) and publishes `dist/`.
 
 ## Design decisions
 
@@ -32,7 +32,7 @@ Astro 7 needs Node 22.12 or newer (`.nvmrc`). Netlify builds with Node 22.12.0 (
 ## Scripts
 
 ```shell
-nvm use   # or any Node >= 22.12
+nvm use   # or any Node >= 22.22
 npm install
 npm run dev
 ```
