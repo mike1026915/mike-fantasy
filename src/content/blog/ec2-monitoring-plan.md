@@ -3,7 +3,7 @@ title: 規劃單機監控：該不該升級要看三種訊號
 slug: ec2-monitoring-plan
 lang: zh-Hant
 draft: false
-date: 2026-10-08
+date: 2026-10-18
 description: 一台 EC2 同時扛著資料庫、後端和前端，什麼時候該升級？先決定要看哪些訊號，再裝最少的告警。
 tags:
   - AWS
