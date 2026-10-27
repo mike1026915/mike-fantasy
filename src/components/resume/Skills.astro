@@ -1,6 +1,6 @@
 ---
 import SectionTitle from './SectionTitle.astro';
-import Tag from '../Tag.astro';
+import LinkedTag from '../LinkedTag.astro';
 import TagList from '../TagList.astro';
 
 const { skills } = Astro.props;
@@ -15,7 +15,7 @@ const { skills } = Astro.props;
       </div>
       <TagList>
         {skill.items.map((item: string) => (
-          <Tag value={item} />
+          <LinkedTag value={item} />
         ))}
       </TagList>
     </>

@@ -1,6 +1,7 @@
 ---
 import Tag from '../Tag.astro';
 import { formatDate } from '../../lib/text';
+import { tagHref } from '../../lib/tags';
 
 const { post } = Astro.props;
 const { title, date, tags, description, slug, lang } = post.data;
@@ -9,7 +10,7 @@ const { title, date, tags, description, slug, lang } = post.data;
 <article lang={lang}>
   <div class="tags">
     {tags.map((t: string) => (
-      <Tag value={t} />
+      <Tag value={t} href={tagHref(t)} />
     ))}
   </div>
   <h2>
