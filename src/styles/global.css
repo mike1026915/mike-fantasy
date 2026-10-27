@@ -153,6 +153,15 @@ mark,
   margin: 0.5rem;
 }
 
+a.tag {
+  text-decoration: none;
+}
+
+a.tag:hover {
+  background: color-mix(in srgb, var(--dark-green) 70%, black);
+  color: var(--light-grey);
+}
+
 .skip-link {
   position: absolute;
   top: 0;

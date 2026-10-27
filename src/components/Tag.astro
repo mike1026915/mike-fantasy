@@ -1,9 +1,16 @@
 ---
 interface Props {
   value: string;
+  href?: string;
 }
 
-const { value } = Astro.props;
+const { value, href } = Astro.props;
 ---
 
-<p class="tag">{value}</p>
+{href ? (
+  <a class="tag" href={href}>
+    {value}
+  </a>
+) : (
+  <p class="tag">{value}</p>
+)}

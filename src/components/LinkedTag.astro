@@ -1,0 +1,16 @@
+---
+import Tag from './Tag.astro';
+import { getPublishedPosts } from '../lib/posts';
+import { groupPostsByTag, tagHref, tagSlug } from '../lib/tags';
+
+interface Props {
+  value: string;
+}
+
+const { value } = Astro.props;
+const groups = groupPostsByTag(await getPublishedPosts());
+// Only link when the tag page would list something.
+const href = groups.has(tagSlug(value)) ? tagHref(value) : undefined;
+---
+
+<Tag value={value} href={href} />

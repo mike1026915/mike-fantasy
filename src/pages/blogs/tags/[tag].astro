@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PostTitle from '../../../components/blog/PostTitle.astro';
+import ContactLine from '../../../components/brand/ContactLine.astro';
+import profile from '../../../data/profile.json';
+import { getPublishedPosts } from '../../../lib/posts';
+import { groupPostsByTag } from '../../../lib/tags';
+
+export async function getStaticPaths() {
+  const groups = groupPostsByTag(await getPublishedPosts());
+
+  return [...groups].map(([slug, { name, posts }]) => ({
+    params: { tag: slug },
+    props: { name, posts },
+  }));
+}
+
+const { name, posts } = Astro.props;
+const { tag } = Astro.params;
+---
+
+<Layout
+  title={`Posts tagged ${name}`}
+  description={`Blog posts by Mike Fang tagged ${name}.`}
+  pathname={`/blogs/tags/${tag}/`}
+>
+  <a class="back" href="/blogs/">
+    ← Blog
+  </a>
+  <h1 class="heading">{`#${name}`}</h1>
+  <p class="count">
+    {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+  </p>
+  <div class="posts">
+    {posts.map((post: any) => (
+      <PostTitle post={post} />
+    ))}
+  </div>
+  <ContactLine contacts={profile.contacts} />
+</Layout>
+
+<style>
+  .back {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .heading {
+    overflow-wrap: anywhere;
+    border-bottom: 0.2rem solid var(--light-green);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .count {
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+
+  .posts {
+    margin-top: 1.5rem;
+  }
+</style>
