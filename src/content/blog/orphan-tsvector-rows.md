@@ -3,7 +3,7 @@ title: 刪除端沒有漏，孤兒列從寫入端來
 slug: orphan-tsvector-rows
 lang: zh-Hant
 draft: false
-date: 2026-09-08
+date: 2026-10-27
 description: 搜尋索引表裡累積了一批指向已刪除資料的孤兒列。我一開始以為是刪除時漏清，結果問題出在 fire-and-forget 的寫入。
 tags:
   - PostgreSQL
