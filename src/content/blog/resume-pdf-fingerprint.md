@@ -3,7 +3,7 @@ title: 讓履歷 PDF 不會悄悄過期
 slug: resume-pdf-fingerprint
 lang: zh-Hant
 draft: false
-date: 2026-10-13
+date: 2026-10-14
 description: 網站上的履歷是從 profile.json 產生的，PDF 卻是另外一個檔案。我用一個 sha256 指紋，讓兩者對不上時直接讓檢查失敗。
 tags:
   - Astro
