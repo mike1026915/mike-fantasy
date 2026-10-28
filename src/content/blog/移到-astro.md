@@ -10,7 +10,7 @@ tags:
 ---
 AI 建議我轉到 Astro \
 研究了一下\
-就靜態網頁生成\
+就 static site generation\
 他比 Gatsby 乾淨也現代多了\
 也比 Next.js 輕量\
 感覺是個不錯的選擇就轉移了\
