@@ -160,19 +160,22 @@
             "role": "Lead Software Engineer",
             "company": "Bruce HR Consulting",
             "location": "Taipei, Taiwan",
-            "project": "BHRC CRM",
+            "project": "Internal CRM",
             "url": "https://app.brucehr.com.tw/",
             "start": "12/2024",
             "end": "present",
-            "description": "Sole lead software engineer of BHRC's internal recruitment, sales and market-research CRM. I designed, built and operate the whole platform: backend, frontend, database, AI, cloud and deployment. Used daily by consultants, sales and leadership across tens of thousands of candidate profiles.",
+            "description": "I built company's internal CRM alone, from scratch, and I still run it: backend, frontend, database, AI, cloud and deployment. Used daily by consultants, sales and leadership across tens of thousands of candidate profiles.",
             "sections": [
                 {
                     "title": "Product impact",
                     "events": [
-                        "Built and run the CRM behind BHRC’s recruiting business. It’s used daily by consultants, sales and leadership, manages a candidate database of **tens of thousands of profiles**, and covers the whole hiring flow from sourcing to placement.",
+                        "Built the **recruiting Kanban** that consultants work from every day, tracking each candidate–job pair from submission to onboarding.",
+                        "Built a **leadership command board** for ranking clients and openings by priority and tracking each consultant’s weekly progress.",
+                        "Built this CRM **alone, from scratch**, and still run it. It’s used daily by consultants, sales and leadership, manages a candidate database of **tens of thousands of profiles**, and covers the whole hiring flow from sourcing to placement.",
                         "Built a **Salary Report** that shows pay against years of experience across the candidate database. Consultants can filter by job function, location, project, job opening and date, remove outliers, and export the chart. They use it to give clients and candidates salary advice backed by data.",
-                        "Built a **Sales Sheet** module that tracks consultant targets, deals and replacement hires in one place, replacing spreadsheet-based tracking.",
-                        "Built **pipeline metrics** that help the team **forecast sales numbers**."
+                        "Replaced spreadsheet tracking with a **Sales Sheet** module that keeps consultant targets, deals and replacement hires in one place.",
+                        "Built **pipeline metrics** that help the team **forecast sales numbers**.",
+                        "Built market-research tools that refresh on a schedule: an **AI reader for earnings-call transcripts**, an **industry intelligence board** and a **tracker for US job-posting trends**."
                     ]
                 },
                 {
@@ -181,7 +184,6 @@
                         "Built **AI candidate–job matching** that finds the **top 100 candidates for a job opening across the entire candidate database** in one click. It compares candidates and the job description on 5 areas (must-have skills, domain experience, functional experience, education, overall profile), combined with hard requirement filters and normalized skill names.",
                         "Kept matching **fast and cheap**: similarity is calculated inside the database (pgvector), and each candidate’s text embeddings are reused until their profile changes. Running a match again costs **almost nothing in AI spend**.",
                         "Built an **AI resume-vs-job match review** that gives a match score with reasons for and against, strengths, red flags and suggested improvements. Consultants can then ask the AI follow-up questions about the match.",
-                        "Launched an **AI Earning Call Reader** that has turned **175 earnings calls** into hiring leads for consultants in its first two months. It includes a model-evaluation step so AI upgrades are checked before rollout.",
                         "Launched an **AI Data Explorer** that lets non-technical staff ask questions about CRM data in plain English, without filing report requests.",
                         "Built an **AI Resume Builder** that saves consultants about **40% of the time** they spend writing and managing resumes.",
                         "Built **AI usage and cost dashboards** with per-user breakdowns, so leadership can see and control LLM spending for the first time.",
@@ -189,29 +191,25 @@
                     ]
                 },
                 {
-                    "title": "Performance & engineering speed",
+                    "title": "Engineering & performance",
                     "events": [
-                        "Made backend builds **6× faster (~12s → ~2s)** by moving to the SWC compiler.",
-                        "Made linting **12× faster (~25s → ~2s)** by moving to oxlint, keeping 77 of 84 existing lint rules.",
-                        "Cut frontend build time by **~23% (~31s → ~24s)** and type-checking by **~28% (15.8s → 11.3s)** by trimming the bundle.",
-                        "Sped up page loads across the main dashboards by running server requests in parallel, caching shared reference data and loading heavy tables and charts only when needed, guided by Lighthouse audits."
+                        "Made backend builds **6× faster (SWC)**, linting **12× faster (oxlint)** and frontend builds **about 23% faster**.",
+                        "Sped up page loads across the main dashboards by running server requests in parallel, caching shared reference data and loading heavy tables and charts only when needed, guided by Lighthouse audits.",
+                        "Every feature starts from a written spec, and changes must pass **435 unit-test files**, Playwright E2E tests and GitLab CI."
+                    ]
+                },
+                {
+                    "title": "Infrastructure & security",
+                    "events": [
+                        "Brought all production AWS resources under **Terraform** by myself, so the whole setup is version-controlled and can be rebuilt from code instead of being clicked together by hand.",
+                        "Set up automated weekly backups stored in a second region and reliable monitoring alerts.",
+                        "Tightened security across the stack: limited each service’s access to only what it needs, locked down network access rules, and hardened server settings against common attack paths."
                     ]
                 },
                 {
                     "title": "AI-assisted engineering (Claude Code & Cursor)",
                     "events": [
-                        "Set up an AI-first engineering workflow in which Claude Code and Cursor follow the same rules from **one shared instruction file**.",
-                        "Wrote **36 custom Claude Code skills and 18 Cursor rules** that make agents follow team standards: spec-first design, safe database migrations, security and performance audits, and verification before any change counts as done.",
-                        "Used AI agents to run security audits, performance reviews and UI design critiques, then shipped the fixes, all gated by **automated tests and type checks**.",
-                        "Set up safe AI-agent access: agents **can’t read secrets** and get **least-privilege access** to data."
-                    ]
-                },
-                {
-                    "title": "Key challenge: redesigning access control without disrupting users",
-                    "events": [
-                        "**Problem:** An internal review found that access rules were broader than the business intended, so some users could see records outside their responsibilities.",
-                        "**Solution:** Redesigned authorization so access follows each user’s real working relationship to a record, and applied it consistently across every feature that touches that data.",
-                        "**Result:** Fixed it with no downtime, no data migration and no disruption for legitimate users."
+                        "Run an AI-first workflow where Claude Code and Cursor follow **one shared instruction file** and a shared skill library (**20 Claude Code skills and Cursor rules**). The skills cover spec-first design, safe database migrations, security and performance audits, and verification before any change counts as done. Agents never see secrets and get least-privilege access to data."
                     ]
                 }
             ]
@@ -226,7 +224,10 @@
             "end": "10/2024",
             "description": "Advertise Order Management System",
             "events": [
-                "Develop feature with React/Redux with TypeScript as frontend and Ruby on Rails as backend, collaborating with U.S. team"
+                "Develop feature with React/Redux with TypeScript as frontend and Ruby on Rails as backend, collaborating with U.S. team",
+                "Supported a new AD server integration end to end.",
+                "Made database queries faster by tuning indexes.",
+                "Made frontend loading faster by reducing the bundle size with lazy loading."
             ]
         },
         {
@@ -380,7 +381,7 @@
                 "name": "BHRC CRM",
                 "company": "Bruce HR Consulting",
                 "role": "Lead Software Engineer",
-                "summary": "Sole lead engineer of a recruiting CRM used daily by consultants, sales and leadership. Designed, built and operate the whole platform end to end: backend, frontend, database, cloud, deployment and operations."
+                "summary": "Built this recruiting CRM alone, from scratch. It is used daily by consultants, sales and leadership. I still design, build and operate the whole platform: backend, frontend, database, cloud, deployment and operations."
             },
             {
                 "domain": "Media tech",
@@ -433,11 +434,5 @@
         "Chatting with Friends",
         "Enjoying Life with my family"
     ],
-    "summaryHighlights": [
-        "Redesigned access control in a production CRM with **no downtime**, no data migration and no disruption for legitimate users.",
-        "Built **AI candidate–job matching** across tens of thousands of profiles; embeddings are reused until a profile changes, so re-running a match costs almost nothing in AI spend.",
-        "Set up an **AI-first engineering workflow**: 36 Claude Code skills and 18 Cursor rules from one shared instruction file, with agents that cannot read secrets and every change gated by automated tests and type checks.",
-        "Built an **AI Resume Builder** that saves consultants about **40% of the time** they spend writing and managing resumes.",
-        "Cut unnecessary video generation requests by **60%** with a request scheduler, and lifted onboarding retention by **~40%** at Vyond."
-    ]
+    "summaryHighlights": []
 }
