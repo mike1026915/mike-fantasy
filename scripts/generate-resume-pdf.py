@@ -269,9 +269,9 @@ def main():
         topMargin=14 * mm, bottomMargin=18 * mm)
     story = (header(profile)
              + section('Summary')
-             + [Paragraph(rich(profile['summary']), STYLES['body']),
-                Spacer(1, 3),
-                bullets(profile['summaryHighlights'])]
+             + [Paragraph(rich(profile['summary']), STYLES['body'])]
+             + ([Spacer(1, 3), bullets(profile['summaryHighlights'])]
+                if profile['summaryHighlights'] else [])
              + experience(profile) + education(profile) + skills(profile))
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
     strip_metadata(OUTPUT)
