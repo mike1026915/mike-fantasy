@@ -161,7 +161,6 @@
             "company": "Bruce HR Consulting",
             "location": "Taipei, Taiwan",
             "project": "Internal CRM",
-            "url": "https://app.brucehr.com.tw/",
             "start": "12/2024",
             "end": "present",
             "description": "I built company's internal CRM alone, from scratch, and I still run it: backend, frontend, database, AI, cloud and deployment. Used daily by consultants, sales and leadership across tens of thousands of candidate profiles.",
