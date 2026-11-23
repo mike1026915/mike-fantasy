@@ -25,67 +25,66 @@
         {
             "title": "General",
             "items": [
+                "Full-stack Development",
+                "System Design",
+                "Project Planning, Managing and Leading",
+                "Members mentoring",
                 "Web Application Development",
-                "System Software Development",
+                "Continuous Integration and Delivery",
                 "Test Plan and Cases Design",
                 "Automation Testing",
                 "Regression Testing",
                 "Performance Testing Design and Improvement",
-                "Continuous Integration and Delivery",
                 "Agile and Scrum experience",
                 "Certified Scrum Master",
                 "Trend Micro Certified Cyber Security Professional",
-                "Members mentoring",
-                "Communication",
-                "Project Planning, Managing and Leading",
-                "Full-stack Development",
-                "System Design",
-                "Access Control",
+                "System Software Development",
                 "Mobile Application Development",
+                "Communication",
                 "Quick Learning"
             ]
         },
         {
             "title": "Programming Languages",
             "items": [
+                "TypeScript",
                 "JavaScript",
                 "Python",
+                "Ruby",
                 "Shell Script",
                 "Java",
                 "C/C++",
                 "C#",
                 "Perl",
-                "Ruby",
-                "TypeScript",
-                "Lua",
-                "Objective-C"
+                "Lua"
             ]
         },
         {
-            "title": "Web Developments",
+            "title": "Web & Backend",
             "items": [
                 "React.js",
+                "Next.js",
                 "Redux",
                 "Node.js",
                 "NestJS",
                 "Express.js",
-                "Flask",
+                "Ruby on Rails",
+                "PostgreSQL",
                 "MySQL",
                 "Redis",
+                "Restful API",
+                "Open API",
                 "HTML5",
                 "CSS3",
                 "SCSS",
-                "Gatsby.js",
-                "Next.js",
                 "Astro",
-                "Restful API",
-                "Open API",
-                "AVA",
-                "Cypress",
-                "AWS Services",
-                "ELK",
-                "Ruby on Rails"
+                "Flask",
+                "Gatsby.js"
             ]
+        },
+        {
+            "title": "Cloud & Infrastructure",
+            "items": ["AWS Services", "Terraform", "Docker", "GitLab CI", "Jenkins", "ELK"]
         },
         {
             "title": "AI",
@@ -94,7 +93,7 @@
                 "Text Embeddings",
                 "Semantic Search",
                 "pgvector",
-                "Model Evaluation",
+                "Claude",
                 "Claude Code",
                 "Cursor"
             ]
@@ -102,24 +101,24 @@
         {
             "title": "Tools & Platforms",
             "items": [
-                "Linux",
-                "Windows",
-                "MacOS",
                 "git",
-                "Perforce",
                 "VSCode",
-                "Lighthouse",
-                "QEMU",
-                "VirtualBox",
-                "Docker",
-                "Jenkins",
+                "Linux",
+                "MacOS",
+                "Windows",
+                "Playwright",
+                "Cypress",
+                "AVA",
+                "Selenium",
                 "Postman",
                 "Jmeter",
-                "Vyond",
-                "Trello",
+                "Lighthouse",
                 "Jira",
-                "Selenium",
-                "PostgreSQL"
+                "Trello",
+                "Perforce",
+                "QEMU",
+                "VirtualBox",
+                "Vyond"
             ]
         },
         {
