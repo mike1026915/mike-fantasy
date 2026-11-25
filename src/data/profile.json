@@ -84,14 +84,7 @@
         },
         {
             "title": "Cloud & Infrastructure",
-            "items": [
-                "AWS Services",
-                "Terraform",
-                "Docker",
-                "GitLab CI",
-                "Jenkins",
-                "ELK"
-            ]
+            "items": ["AWS Services", "Terraform", "Docker", "GitLab CI", "Jenkins", "ELK"]
         },
         {
             "title": "AI",
