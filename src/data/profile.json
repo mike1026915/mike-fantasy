@@ -84,7 +84,14 @@
         },
         {
             "title": "Cloud & Infrastructure",
-            "items": ["AWS Services", "Terraform", "Docker", "GitLab CI", "Jenkins", "ELK"]
+            "items": [
+                "AWS Services",
+                "Terraform",
+                "Docker",
+                "GitLab CI",
+                "Jenkins",
+                "ELK"
+            ]
         },
         {
             "title": "AI",
@@ -169,7 +176,6 @@
                     "events": [
                         "Built the **recruiting Kanban** that consultants work from every day, tracking each candidate–job pair from submission to onboarding.",
                         "Built a **leadership command board** for ranking clients and openings by priority and tracking each consultant’s weekly progress.",
-                        "Built this CRM **alone, from scratch**, and still run it. It’s used daily by consultants, sales and leadership, manages a candidate database of **tens of thousands of profiles**, and covers the whole hiring flow from sourcing to placement.",
                         "Built a **Salary Report** that shows pay against years of experience across the candidate database. Consultants can filter by job function, location, project, job opening and date, remove outliers, and export the chart. They use it to give clients and candidates salary advice backed by data.",
                         "Replaced spreadsheet tracking with a **Sales Sheet** module that keeps consultant targets, deals and replacement hires in one place.",
                         "Built **pipeline metrics** that help the team **forecast sales numbers**.",
